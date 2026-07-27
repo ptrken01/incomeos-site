@@ -1,0 +1,65 @@
+# Local-First AI Dev Notes
+
+> Build-once digital products: local-LLM playbooks and niche AI prompt packs for developers. Snippet-engineered, private, and cited by AI search.
+
+## Products
+- [Local LLM on Apple Silicon — The MLX Deploy Playbook](https://ptrk-en.gumroad.com/l/mlx-deploy-playbook): The exact recipe to serve fast, private LLMs on your Mac — including the silent failures nobody documents.
+- [The MLX-Optimized Local-LLM Prompt Pack](https://ptrk-en.gumroad.com/l/mlx-prompt-pack): 48 production prompts tuned for smaller local models — copy-paste + JSON for agent loops.
+- [Local-LLM Builder Bundle (Playbook + Prompt Pack)](https://ptrk-en.gumroad.com/l/mlx-starter-bundle): Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.
+- [50 Real Estate Agents AI Prompts](https://ptrk-en.gumroad.com/l/niche-realestate-prompts): 50 ready-to-use prompts so real estate agents write listings, follow-ups, and ads in minutes.
+- [50 Gym & Fitness Coaches AI Prompts](https://ptrk-en.gumroad.com/l/niche-fitness-prompts): 50 prompts to write client programs, social posts, and DMs that actually convert.
+- [50 Etsy & Small-Shop Sellers AI Prompts](https://ptrk-en.gumroad.com/l/niche-etsy-prompts): 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.
+- [50 Solopreneur Consultants AI Prompts](https://ptrk-en.gumroad.com/l/niche-consultant-prompts): 50 prompts to write proposals, client emails, and lead magnets without hiring a copywriter.
+- [50 Youtubers & Video Creators AI Prompts](https://ptrk-en.gumroad.com/l/niche-youtuber-prompts): 50 prompts for video scripts, titles, and thumbnails that get clicked.
+- [50 Newsletter Authors AI Prompts](https://ptrk-en.gumroad.com/l/niche-newsletter-prompts): 50 prompts for issue openers, subject lines, and growth tweets that build a list.
+- [50 Local Service Businesses AI Prompts](https://ptrk-en.gumroad.com/l/niche-localservice-prompts): 50 prompts for local service businesses to write Google posts, quotes, and review requests.
+- [50 Course Creators AI Prompts](https://ptrk-en.gumroad.com/l/niche-coursecreator-prompts): 50 prompts for course outlines, lesson scripts, and launch emails that sell.
+- [The AI Automation Playbook: 51 Workflows for Small Business](https://ptrk-en.gumroad.com/l/ai-automation-playbook): 51 ready-to-deploy AI workflows that cut admin time for small teams - copy-paste, not theory.
+- [The AI Prompt Library: 200 Copy-Paste Prompts for Business](https://ptrk-en.gumroad.com/l/ai-prompt-library): 200 production prompts across marketing, ops, and writing - paste and get results.
+- [AI for Non-Techies: The 2026 Productivity Guide](https://ptrk-en.gumroad.com/l/ai-skills-ebook): The plain-English guide to using AI for real work - no code, no jargon.
+- [The 2026 AI Stack: 60 Tools + Local-LLM Setup Guide](https://ptrk-en.gumroad.com/l/ai-tools-stack-guide): The 60 tools worth using in 2026, plus how to run a private LLM on your Mac.
+- [The Passive Income Playbook: Build Digital Products with AI](https://ptrk-en.gumroad.com/l/passive-income-playbook): The exact system to launch AI-built digital products that sell while you sleep.
+- [The AI Agentic Commerce System: Sell to Autonomous Buyers](https://ptrk-en.gumroad.com/l/ai-agentic-commerce-system): The blueprint for building products and listings that autonomous AI buyers purchase.
+- [AI Philosophy & Hyperstition Strategy Notes](https://ptrk-en.gumroad.com/l/hyperstition-brand-pack): How self-fulfilling ideas, positive feedback, and the 'capitalism is AI' thesis actually inform practical brand + automation strategy.
+- [Mechanism-Design Pricing Playbook for AI Agents](https://ptrk-en.gumroad.com/l/math-mechanism-design-pricing): How to design revenue-maximizing pricing and auction rules an AI agent can compute and a client can trust.
+- [Optimal-Stopping Decisions Playbook for Agents](https://ptrk-en.gumroad.com/l/math-optimal-stopping): When to act, sell, or stop under uncertainty — the math a decision agent should run for a client.
+- [Operations Optimization Pack for AI Agents](https://ptrk-en.gumroad.com/l/math-operations-optimization): Solve client logistics, scheduling, and allocation problems with combinatorial-optimization math.
+- [Time-Series Forecasting Pack for Agents](https://ptrk-en.gumroad.com/l/math-time-series-forecasting): Forecast demand, load, and revenue for a client with transformer-based time-series models.
+- [Queueing & Service-Throughput Pack for Agents](https://ptrk-en.gumroad.com/l/math-queueing-service): Optimize a client's service/throughput system with queueing-theory math an agent can apply.
+- [Game-Theoretic Multi-Agent Strategy Pack](https://ptrk-en.gumroad.com/l/math-game-theory-multiagent): Model competitor and multi-agent interactions so an agent can price and move strategically.
+- [Stochastic-Control Trading Policy Pack](https://ptrk-en.gumroad.com/l/math-stochastic-control-trading): Run a mathematical trading and portfolio policy an agent can execute and explain.
+- [Learning-to-Rank & Retrieval Pack for Agents](https://ptrk-en.gumroad.com/l/math-learning-to-rank): Build a client search/recommendation ranking model with learning-to-rank math.
+- [Embeddings & Similarity Pack for Agents](https://ptrk-en.gumroad.com/l/math-linear-algebra-embeddings): Build recommendation, similarity, and embedding systems with linear-algebra math.
+- [Risk & Actuarial Pricing Pack for Agents](https://ptrk-en.gumroad.com/l/math-risk-actuarial-pricing): Price insurance and risk models for a client with coherent risk-measure math.
+
+## Latest articles
+- [Agent Loop Prompts Setup That Actually Works](https://ptrk-en.github.io/incomeos-site/articles/agent-loop-prompts-setup-that-actually-works)
+- [Agentic Commerce: A Practical 2026 Guide](https://ptrk-en.github.io/incomeos-site/articles/agentic-commerce-a-practical-2026-guide)
+- [Agentic Commerce Benchmarks & Numbers](https://ptrk-en.github.io/incomeos-site/articles/agentic-commerce-benchmarks-numbers)
+- [AI Automation Workflows: A Practical 2026 Guide](https://ptrk-en.github.io/incomeos-site/articles/ai-automation-workflows-a-practical-2026-guide)
+- [Ai Automation Workflows Step-by-Step](https://ptrk-en.github.io/incomeos-site/articles/ai-automation-workflows-step-by-step)
+- [AI For Beginners vs the Alternatives](https://ptrk-en.github.io/incomeos-site/articles/ai-for-beginners-vs-the-alternatives)
+- [AI For Non Technical: A Practical 2026 Guide](https://ptrk-en.github.io/incomeos-site/articles/ai-for-non-technical-a-practical-2026-guide)
+- [AI For Non Technical: Common Pitfalls](https://ptrk-en.github.io/incomeos-site/articles/ai-for-non-technical-common-pitfalls)
+- [Ai Passive Income Step-by-Step](https://ptrk-en.github.io/incomeos-site/articles/ai-passive-income-step-by-step)
+- [Ai Prompt Library: A Practical 2026 Guide](https://ptrk-en.github.io/incomeos-site/articles/ai-prompt-library-a-practical-2026-guide)
+- [Ai Prompts For Realtors Setup That Actually Works](https://ptrk-en.github.io/incomeos-site/articles/ai-prompts-for-realtors-setup-that-actually-works)
+- [Ai Shopping Agents Common Pitfalls](https://ptrk-en.github.io/incomeos-site/articles/ai-shopping-agents-common-pitfalls)
+- [AI Skills For Professionals Setup That Actually Works](https://ptrk-en.github.io/incomeos-site/articles/ai-skills-for-professionals-setup-that-actually-works)
+- [AI Workflow Pack in 2026](https://ptrk-en.github.io/incomeos-site/articles/ai-workflow-pack-in-2026)
+- [Apple Silicon LLM Server for Local-First Teams](https://ptrk-en.github.io/incomeos-site/articles/apple-silicon-llm-server-for-local-first-teams)
+- [Apple Silicon Llm Server Step By Step](https://ptrk-en.github.io/incomeos-site/articles/apple-silicon-llm-server-step-by-step)
+- [Autonomous Commerce 2026: A Practical Dev Guide](https://ptrk-en.github.io/incomeos-site/articles/autonomous-commerce-2026-a-practical-dev-guide)
+- [AWS S3 Local Development: A Minimal Working Example](https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-a-minimal-working-example)
+- [AWS S3 Local Development - A Practical Dev Guide](https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-a-practical-dev-guide)
+- [AWS S3 Local Development CI/CD Setup That Actually Works](https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-ci-cd-setup-that-actually-works)
+- [AWS S3 Local Development Step-by-Step](https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-step-by-step)
+- [AWS Sandbox Local: A Practical Dev Guide](https://ptrk-en.github.io/incomeos-site/articles/aws-sandbox-local-a-practical-dev-guide)
+- [AWS Sandbox Local Benchmarks & Numbers](https://ptrk-en.github.io/incomeos-site/articles/aws-sandbox-local-benchmarks-numbers)
+- [AWS Sandbox Local vs the Alternatives](https://ptrk-en.github.io/incomeos-site/articles/aws-sandbox-local-vs-the-alternatives)
+- [Best AI Tools 2026: A Practical 2026 Guide](https://ptrk-en.github.io/incomeos-site/articles/best-ai-tools-2026-a-practical-2026-guide)
+- [Best AI Tools 2026 Benchmarks & Numbers](https://ptrk-en.github.io/incomeos-site/articles/best-ai-tools-2026-benchmarks-numbers)
+- [Build Digital Products With AI: A Minimal Working Example](https://ptrk-en.github.io/incomeos-site/articles/build-digital-products-with-ai-a-minimal-working-example)
+- [Capitalism Is AI Thesis in Plain English](https://ptrk-en.github.io/incomeos-site/articles/capitalism-is-ai-thesis-in-plain-english)
+- [ChatGPT Prompt Pack: A Practical Dev Guide](https://ptrk-en.github.io/incomeos-site/articles/chatgpt-prompt-pack-a-practical-dev-guide)
+- [Ci Local Aws Testing: A Minimal Working Example](https://ptrk-en.github.io/incomeos-site/articles/ci-local-aws-testing-a-minimal-working-example)

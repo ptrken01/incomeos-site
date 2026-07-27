@@ -1,0 +1,176 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>AWS S3 Local Development Step-by-Step | Local-First AI Dev Notes</title>
+<meta name="description" content="# AWS S3 Local Development Step-by-Step  When developing applications that interact with AWS S3, you often need a local environment that mimics the real se">
+<meta property="og:title" content="AWS S3 Local Development Step-by-Step">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-step-by-step">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AWS S3 Local Development Step-by-Step", "description": "# AWS S3 Local Development Step-by-Step  When developing applications that interact with AWS S3, you often need a local environment that mimics the real service behavior. This approach saves costs, avoids network latency, and enables offline development. While tools like LocalStack and MinIO exist,", "url": "https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-step-by-step", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-step-by-step"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>AWS S3 Local Development Step-by-Step</h1><h2>AWS S3 Local Development Step-by-Step</h2>
+<h2>AWS S3 Local Development Step-by-Step</h2>
+<p>When developing applications that interact with AWS S3, you often need a local environment that mimics the real service behavior. This approach saves costs, avoids network latency, and enables offline development. While tools like LocalStack and MinIO exist, many developers find them complex to set up or don't match real AWS behavior exactly.</p>
+<p>Enter Floci Local-AWS Starter Kit – a free, zero-config solution that runs a local AWS emulator and lets you point your code at it just like real AWS services.</p>
+<h3>Why Local AWS S3?</h3>
+<p>Before diving into setup, let's understand why local development matters:</p>
+<ul>
+<li><strong>Cost savings</strong>: Avoid paying for S3 operations during testing</li>
+<li><strong>Speed</strong>: Eliminate network latency between your dev machine and AWS</li>
+<li><strong>Reliability</strong>: No intermittent connectivity issues or rate limiting</li>
+<li><strong>Offline work</strong>: Develop without internet access</li>
+</ul>
+<h3>Prerequisites</h3>
+<p>You'll need:</p>
+<ul>
+<li>Docker (version 20.10+ recommended)</li>
+<li>Node.js (v14+) for testing code</li>
+<li>Basic understanding of AWS S3 operations</li>
+</ul>
+<h3>Quick Setup with Floci</h3>
+<p>Floci's Local-AWS Starter Kit provides everything you need in a single command:</p>
+<p>```bash</p>
+<h2>Install the CLI globally</h2>
+<p>npm install -g @floci/cli</p>
+<h2>Start local AWS services (S3, Lambda, DynamoDB)</h2>
+<p>floci start</p>
+<p>```</p>
+<p>This starts a local AWS-compatible environment with:</p>
+<ul>
+<li>S3 endpoint at `http://localhost:4566`</li>
+<li>Lambda at `http://localhost:4567`</li>
+<li>DynamoDB at `http://localhost:4568`</li>
+<li>All services accessible via standard AWS SDKs</li>
+</ul>
+<h3>Configuration Example</h3>
+<p>Here's how to configure your Node.js application to use the local S3 endpoint:</p>
+<p>```javascript</p>
+<p>// config/aws-config.js</p>
+<p>const { S3Client } = require('@aws-sdk/client-s3');</p>
+<p>const s3Client = new S3Client({</p>
+<p>  endpoint: process.env.AWS_ENDPOINT || 'http://localhost:4566',</p>
+<p>  region: process.env.AWS_REGION || 'us-east-1',</p>
+<p>  credentials: {</p>
+<p>    accessKeyId: 'test',</p>
+<p>    secretAccessKey: 'test'</p>
+<p>  },</p>
+<p>  forcePathStyle: true // Required for local development</p>
+<p>});</p>
+<p>module.exports = { s3Client };</p>
+<p>```</p>
+<h3>Testing S3 Operations</h3>
+<p>Here's a complete working example that demonstrates basic S3 operations:</p>
+<p>```javascript</p>
+<p>// test-s3.js</p>
+<p>const { s3Client } = require('./config/aws-config');</p>
+<p>async function testS3Operations() {</p>
+<p>  const bucketName = 'test-bucket';</p>
+<p>  try {</p>
+<p>    // Create bucket</p>
+<p>    await s3Client.send(new CreateBucketCommand({ Bucket: bucketName }));</p>
+<p>    console.log('✓ Bucket created');</p>
+<p>    // Upload file</p>
+<p>    const uploadParams = {</p>
+<p>      Bucket: bucketName,</p>
+<p>      Key: 'test-file.txt',</p>
+<p>      Body: 'Hello, local S3!'</p>
+<p>    };</p>
+<p>    await s3Client.send(new PutObjectCommand(uploadParams));</p>
+<p>    console.log('✓ File uploaded');</p>
+<p>    // List objects</p>
+<p>    const listParams = { Bucket: bucketName };</p>
+<p>    const response = await s3Client.send(new ListObjectsV2Command(listParams));</p>
+<p>    console.log('✓ Objects listed:', response.Contents?.length || 0);</p>
+<p>    // Download file</p>
+<p>    const downloadParams = { Bucket: bucketName, Key: 'test-file.txt' };</p>
+<p>    const data = await s3Client.send(new GetObjectCommand(downloadParams));</p>
+<p>    const content = await streamToString(data.Body);</p>
+<p>    console.log('✓ File downloaded:', content);</p>
+<p>  } catch (error) {</p>
+<p>    console.error('Error:', error.message);</p>
+<p>  }</p>
+<p>}</p>
+<p>function streamToString(stream) {</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>    const chunks = [];</p>
+<p>    stream.on('data', chunk =&gt; chunks.push(chunk));</p>
+<p>    stream.on('error', reject);</p>
+<p>    stream.on('end', () =&gt; resolve(Buffer.concat(chunks).toString('utf-8')));</p>
+<p>  });</p>
+<p>}</p>
+<p>testS3Operations();</p>
+<p>```</p>
+<h3>Docker Compose Alternative</h3>
+<p>If you prefer a more explicit setup using Docker Compose:</p>
+<p>```yaml</p>
+<h2>docker-compose.yml</h2>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    ports:</p>
+<p>      - "4566:4566"  # S3</p>
+<p>      - "4567:4567"  # Lambda</p>
+<p>      - "4568:4568"  # DynamoDB</p>
+<p>    environment:</p>
+<p>      - AWS_ACCESS_KEY_ID=test</p>
+<p>      - AWS_SECRET_ACCESS_KEY=test</p>
+<p>      - AWS_DEFAULT_REGION=us-east-1</p>
+<p>```</p>
+<p>Run with:</p>
+<p>```bash</p>
+<p>docker-compose up -d</p>
+<p>```</p>
+<h3>Performance Characteristics</h3>
+<p>Floci's local AWS emulator is designed for development scenarios:</p>
+<ul>
+<li><strong>Startup time</strong>: ~3 seconds</li>
+<li><strong>Memory usage</strong>: ~50MB average</li>
+<li><strong>Response times</strong>: &lt; 10ms for basic operations</li>
+<li><strong>Supported services</strong>: S3, Lambda, DynamoDB (more coming)</li>
+</ul>
+<h3>Environment Variables</h3>
+<p>Set these in your `.env` file or shell:</p>
+<p>```bash</p>
+<p>AWS_ENDPOINT=http://localhost:4566</p>
+<p>AWS_REGION=us-east-1</p>
+<p>AWS_ACCESS_KEY_ID=test</p>
+<p>AWS_SECRET_ACCESS_KEY=test</p>
+<p>```</p>
+<h3>Common Gotchas</h3>
+<p>1. <strong>Path-style access</strong>: Always set `forcePathStyle: true` in your S3 client configuration</p>
+<p>2. <strong>Credentials</strong>: Use test credentials for local development</p>
+<p>3. <strong>Bucket naming</strong>: Local environments may have different bucket name validation rules</p>
+<p>4. <strong>Cross-region operations</strong>: Local mode doesn't support cross-region replication</p>
+<h3>Integration with CI/CD</h3>
+<p>You can also use Floci in your CI pipeline:</p>
+<p>```yaml</p>
+<h2>.github/workflows/test.yml</h2>
+<p>name: Test S3 Operations</p>
+<p>on: [push]</p>
+<p>jobs:</p>
+<p>  test:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v2</p>
+<p>      - name: Start local AWS</p>
+<p>        run: |</p>
+<p>          npm install -g @floci/cli</p>
+<p>          floci start &amp;</p>
+<p>          sleep 5</p>
+<p>      - name: Run tests</p>
+<p>        run: npm test</p>
+<p>```</p>
+<h3>Getting Started</h3>
+<p>The setup process takes less than 5 minutes from installation to running your first S3 operations. The Floci Local-AWS Starter Kit handles all the complexity of spinning up the local environment, so you can focus on writing code.</p>
+<h3>Get the kit</h3>
+<p>Ready to start developing with a true-to-AWS local environment? Get the Floci Local-AWS Starter Kit:</p>
+<p><a href="https://buy.stripe.com/cNi5kD3hicEW0rbecE48002">Get Floci Local-AWS Starter Kit</a></p>
+<p>With zero configuration required, you can immediately point your existing code at the local AWS services and enjoy the same APIs and behaviors as the real AWS environment.</p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>In practice, what does 'AWS S3 Local Development Step-by-Step' actually cover?</strong> This guide walks through aws s3 local development step-by-step with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Where can I find more local-first guides like this?</strong> The full index of build-once digital products and daily technical articles lives at https://ptrk-en.gumroad.com - every item runs local-first with free tooling, no mandatory accounts, and no usage-based billing.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

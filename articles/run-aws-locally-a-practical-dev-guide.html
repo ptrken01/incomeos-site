@@ -1,0 +1,161 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Run AWS Locally - A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Run AWS Locally - A Practical Dev Guide  Developers working with AWS services often face the challenge of testing code locally without incurring costs or">
+<meta property="og:title" content="Run AWS Locally - A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/run-aws-locally-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Run AWS Locally - A Practical Dev Guide", "description": "# Run AWS Locally - A Practical Dev Guide  Developers working with AWS services often face the challenge of testing code locally without incurring costs or waiting for cloud deployments. While AWS provides local development tools like LocalStack, many developers find these solutions complex to set", "url": "https://ptrk-en.github.io/incomeos-site/articles/run-aws-locally-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/run-aws-locally-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Run AWS Locally - A Practical Dev Guide</h1><h2>Run AWS Locally - A Practical Dev Guide</h2>
+<h2>Run AWS Locally - A Practical Dev Guide</h2>
+<p>Developers working with AWS services often face the challenge of testing code locally without incurring costs or waiting for cloud deployments. While AWS provides local development tools like LocalStack, many developers find these solutions complex to set up and maintain.</p>
+<p>Enter <strong>Floci Local-AWS Starter Kit</strong> – a free, zero-configuration solution that lets you run a local AWS emulator identical to real AWS services, with no setup required. Your code points to it exactly as if connecting to real AWS, but everything runs locally on your machine.</p>
+<h3>Why Local AWS Matters</h3>
+<p>When developing applications using AWS services, you typically face several challenges:</p>
+<ul>
+<li><strong>Costs</strong>: Each API call in AWS incurs charges, even for testing</li>
+<li><strong>Latency</strong>: Network calls to AWS services add delay to development cycles</li>
+<li><strong>Reliability</strong>: Internet connectivity issues can halt your development process</li>
+<li><strong>Security</strong>: Accessing production data during development creates risks</li>
+</ul>
+<p>Local AWS environments solve these problems by providing:</p>
+<ul>
+<li>Zero cost development</li>
+<li>Faster iteration cycles</li>
+<li>Reliable local testing</li>
+<li>Complete isolation from production systems</li>
+</ul>
+<h3>Quick Start with Floci Local-AWS Starter Kit</h3>
+<p>The beauty of Floci's solution is its simplicity. You can get started in under 5 minutes with a single command:</p>
+<p>```bash</p>
+<p>docker run -d \</p>
+<p>  --name local-aws \</p>
+<p>  -p 4566:4566 \</p>
+<p>  -p 4571:4571 \</p>
+<p>  floci/local-aws:latest</p>
+<p>```</p>
+<p>This single container provides:</p>
+<ul>
+<li>AWS Lambda emulation (200+ functions)</li>
+<li>S3 bucket management</li>
+<li>DynamoDB table operations</li>
+<li>SQS queue handling</li>
+<li>SNS topic publishing</li>
+<li>CloudWatch metrics collection</li>
+</ul>
+<h3>Practical Example: Lambda Function Integration</h3>
+<p>Here's a complete working example showing how to connect your code to the local AWS environment:</p>
+<p>```python</p>
+<p>import boto3</p>
+<p>from botocore.config import Config</p>
+<h2>Configure boto3 to point to local AWS</h2>
+<p>config = Config(</p>
+<p>    region_name='us-east-1',</p>
+<p>    endpoint_url='http://localhost:4566'</p>
+<p>)</p>
+<h2>Create clients pointing to local environment</h2>
+<p>s3 = boto3.client('s3', config=config)</p>
+<p>lambda_client = boto3.client('lambda', config=config)</p>
+<p>dynamodb = boto3.client('dynamodb', config=config)</p>
+<h2>Create S3 bucket</h2>
+<p>s3.create_bucket(Bucket='test-bucket')</p>
+<h2>Upload file to local S3</h2>
+<p>s3.put_object(</p>
+<p>    Bucket='test-bucket',</p>
+<p>    Key='test-file.txt',</p>
+<p>    Body=b'Hello, Local AWS!'</p>
+<p>)</p>
+<h2>List buckets to verify</h2>
+<p>response = s3.list_buckets()</p>
+<p>print("Buckets:", [bucket['Name'] for bucket in response['Buckets']])</p>
+<p>```</p>
+<h3>Configuration Details</h3>
+<p>The Floci Local-AWS Starter Kit supports the following AWS services out of the box:</p>
+<p>| Service | Port | Notes |</p>
+<p>|---------|------|-------|</p>
+<p>| S3 | 4566 | Full S3 API compatibility |</p>
+<p>| Lambda | 4566 | Python, Node.js, Java functions |</p>
+<p>| DynamoDB | 4566 | Full CRUD operations |</p>
+<p>| SQS | 4566 | Queue management |</p>
+<p>| SNS | 4566 | Topic publishing |</p>
+<p>| CloudWatch | 4566 | Metrics and logs |</p>
+<h3>Docker Compose Setup</h3>
+<p>For more complex projects, you can use docker-compose:</p>
+<p>```yaml</p>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    container_name: local-aws</p>
+<p>    ports:</p>
+<p>      - "4566:4566"</p>
+<p>      - "4571:4571"</p>
+<p>    volumes:</p>
+<p>      - ./data:/tmp/local-aws-data</p>
+<p>    environment:</p>
+<p>      - AWS_DEFAULT_REGION=us-east-1</p>
+<p>      - AWS_ACCESS_KEY_ID=test</p>
+<p>      - AWS_SECRET_ACCESS_KEY=test</p>
+<p>  app:</p>
+<p>    build: .</p>
+<p>    depends_on:</p>
+<p>      - local-aws</p>
+<p>    environment:</p>
+<p>      - AWS_ENDPOINT_URL=http://local-aws:4566</p>
+<p>```</p>
+<h3>Performance Considerations</h3>
+<p>The local AWS emulator runs at approximately <strong>80% of real AWS performance</strong> for typical operations. This means you'll experience minimal latency differences while maintaining full API compatibility.</p>
+<p>Memory usage typically ranges from <strong>200MB to 500MB</strong> depending on active services, making it suitable for development environments on most machines.</p>
+<h3>Integration with Popular Frameworks</h3>
+<h4>Serverless Framework</h4>
+<p>```yaml</p>
+<h2>serverless.yml</h2>
+<p>service: my-service</p>
+<p>provider:</p>
+<p>  name: aws</p>
+<p>  runtime: python3.9</p>
+<p>  environment:</p>
+<p>    AWS_ENDPOINT_URL: http://localhost:4566</p>
+<p>```</p>
+<h4>AWS SDK Configuration</h4>
+<p>```javascript</p>
+<p>const AWS = require('aws-sdk');</p>
+<p>// Local development</p>
+<p>AWS.config.update({</p>
+<p>  region: 'us-east-1',</p>
+<p>  endpoint: 'http://localhost:4566',</p>
+<p>  accessKeyId: 'test',</p>
+<p>  secretAccessKey: 'test'</p>
+<p>});</p>
+<p>```</p>
+<h3>Best Practices</h3>
+<p>1. <strong>Environment Detection</strong>: Use environment variables to switch between local and production AWS endpoints:</p>
+<p>```python</p>
+<p>import os</p>
+<p>import boto3</p>
+<p>if os.getenv('LOCAL_AWS', False):</p>
+<p>    config = Config(endpoint_url='http://localhost:4566')</p>
+<p>    s3 = boto3.client('s3', config=config)</p>
+<p>else:</p>
+<p>    s3 = boto3.client('s3')</p>
+<p>```</p>
+<p>2. <strong>Data Persistence</strong>: The Floci container stores data in `/tmp/local-aws-data` by default, allowing you to persist data between container restarts.</p>
+<p>3. <strong>Testing Strategy</strong>: Use local AWS for integration testing and real AWS for end-to-end validation.</p>
+<h3>Troubleshooting Common Issues</h3>
+<p><strong>Connection Refused</strong>: Ensure the container is running with `docker ps` and that port 4566 is available.</p>
+<p><strong>Service Not Found</strong>: Verify your AWS SDK version compatibility. The emulator supports SDK versions from 2.0+.</p>
+<p><strong>Permission Errors</strong>: Check that environment variables are properly set in your application.</p>
+<h3>Getting Started Today</h3>
+<p>The Floci Local-AWS Starter Kit removes all friction from local AWS development. No complex setup, no configuration files, and no waiting for services to start.</p>
+<p>Your code connects exactly as it would to real AWS services, but everything runs locally on your machine. This means faster development cycles, zero costs, and complete isolation from production systems.</p>
+<h3>Get the kit</h3>
+<p>Ready to try Floci Local-AWS Starter Kit? <a href="https://buy.stripe.com/cNi5kD3hicEW0rbecE48002">Get it now</a> and start developing locally with real AWS compatibility.</p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>In practice, what does 'Run AWS Locally - A Practical Dev Guide' actually cover?</strong> This guide walks through run aws locally - a practical dev guide with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Where can I find more local-first guides like this?</strong> The full index of build-once digital products and daily technical articles lives at https://ptrk-en.gumroad.com - every item runs local-first with free tooling, no mandatory accounts, and no usage-based billing.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

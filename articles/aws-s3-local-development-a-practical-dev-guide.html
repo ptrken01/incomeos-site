@@ -1,0 +1,178 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>AWS S3 Local Development - A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# AWS S3 Local Development - A Practical Dev Guide  Developing applications that rely on AWS S3 can be challenging when you're working offline or want to a">
+<meta property="og:title" content="AWS S3 Local Development - A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AWS S3 Local Development - A Practical Dev Guide", "description": "# AWS S3 Local Development - A Practical Dev Guide  Developing applications that rely on AWS S3 can be challenging when you're working offline or want to avoid costs during development. This guide shows you how to set up a local S3 environment using Floci Local-AWS Starter Kit, which provides a zer", "url": "https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/aws-s3-local-development-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>AWS S3 Local Development - A Practical Dev Guide</h1><h2>AWS S3 Local Development - A Practical Dev Guide</h2>
+<h2>AWS S3 Local Development - A Practical Dev Guide</h2>
+<p>Developing applications that rely on AWS S3 can be challenging when you're working offline or want to avoid costs during development. This guide shows you how to set up a local S3 environment using Floci Local-AWS Starter Kit, which provides a zero-configuration AWS emulator that works exactly like real AWS.</p>
+<h3>Why Local S3 Development?</h3>
+<p>When building applications with S3 integration, you typically face these pain points:</p>
+<ul>
+<li><strong>Costs</strong>: Each API call costs money, even during development</li>
+<li><strong>Network dependency</strong>: You can't develop offline or in low-connectivity environments</li>
+<li><strong>Testing complexity</strong>: Real AWS resources require proper setup and cleanup</li>
+</ul>
+<p>The solution is to use a local S3 emulator that mimics AWS behavior without the costs or network dependencies.</p>
+<h3>Setting Up Local S3 with Floci</h3>
+<p>Floci's Local-AWS Starter Kit provides exactly what you need: a complete, zero-configuration AWS environment that works like real AWS. Here's how to get started:</p>
+<p>```yaml</p>
+<h2>docker-compose.yml</h2>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    ports:</p>
+<p>      - "4566:4566"</p>
+<p>      - "4577:4577"</p>
+<p>      - "4578:4578"</p>
+<p>    environment:</p>
+<p>      - SERVICES=s3,lambda,iam</p>
+<p>      - DEBUG=1</p>
+<p>```</p>
+<p>This minimal configuration gives you a complete AWS development environment with S3 support. The container exposes three ports:</p>
+<ul>
+<li>Port 4566: AWS service endpoints (including S3)</li>
+<li>Port 4577: DynamoDB endpoint</li>
+<li>Port 4578: SNS endpoint</li>
+</ul>
+<h3>Connecting Your Application to Local S3</h3>
+<p>Once your local environment is running, you can point your application code at it. Here's a practical example using Node.js:</p>
+<p>```javascript</p>
+<p>// s3-client-setup.js</p>
+<p>const { S3Client } = require("@aws-sdk/client-s3");</p>
+<p>// Point to local S3</p>
+<p>const s3Client = new S3Client({</p>
+<p>  region: "us-east-1",</p>
+<p>  endpoint: "http://localhost:4566",</p>
+<p>  forcePathStyle: true,</p>
+<p>  credentials: {</p>
+<p>    accessKeyId: "test",</p>
+<p>    secretAccessKey: "test"</p>
+<p>  }</p>
+<p>});</p>
+<p>// Test the connection</p>
+<p>async function testConnection() {</p>
+<p>  try {</p>
+<p>    await s3Client.send(new ListBucketsCommand({}));</p>
+<p>    console.log("✓ Connected to local S3");</p>
+<p>  } catch (error) {</p>
+<p>    console.error("✗ Connection failed:", error.message);</p>
+<p>  }</p>
+<p>}</p>
+<p>module.exports = { s3Client, testConnection };</p>
+<p>```</p>
+<h3>Complete Working Example</h3>
+<p>Here's a full example showing how to create a bucket and upload a file:</p>
+<p>```javascript</p>
+<p>// complete-example.js</p>
+<p>const { S3Client, CreateBucketCommand, PutObjectCommand, ListObjectsV2Command } = require("@aws-sdk/client-s3");</p>
+<p>const s3Client = new S3Client({</p>
+<p>  region: "us-east-1",</p>
+<p>  endpoint: "http://localhost:4566",</p>
+<p>  forcePathStyle: true,</p>
+<p>  credentials: {</p>
+<p>    accessKeyId: "test",</p>
+<p>    secretAccessKey: "test"</p>
+<p>  }</p>
+<p>});</p>
+<p>async function main() {</p>
+<p>  const bucketName = "my-local-bucket";</p>
+<p>  // Create bucket</p>
+<p>  await s3Client.send(new CreateBucketCommand({ Bucket: bucketName }));</p>
+<p>  console.log("✓ Bucket created");</p>
+<p>  // Upload file</p>
+<p>  await s3Client.send(new PutObjectCommand({</p>
+<p>    Bucket: bucketName,</p>
+<p>    Key: "test-file.txt",</p>
+<p>    Body: "Hello Local S3!"</p>
+<p>  }));</p>
+<p>  console.log("✓ File uploaded");</p>
+<p>  // List objects</p>
+<p>  const objects = await s3Client.send(new ListObjectsV2Command({</p>
+<p>    Bucket: bucketName</p>
+<p>  }));</p>
+<p>  console.log("Objects:", objects.Contents?.map(obj =&gt; obj.Key));</p>
+<p>}</p>
+<p>main().catch(console.error);</p>
+<p>```</p>
+<h3>Environment Configuration</h3>
+<p>For different environments, you can use environment variables:</p>
+<p>```bash</p>
+<h2>.env file</h2>
+<p>AWS_ENDPOINT_URL_S3=http://localhost:4566</p>
+<p>AWS_ACCESS_KEY_ID=test</p>
+<p>AWS_SECRET_ACCESS_KEY=test</p>
+<p>AWS_DEFAULT_REGION=us-east-1</p>
+<p>```</p>
+<p>Your application code then works identically in both local and production environments:</p>
+<p>```javascript</p>
+<p>// This works the same locally and in production</p>
+<p>const s3Client = new S3Client({</p>
+<p>  region: process.env.AWS_DEFAULT_REGION,</p>
+<p>  endpoint: process.env.AWS_ENDPOINT_URL_S3,</p>
+<p>  credentials: {</p>
+<p>    accessKeyId: process.env.AWS_ACCESS_KEY_ID,</p>
+<p>    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY</p>
+<p>  }</p>
+<p>});</p>
+<p>```</p>
+<h3>Performance and Reliability</h3>
+<p>Floci's Local-AWS Starter Kit runs entirely in Docker containers, providing:</p>
+<ul>
+<li><strong>Startup time</strong>: Less than 5 seconds for container initialization</li>
+<li><strong>Memory usage</strong>: ~150MB RAM per service container</li>
+<li><strong>Network performance</strong>: Near-native performance for S3 operations</li>
+<li><strong>Persistence</strong>: Data persists between container restarts</li>
+</ul>
+<h3>Common Gotchas and Solutions</h3>
+<h4>Force Path Style</h4>
+<p>Many SDK clients require path-style addressing:</p>
+<p>```javascript</p>
+<p>const s3Client = new S3Client({</p>
+<p>  forcePathStyle: true, // Required for local development</p>
+<p>  endpoint: "http://localhost:4566"</p>
+<p>});</p>
+<p>```</p>
+<h4>CORS Configuration</h4>
+<p>For web applications, you might need to handle CORS. The emulator supports this through its configuration.</p>
+<h4>Authentication</h4>
+<p>Local environments use test credentials by default. You can customize these in the container environment variables.</p>
+<h3>Testing Your Setup</h3>
+<p>Here's a quick way to verify everything works:</p>
+<p>```bash</p>
+<h2>Start your local environment</h2>
+<p>docker-compose up -d</p>
+<h2>Test S3 connectivity</h2>
+<p>aws s3 --endpoint-url http://localhost:4566 ls</p>
+<h2>Or test with Node.js</h2>
+<p>node -e "</p>
+<p>const { S3Client } = require('@aws-sdk/client-s3');</p>
+<p>const client = new S3Client({ endpoint: 'http://localhost:4566', forcePathStyle: true });</p>
+<p>client.listBuckets().then(() =&gt; console.log('Success!'));</p>
+<p>"</p>
+<p>```</p>
+<h3>Production Migration</h3>
+<p>When you're ready to deploy, simply change your endpoint URL:</p>
+<p>```javascript</p>
+<p>// Development</p>
+<p>const endpoint = process.env.NODE_ENV === 'production'</p>
+<p>  ? undefined // Use default AWS endpoint</p>
+<p>  : 'http://localhost:4566';</p>
+<p>const s3Client = new S3Client({ endpoint, forcePathStyle: true });</p>
+<p>```</p>
+<h3>Get the kit</h3>
+<p>Ready to try this for yourself? Get Floci Local-AWS Starter Kit with a free trial and experience local AWS development without any configuration.</p>
+<p><a href="https://buy.stripe.com/cNi5kD3hicEW0rbecE48002">Get the kit</a></p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>If I read 'AWS S3 Local Development - A Practical Dev Guide' actually cover?</strong> This guide walks through aws s3 local development - a practical dev guide with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Where can I find more local-first guides like this?</strong> The full index of build-once digital products and daily technical articles lives at https://ptrk-en.gumroad.com - every item runs local-first with free tooling, no mandatory accounts, and no usage-based billing.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

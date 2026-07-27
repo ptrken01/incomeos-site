@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Shop Title Prompts: A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Shop Title Prompts: A Practical Dev Guide  Etsy sellers need compelling titles, descriptions, and policies to convert visitors into buyers. But writing t">
+<meta property="og:title" content="Shop Title Prompts: A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/shop-title-prompts-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Shop Title Prompts: A Practical Dev Guide", "description": "# Shop Title Prompts: A Practical Dev Guide  Etsy sellers need compelling titles, descriptions, and policies to convert visitors into buyers. But writing these manually is time-consuming and inconsistent.  This guide shows how to build a reusable workflow using AI prompts that generate shop content", "url": "https://ptrk-en.github.io/incomeos-site/articles/shop-title-prompts-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/shop-title-prompts-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Shop Title Prompts: A Practical Dev Guide</h1><h2>Shop Title Prompts: A Practical Dev Guide</h2>
+<h2>Shop Title Prompts: A Practical Dev Guide</h2>
+<p>Etsy sellers need compelling titles, descriptions, and policies to convert visitors into buyers. But writing these manually is time-consuming and inconsistent.</p>
+<p>This guide shows how to build a reusable workflow using AI prompts that generate shop content in seconds—once, then forever.</p>
+<h3>The Setup</h3>
+<p>Create a simple script that loads 50 pre-written prompts and runs them through an LLM like GPT-4 or Claude. Here's a Python example:</p>
+<p>```python</p>
+<p>import openai</p>
+<p>import os</p>
+<h2>Load your API key from environment variable</h2>
+<p>openai.api_key = os.getenv("OPENAI_API_KEY")</p>
+<p>prompts = [</p>
+<p>    "Write a compelling Etsy title for a handcrafted wooden jewelry box",</p>
+<p>    "Create an SEO-optimized product description for a vintage-inspired ceramic mug",</p>
+<p>    # ... 48 more prompts</p>
+<p>]</p>
+<p>def generate_content(prompt):</p>
+<p>    response = openai.ChatCompletion.create(</p>
+<p>        model="gpt-4",</p>
+<p>        messages=[{"role": "user", "content": prompt}],</p>
+<p>        max_tokens=200,</p>
+<p>        temperature=0.7</p>
+<p>    )</p>
+<p>    return response.choices[0].message.content.strip()</p>
+<h2>Generate all content</h2>
+<p>for i, prompt in enumerate(prompts):</p>
+<p>    result = generate_content(prompt)</p>
+<p>    print(f"Prompt {i+1}: {result}")</p>
+<p>```</p>
+<p>This script generates 50 unique product listings in minutes. You can adapt it for your shop's specific niches.</p>
+<h3>Customization Workflow</h3>
+<p>Rather than writing titles from scratch, use this template:</p>
+<p>```python</p>
+<p>def customize_prompt(template, product_data):</p>
+<p>    return template.format(</p>
+<p>        category=product_data['category'],</p>
+<p>        material=product_data['material'],</p>
+<p>        style=product_data['style']</p>
+<p>    )</p>
+<h2>Example usage:</h2>
+<p>template = "Handcrafted {category} in {material} with {style} design"</p>
+<p>product_data = {</p>
+<p>    'category': 'necklace',</p>
+<p>    'material': 'silver',</p>
+<p>    'style': 'vintage'</p>
+<p>}</p>
+<p>final_prompt = customize_prompt(template, product_data)</p>
+<p>```</p>
+<p>This lets you maintain consistency while personalizing each listing.</p>
+<h3>Implementation Tips</h3>
+<p>1. <strong>Batch Processing</strong>: Generate content in batches of 5-10 to stay under rate limits</p>
+<p>2. <strong>Quality Control</strong>: Review outputs for tone and keyword relevance before publishing</p>
+<p>3. <strong>Versioning</strong>: Save successful prompt variations for future use</p>
+<p>4. <strong>Cost Management</strong>: Monitor API usage—50 prompts cost ~$0.15 at $0.03 per 1K tokens</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I ensure AI-generated titles rank well in Etsy search?</strong></p>
+<p>A: Include primary keywords naturally, use specific descriptors, and maintain consistent format. Test variations to see what converts best.</p>
+<p><strong>Q: Can these prompts be used for other marketplaces?</strong></p>
+<p>A: Yes, but adapt keyword focus—Etsy favors handmade terms while Amazon prefers commercial phrasing.</p>
+<p><strong>Q: What's the cost of running this workflow monthly?</strong></p>
+<p>A: At $0.03 per 1K tokens and ~200 tokens per prompt, 50 prompts cost about $0.03 each, totaling $1.50/month.</p>
+<h3>Get it</h3>
+<p>Get 50 Etsy &amp; Small-Shop Seller AI Prompts—50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell: <a href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">https://ptrk-en.gumroad.com/l/niche-etsy-prompts</a></p><div class="cta"><p><strong>50 Etsy & Small-Shop Sellers AI Prompts</strong> — 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

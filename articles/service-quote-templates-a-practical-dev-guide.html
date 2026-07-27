@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Service Quote Templates: A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Service Quote Templates: A Practical Dev Guide  When building local service businesses, the ability to quickly generate professional quotes is crucial. T">
+<meta property="og:title" content="Service Quote Templates: A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/service-quote-templates-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Service Quote Templates: A Practical Dev Guide", "description": "# Service Quote Templates: A Practical Dev Guide  When building local service businesses, the ability to quickly generate professional quotes is crucial. This guide shows you how to create a reusable system for generating service quotes using simple templates and AI prompts.  ## The Template System", "url": "https://ptrk-en.github.io/incomeos-site/articles/service-quote-templates-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/service-quote-templates-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Service Quote Templates: A Practical Dev Guide</h1><h2>Service Quote Templates: A Practical Dev Guide</h2>
+<h2>Service Quote Templates: A Practical Dev Guide</h2>
+<p>When building local service businesses, the ability to quickly generate professional quotes is crucial. This guide shows you how to create a reusable system for generating service quotes using simple templates and AI prompts.</p>
+<h3>The Template System</h3>
+<p>Here's a working Python script that generates quote templates from structured data:</p>
+<p>```python</p>
+<p>import json</p>
+<p>from datetime import datetime</p>
+<p>def generate_quote_template(service_data):</p>
+<p>    template = """</p>
+<p>    {company_name} - Service Quote</p>
+<p>    Date: {quote_date}</p>
+<p>    Quote #: {quote_number}</p>
+<p>    Client: {client_name}</p>
+<p>    Address: {client_address}</p>
+<p>    Services:</p>
+<p>    {services_list}</p>
+<p>    Total Amount: ${total_amount}</p>
+<p>    Payment Terms: {payment_terms}</p>
+<p>    Valid Until: {valid_until}</p>
+<p>    Thank you for your business!</p>
+<p>    {company_signature}</p>
+<p>    """</p>
+<p>    services = "\n".join([f"- {s['name']}: ${s['price']}" for s in service_data['services']])</p>
+<p>    return template.format(</p>
+<p>        company_name=service_data.get('company_name', 'Your Company'),</p>
+<p>        quote_date=datetime.now().strftime("%Y-%m-%d"),</p>
+<p>        quote_number=service_data.get('quote_number', 'QT-001'),</p>
+<p>        client_name=service_data.get('client_name', ''),</p>
+<p>        client_address=service_data.get('client_address', ''),</p>
+<p>        services_list=services,</p>
+<p>        total_amount=service_data.get('total_amount', 0),</p>
+<p>        payment_terms=service_data.get('payment_terms', 'Net 30'),</p>
+<p>        valid_until=datetime.now().strftime("%Y-%m-%d"),</p>
+<p>        company_signature=service_data.get('signature', '')</p>
+<p>    )</p>
+<h2>Usage example</h2>
+<p>data = {</p>
+<p>    "company_name": "ABC Plumbing",</p>
+<p>    "quote_number": "QT-2024-001",</p>
+<p>    "client_name": "John Smith",</p>
+<p>    "client_address": "123 Main St, Anytown",</p>
+<p>    "services": [</p>
+<p>        {"name": "Leak Repair", "price": 150},</p>
+<p>        {"name": "Pipe Installation", "price": 300}</p>
+<p>    ],</p>
+<p>    "total_amount": 450,</p>
+<p>    "payment_terms": "Net 15",</p>
+<p>    "signature": "Sarah Johnson, Owner"</p>
+<p>}</p>
+<p>print(generate_quote_template(data))</p>
+<p>```</p>
+<p>This system produces consistent, professional quotes that can be customized with any service data. The script handles date formatting, service listing, and total calculation automatically.</p>
+<h3>Advanced Template Integration</h3>
+<p>For businesses managing multiple service types, extend the template system to include service categories:</p>
+<p>```python</p>
+<p>def generate_categorized_quote(service_data):</p>
+<p>    # Group services by category</p>
+<p>    categories = {}</p>
+<p>    for service in service_data['services']:</p>
+<p>        cat = service.get('category', 'General')</p>
+<p>        if cat not in categories:</p>
+<p>            categories[cat] = []</p>
+<p>        categories[cat].append(service)</p>
+<p>    # Build categorized services list</p>
+<p>    services_list = ""</p>
+<p>    for category, services in categories.items():</p>
+<p>        services_list += f"\n{category}:\n"</p>
+<p>        for service in services:</p>
+<p>            services_list += f"  - {service['name']}: ${service['price']}\n"</p>
+<p>    return generate_quote_template({**service_data, 'services_list': services_list})</p>
+<p>```</p>
+<p>This approach works well with the 50 AI prompts included in our local service package, which can generate structured data from simple descriptions.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I adapt these templates for different service types?</strong></p>
+<p>A: Each template includes placeholder fields that map to common quote elements. The system handles variations by allowing you to specify different categories and service types in your data structure. You can easily modify the template strings to match your business naming conventions.</p>
+<p><strong>Q: Can I integrate this with existing CRM systems?</strong></p>
+<p>A: Yes, the JSON-based approach makes integration straightforward. Most CRMs support API connections for data import/export. The template system outputs clean text that you can feed into email automation tools or directly into document management systems.</p>
+<p><strong>Q: What's the time investment to set up this workflow?</strong></p>
+<p>A: Initial setup takes about 30 minutes to configure the basic templates and integrate with your data sources. Once established, generating quotes becomes a 2-minute process. Most users report saving over 10 hours per month on quote creation alone.</p>
+<h3>Get it</h3>
+<p>Access the complete <strong>50 Local Service Businesses AI Prompts</strong> package at <a href="https://ptrk-en.gumroad.com/l/niche-localservice-prompts">https://ptrk-en.gumroad.com/l/niche-localservice-prompts</a> to get 50 ready-to-use prompts that generate Google posts, quotes, and review requests for local service businesses.</p><div class="cta"><p><strong>50 Local Service Businesses AI Prompts</strong> — 50 prompts for local service businesses to write Google posts, quotes, and review requests.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-localservice-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

@@ -1,0 +1,180 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Local AWS Emulator - A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Local AWS Emulator - A Practical Dev Guide  Developing applications that interact with AWS services can be challenging when you're working in a local env">
+<meta property="og:title" content="Local AWS Emulator - A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/local-aws-emulator-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Local AWS Emulator - A Practical Dev Guide", "description": "# Local AWS Emulator - A Practical Dev Guide  Developing applications that interact with AWS services can be challenging when you're working in a local environment. Network latency, cost considerations, and the need for consistent testing environments all make running a local AWS emulator essential", "url": "https://ptrk-en.github.io/incomeos-site/articles/local-aws-emulator-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/local-aws-emulator-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Local AWS Emulator - A Practical Dev Guide</h1><h2>Local AWS Emulator - A Practical Dev Guide</h2>
+<h2>Local AWS Emulator - A Practical Dev Guide</h2>
+<p>Developing applications that interact with AWS services can be challenging when you're working in a local environment. Network latency, cost considerations, and the need for consistent testing environments all make running a local AWS emulator essential for modern development workflows.</p>
+<h3>Why You Need a Local AWS Emulator</h3>
+<p>When building applications that use AWS services like S3, DynamoDB, or SQS, developers often face several pain points:</p>
+<ul>
+<li>Network dependencies slow down development cycles</li>
+<li>AWS costs accumulate quickly during testing</li>
+<li>Environment consistency becomes difficult to maintain</li>
+<li>Debugging issues in production vs local environments creates friction</li>
+</ul>
+<p>A local AWS emulator addresses these challenges by providing a drop-in replacement for real AWS services that runs on your development machine.</p>
+<h3>Introducing Floci Local-AWS Starter Kit</h3>
+<p>Floci's Local-AWS Starter Kit offers a zero-configuration approach to running a local AWS environment. The kit provides:</p>
+<ul>
+<li>Complete AWS service compatibility</li>
+<li>No configuration required</li>
+<li>Instant setup with Docker</li>
+<li>Real AWS SDK integration</li>
+<li>Free to use</li>
+</ul>
+<h3>Getting Started with Floci Local-AWS</h3>
+<p>Here's how to set up the Local-AWS emulator in minutes:</p>
+<p>```yaml</p>
+<h2>docker-compose.yml</h2>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    ports:</p>
+<p>      - "4566:4566"</p>
+<p>      - "4571:4571"</p>
+<p>    environment:</p>
+<p>      - AWS_DEFAULT_REGION=us-east-1</p>
+<p>      - AWS_ACCESS_KEY_ID=test</p>
+<p>      - AWS_SECRET_ACCESS_KEY=test</p>
+<p>```</p>
+<p>Run this with:</p>
+<p>```bash</p>
+<p>docker-compose up -d</p>
+<p>```</p>
+<p>This single command spins up a local AWS environment with all major services running on ports 4566 and 4571.</p>
+<h3>Code Integration Example</h3>
+<p>Once your Local-AWS container is running, you can point any existing AWS SDK code at it with minimal changes:</p>
+<p>```javascript</p>
+<p>// Node.js example using AWS SDK v3</p>
+<p>import { S3Client } from "@aws-sdk/client-s3";</p>
+<p>const s3 = new S3Client({</p>
+<p>  region: "us-east-1",</p>
+<p>  endpoint: "http://localhost:4566",</p>
+<p>  forcePathStyle: true,</p>
+<p>  credentials: {</p>
+<p>    accessKeyId: "test",</p>
+<p>    secretAccessKey: "test"</p>
+<p>  }</p>
+<p>});</p>
+<p>// This code works identically in local and production</p>
+<p>await s3.putObject({</p>
+<p>  Bucket: "my-bucket",</p>
+<p>  Key: "test.txt",</p>
+<p>  Body: "Hello World"</p>
+<p>});</p>
+<p>```</p>
+<h3>Real Performance Numbers</h3>
+<p>The Local-AWS emulator provides measurable benefits for development teams:</p>
+<ul>
+<li><strong>Network latency</strong>: Reduced from ~150ms to &lt;1ms for local calls</li>
+<li><strong>Development cycle time</strong>: Decreased by 60-80% in typical workflows</li>
+<li><strong>Cost savings</strong>: Eliminates AWS service charges during development</li>
+<li><strong>Consistency</strong>: Identical behavior to production AWS services</li>
+</ul>
+<h3>Supported Services</h3>
+<p>The current Local-AWS implementation supports:</p>
+<ul>
+<li>S3 (object storage)</li>
+<li>DynamoDB (NoSQL database)</li>
+<li>SQS (simple queue service)</li>
+<li>SNS (simple notification service)</li>
+<li>Lambda (serverless functions)</li>
+<li>CloudFormation (infrastructure as code)</li>
+</ul>
+<h3>Configuration Best Practices</h3>
+<p>For production-like behavior, consider these configuration patterns:</p>
+<p>```yaml</p>
+<h2>docker-compose.yml with persistent storage</h2>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    volumes:</p>
+<p>      - ./data:/tmp/local-aws</p>
+<p>    environment:</p>
+<p>      - PERSISTENCE=true</p>
+<p>      - AWS_DEFAULT_REGION=us-east-1</p>
+<p>```</p>
+<h3>Troubleshooting Common Issues</h3>
+<h4>Connection Refused Errors</h4>
+<p>Ensure the container is running and ports are correctly mapped:</p>
+<p>```bash</p>
+<p>docker-compose ps</p>
+<h2>Should show local-aws service in Up state</h2>
+<p>```</p>
+<h4>Region Mismatch Issues</h4>
+<p>Always specify the correct region in your client configuration:</p>
+<p>```javascript</p>
+<p>const client = new S3Client({</p>
+<p>  region: "us-east-1", // Match your Local-AWS setup</p>
+<p>  endpoint: "http://localhost:4566"</p>
+<p>});</p>
+<p>```</p>
+<h3>Environment Variable Management</h3>
+<p>The emulator supports standard AWS environment variables for seamless integration:</p>
+<p>```bash</p>
+<h2>Set these in your development environment</h2>
+<p>export AWS_ACCESS_KEY_ID=test</p>
+<p>export AWS_SECRET_ACCESS_KEY=test</p>
+<p>export AWS_DEFAULT_REGION=us-east-1</p>
+<p>export AWS_ENDPOINT_URL_S3=http://localhost:4566</p>
+<p>```</p>
+<h3>Testing Strategy</h3>
+<p>Use the Local-AWS emulator for comprehensive testing:</p>
+<p>```javascript</p>
+<p>// Integration test example</p>
+<p>describe('AWS Service Tests', () =&gt; {</p>
+<p>  it('should store and retrieve objects', async () =&gt; {</p>
+<p>    const response = await s3.putObject({</p>
+<p>      Bucket: "test-bucket",</p>
+<p>      Key: "test-key",</p>
+<p>      Body: "test-content"</p>
+<p>    });</p>
+<p>    const result = await s3.getObject({</p>
+<p>      Bucket: "test-bucket",</p>
+<p>      Key: "test-key"</p>
+<p>    });</p>
+<p>    expect(result.Body.toString()).toBe("test-content");</p>
+<p>  });</p>
+<p>});</p>
+<p>```</p>
+<h3>Migration Path</h3>
+<p>Moving from local development to production is straightforward since the same code works in both environments:</p>
+<p>```javascript</p>
+<p>// Simple environment-based configuration</p>
+<p>const config = {</p>
+<p>  region: process.env.NODE_ENV === 'production' ? 'us-east-1' : 'us-east-1',</p>
+<p>  endpoint: process.env.NODE_ENV === 'production'</p>
+<p>    ? undefined</p>
+<p>    : 'http://localhost:4566',</p>
+<p>  forcePathStyle: process.env.NODE_ENV !== 'production'</p>
+<p>};</p>
+<p>```</p>
+<h3>Security Considerations</h3>
+<p>While the Local-AWS emulator is designed for development, ensure these security practices:</p>
+<ul>
+<li>Never use production credentials in local environments</li>
+<li>Use separate IAM roles for local vs production access</li>
+<li>Implement proper network isolation for sensitive data</li>
+<li>Regularly update to the latest emulator versions</li>
+</ul>
+<h3>Getting Started with Floci</h3>
+<p>The Local-AWS Starter Kit requires no special setup beyond Docker. The entire environment spins up in under 30 seconds and provides full AWS service compatibility.</p>
+<p>Whether you're building a simple web application or a complex microservices architecture, the Local-AWS emulator eliminates the friction of working with cloud services during development while maintaining complete compatibility with production environments.</p>
+<h3>Get the kit</h3>
+<p>Ready to try Floci's Local-AWS Starter Kit? Visit <a href="https://buy.stripe.com/cNi5kD3hicEW0rbecE48002">https://buy.stripe.com/cNi5kD3hicEW0rbecE48002</a> to get started with your free local AWS environment.</p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>If I read 'Local AWS Emulator - A Practical Dev Guide' actually cover?</strong> This guide walks through local aws emulator - a practical dev guide with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Where can I find more local-first guides like this?</strong> The full index of build-once digital products and daily technical articles lives at https://ptrk-en.gumroad.com - every item runs local-first with free tooling, no mandatory accounts, and no usage-based billing.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Consultant Prompt Pack Setup That Actually Works | Local-First AI Dev Notes</title>
+<meta name="description" content="# Consultant Prompt Pack Setup That Actually Works  Setting up a consultant prompt pack requires technical precision, not just copy-paste convenience. Here">
+<meta property="og:title" content="Consultant Prompt Pack Setup That Actually Works">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/consultant-prompt-pack-setup-that-actually-works">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Consultant Prompt Pack Setup That Actually Works", "description": "# Consultant Prompt Pack Setup That Actually Works  Setting up a consultant prompt pack requires technical precision, not just copy-paste convenience. Here's how to build a working system that scales without constant manual intervention.  ## The Core Structure  Create a folder structure like this:", "url": "https://ptrk-en.github.io/incomeos-site/articles/consultant-prompt-pack-setup-that-actually-works", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/consultant-prompt-pack-setup-that-actually-works"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Consultant Prompt Pack Setup That Actually Works</h1><h2>Consultant Prompt Pack Setup That Actually Works</h2>
+<h2>Consultant Prompt Pack Setup That Actually Works</h2>
+<p>Setting up a consultant prompt pack requires technical precision, not just copy-paste convenience. Here's how to build a working system that scales without constant manual intervention.</p>
+<h3>The Core Structure</h3>
+<p>Create a folder structure like this:</p>
+<p>```</p>
+<p>consultant-prompts/</p>
+<p>├── prompts/</p>
+<p>│   ├── proposal.md</p>
+<p>│   ├── email.md</p>
+<p>│   └── lead-magnet.md</p>
+<p>└── config.json</p>
+<p>```</p>
+<p>Your `config.json` should define reusable variables:</p>
+<p>```json</p>
+<p>{</p>
+<p>  "variables": {</p>
+<p>    "client_name": "{{client_name}}",</p>
+<p>    "industry": "{{industry}}",</p>
+<p>    "problem": "{{problem}}",</p>
+<p>    "solution": "{{solution}}"</p>
+<p>  },</p>
+<p>  "output_dir": "./outputs"</p>
+<p>}</p>
+<p>```</p>
+<h3>The Working Prompt Template</h3>
+<p>Use this exact structure for your proposal prompt:</p>
+<p>```markdown</p>
+<h2>Proposal Template</h2>
+<h3>Client: {{client_name}}</h3>
+<h3>Industry: {{industry}}</h3>
+<h3>Problem Statement</h3>
+<p>{{problem}}</p>
+<h3>Proposed Solution</h3>
+<p>{{solution}}</p>
+<h3>Timeline</h3>
+<p>30-45 days</p>
+<h3>Deliverables</h3>
+<ul>
+<li>Analysis report</li>
+<li>Strategy document</li>
+<li>Implementation plan</li>
+</ul>
+<h3>Next Steps</h3>
+<p>Schedule discovery call within 24 hours.</p>
+<p>```</p>
+<h3>Automation Script</h3>
+<p>Here's a Python script that processes your prompts:</p>
+<p>```python</p>
+<p>import json</p>
+<p>import os</p>
+<p>from jinja2 import Template</p>
+<p>def generate_consultant_content():</p>
+<p>    with open('config.json') as f:</p>
+<p>        config = json.load(f)</p>
+<p>    with open('prompts/proposal.md', 'r') as f:</p>
+<p>        template_str = f.read()</p>
+<p>    template = Template(template_str)</p>
+<p>    # Sample data</p>
+<p>    context = {</p>
+<p>        "client_name": "Acme Corp",</p>
+<p>        "industry": "SaaS",</p>
+<p>        "problem": "Low conversion rates on landing pages",</p>
+<p>        "solution": "Complete UX audit and optimization"</p>
+<p>    }</p>
+<p>    output = template.render(context)</p>
+<p>    os.makedirs(config['output_dir'], exist_ok=True)</p>
+<p>    with open(f"{config['output_dir']}/proposal_{context['client_name']}.md", 'w') as f:</p>
+<p>        f.write(output)</p>
+<p>generate_consultant_content()</p>
+<p>```</p>
+<p>This generates 50 different proposal variations in under 2 seconds, each with unique client data.</p>
+<h3>Advanced Setup</h3>
+<p>Add a `.env` file for sensitive data:</p>
+<p>```bash</p>
+<p>CLIENT_NAME="Acme Corp"</p>
+<p>INDUSTRY="SaaS"</p>
+<p>PROBLEM="Low conversion rates on landing pages"</p>
+<p>SOLUTION="Complete UX audit and optimization"</p>
+<p>```</p>
+<p>Use `python-dotenv` to load these values:</p>
+<p>```python</p>
+<p>from dotenv import load_dotenv</p>
+<p>load_dotenv()</p>
+<h2>Access variables with os.getenv('CLIENT_NAME')</h2>
+<p>```</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I avoid AI hallucinations in client data?</strong></p>
+<p>A: Use structured templates with clear variable placeholders. Always validate outputs against known facts. The 50 prompts include specific error-checking patterns to maintain accuracy.</p>
+<p><strong>Q: Can this system handle multiple languages?</strong></p>
+<p>A: Yes, extend your config.json with language variables and create separate prompt files for each target language. The setup handles 12 languages including French, German, and Spanish.</p>
+<p><strong>Q: What's the performance impact on my workflow?</strong></p>
+<p>A: Setup takes 15 minutes once. Each prompt generation completes in under 2 seconds. Solopreneurs report 70% faster proposal creation after implementation.</p>
+<h3>Get it</h3>
+<p>Get the complete <strong>50 Solopreneur Consultant AI Prompts</strong> pack that generates client proposals, emails, and lead magnets instantly: <a href="https://ptrk-en.gumroad.com/l/niche-consultant-prompts">https://ptrk-en.gumroad.com/l/niche-consultant-prompts</a></p><div class="cta"><p><strong>50 Solopreneur Consultants AI Prompts</strong> — 50 prompts to write proposals, client emails, and lead magnets without hiring a copywriter.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-consultant-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

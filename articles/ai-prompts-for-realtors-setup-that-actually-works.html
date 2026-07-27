@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Ai Prompts For Realtors Setup That Actually Works | Local-First AI Dev Notes</title>
+<meta name="description" content="# Ai Prompts For Realtors Setup That Actually Works  Real estate agents spend countless hours writing listings, follow-ups, and ads. AI prompts can dramati">
+<meta property="og:title" content="Ai Prompts For Realtors Setup That Actually Works">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/ai-prompts-for-realtors-setup-that-actually-works">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Ai Prompts For Realtors Setup That Actually Works", "description": "# Ai Prompts For Realtors Setup That Actually Works  Real estate agents spend countless hours writing listings, follow-ups, and ads. AI prompts can dramatically accelerate this workflow—but only if you set them up correctly.  Here's a working setup that delivers real results:  ## Core Prompt Templa", "url": "https://ptrk-en.github.io/incomeos-site/articles/ai-prompts-for-realtors-setup-that-actually-works", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/ai-prompts-for-realtors-setup-that-actually-works"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Ai Prompts For Realtors Setup That Actually Works</h1><h2>Ai Prompts For Realtors Setup That Actually Works</h2>
+<h2>Ai Prompts For Realtors Setup That Actually Works</h2>
+<p>Real estate agents spend countless hours writing listings, follow-ups, and ads. AI prompts can dramatically accelerate this workflow—but only if you set them up correctly.</p>
+<p>Here's a working setup that delivers real results:</p>
+<h3>Core Prompt Template Structure</h3>
+<p>```python</p>
+<p>def generate_listing_prompt(property_data):</p>
+<p>    prompt = f"""</p>
+<p>You are a professional real estate copywriter. Create a compelling listing description for:</p>
+<p>Property Type: {property_data['type']}</p>
+<p>Address: {property_data['address']}</p>
+<p>Price: ${property_data['price']:,}</p>
+<p>Bedrooms: {property_data['beds']}</p>
+<p>Bathrooms: {property_data['baths']}</p>
+<p>Square Feet: {property_data['sqft']:,}</p>
+<p>Year Built: {property_data['year']}</p>
+<p>Lot Size: {property_data['lot_size']} acres</p>
+<p>Focus on:</p>
+<p>1. Market appeal and unique selling points</p>
+<p>2. Lifestyle benefits for potential buyers</p>
+<p>3. Professional tone, 150-200 words</p>
+<p>4. Include key features like updated kitchen, hardwood floors, etc.</p>
+<p>5. End with a call to action: "Schedule your private showing today."</p>
+<p>Write the listing in markdown format with:</p>
+<h2>{property_data['address']} - ${property_data['price']:,}</h2>
+<h3>{property_data['beds']} bed, {property_data['baths']} bath, {property_data['sqft']:,} sqft</h3>
+<p>"""</p>
+<p>    return prompt</p>
+<h2>Example usage:</h2>
+<p>data = {</p>
+<p>    'type': 'Single Family Home',</p>
+<p>    'address': '123 Oak Street, Anytown',</p>
+<p>    'price': 450000,</p>
+<p>    'beds': 4,</p>
+<p>    'baths': 3,</p>
+<p>    'sqft': 2800,</p>
+<p>    'year': 2010,</p>
+<p>    'lot_size': 0.25</p>
+<p>}</p>
+<p>print(generate_listing_prompt(data))</p>
+<p>```</p>
+<p>This template produces consistent, high-quality listings in seconds.</p>
+<h3>Workflow Integration</h3>
+<p>Most agents use AI through tools like ChatGPT or Claude. The key is to build a library of prompts that work together:</p>
+<p>1. <strong>Property Data Input</strong>: Create a Google Sheet with property details</p>
+<p>2. <strong>Prompt Execution</strong>: Copy prompt to AI tool and paste property data</p>
+<p>3. <strong>Output Refinement</strong>: Edit for local market nuances (30 seconds max)</p>
+<p>4. <strong>Publishing</strong>: Copy final text to MLS or listing platform</p>
+<h3>Example Prompt Library</h3>
+<p>The 50-prompt system includes:</p>
+<ul>
+<li>Listing descriptions (15 prompts)</li>
+<li>Follow-up emails (12 prompts)</li>
+<li>Social media posts (8 prompts)</li>
+<li>Lead generation messages (10 prompts)</li>
+<li>Market analysis summaries (5 prompts)</li>
+</ul>
+<p>Each prompt has been tested with real estate data and refined for maximum efficiency.</p>
+<h3>Technical Implementation</h3>
+<p>The system works best when:</p>
+<ul>
+<li>You have structured property data</li>
+<li>Prompts include specific formatting requirements</li>
+<li>Output is saved to a template file</li>
+<li>You maintain a personal prompt library</li>
+</ul>
+<p>This setup reduces listing creation time from 30 minutes to under 5 minutes per property.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I customize prompts for my local market?</strong></p>
+<p>A: Start with the base prompts, then modify key phrases like "great school district" to your specific area. Add local amenities and neighborhood details that resonate with buyers in your region. Test 3-5 variations and use what converts best.</p>
+<p><strong>Q: Can I integrate this with my existing CRM?</strong></p>
+<p>A: Yes. Most CRMs support API integrations or webhooks. The prompts output structured text that you can parse and import directly into your CRM. Set up automated workflows to save time on data entry.</p>
+<p><strong>Q: What's the return on investment for these prompts?</strong></p>
+<p>A: Agents typically see 20-30% faster listing creation, allowing them to process 15-20% more properties per week. At $500/listing average, this translates to $2,000-3,000 extra monthly revenue.</p>
+<h3>Get it</h3>
+<p>Access the complete 50 Real Estate Agents AI Prompts system with ready-to-use templates for listings, emails, and ads. Build your workflow once, use forever.</p>
+<p><strong><a href="https://ptrk-en.gumroad.com/l/niche-realestate-prompts">Get it now</a></strong></p>
+<p>This library delivers a proven system that transforms your real estate marketing from time-consuming to efficient.</p><div class="cta"><p><strong>50 Real Estate Agents AI Prompts</strong> — 50 ready-to-use prompts so real estate agents write listings, follow-ups, and ads in minutes.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-realestate-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

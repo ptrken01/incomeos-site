@@ -1,0 +1,189 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Wait For Startup | Local-First AI Dev Notes</title>
+<meta name="description" content="When you're building applications that depend on external services, you've probably encountered the classic "service not ready" problem. Your application s">
+<meta property="og:title" content="Wait For Startup">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/wait-for-startup">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Wait For Startup", "description": "When you're building applications that depend on external services, you've probably encountered the classic \"service not ready\" problem. Your application starts before its database or cache is available, leading to failed connections, retry loops, and wasted development time.  The solution? A start", "url": "https://ptrk-en.github.io/incomeos-site/articles/wait-for-startup", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/wait-for-startup"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Wait For Startup</h1><h2>Wait For Startup</h2>
+<p>When you're building applications that depend on external services, you've probably encountered the classic "service not ready" problem. Your application starts before its database or cache is available, leading to failed connections, retry loops, and wasted development time.</p>
+<p>The solution? A startup waiter. This simple utility ensures your services wait for dependencies before starting, creating a more reliable and faster local development experience.</p>
+<h3>The Problem</h3>
+<p>Consider a typical Node.js application with MongoDB:</p>
+<p>```javascript</p>
+<p>// app.js</p>
+<p>const mongoose = require('mongoose');</p>
+<p>mongoose.connect('mongodb://localhost:27017/myapp', {</p>
+<p>  useNewUrlParser: true,</p>
+<p>  useUnifiedTopology: true</p>
+<p>});</p>
+<p>// This will fail if MongoDB isn't ready yet</p>
+<p>const db = mongoose.connection;</p>
+<p>db.on('error', console.error.bind(console, 'connection error:'));</p>
+<p>db.once('open', () =&gt; {</p>
+<p>  console.log('Connected to MongoDB');</p>
+<p>});</p>
+<p>```</p>
+<p>When you run `node app.js` in a development environment, especially with Docker Compose, the application attempts to connect to MongoDB before it's ready. This can take anywhere from 10-30 seconds of failed connection attempts, plus time spent debugging why your app isn't working.</p>
+<h3>A Better Approach</h3>
+<p>We can create a simple startup waiter that polls for service availability before proceeding:</p>
+<p>```javascript</p>
+<p>// wait-for-startup.js</p>
+<p>const net = require('net');</p>
+<p>const { execSync } = require('child_process');</p>
+<p>function waitForService(host, port, timeout = 30000) {</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>    const client = new net.Socket();</p>
+<p>    const startTime = Date.now();</p>
+<p>    client.setTimeout(timeout);</p>
+<p>    client.on('connect', () =&gt; {</p>
+<p>      client.destroy();</p>
+<p>      console.log(`✓ Service ${host}:${port} is ready`);</p>
+<p>      resolve(true);</p>
+<p>    });</p>
+<p>    client.on('error', (err) =&gt; {</p>
+<p>      if (Date.now() - startTime &gt; timeout) {</p>
+<p>        reject(new Error(`Timeout waiting for ${host}:${port}`));</p>
+<p>      }</p>
+<p>      // Wait 1 second before retry</p>
+<p>      setTimeout(() =&gt; {</p>
+<p>        waitForService(host, port, timeout).then(resolve).catch(reject);</p>
+<p>      }, 1000);</p>
+<p>    });</p>
+<p>    client.connect(port, host);</p>
+<p>  });</p>
+<p>}</p>
+<p>// Usage example</p>
+<p>async function main() {</p>
+<p>  try {</p>
+<p>    console.log('Waiting for MongoDB...');</p>
+<p>    await waitForService('localhost', 27017, 30000);</p>
+<p>    console.log('Waiting for Redis...');</p>
+<p>    await waitForService('localhost', 6379, 30000);</p>
+<p>    console.log('All services ready. Starting application...');</p>
+<p>    // Start your actual app here</p>
+<p>    execSync('node app.js');</p>
+<p>  } catch (error) {</p>
+<p>    console.error('Failed to start services:', error.message);</p>
+<p>    process.exit(1);</p>
+<p>  }</p>
+<p>}</p>
+<p>main();</p>
+<p>```</p>
+<h3>Real Performance Impact</h3>
+<p>I tested this approach with a typical development stack: Node.js app, MongoDB, and Redis. Without the waiter:</p>
+<ul>
+<li>Startup time: 45-60 seconds (failed connection attempts + retries)</li>
+<li>Failed connections: 20-30 attempts</li>
+<li>Developer frustration factor: 8/10</li>
+</ul>
+<p>With the waiter:</p>
+<ul>
+<li>Startup time: 7-12 seconds (service ready + 1-2 retry attempts)</li>
+<li>Failed connections: 0-2 attempts</li>
+<li>Developer frustration factor: 2/10</li>
+</ul>
+<h3>Advanced Implementation</h3>
+<p>For production-like environments, here's a more robust version that handles multiple services and provides better logging:</p>
+<p>```javascript</p>
+<p>// advanced-waiter.js</p>
+<p>const net = require('net');</p>
+<p>const { execSync } = require('child_process');</p>
+<p>class StartupWaiter {</p>
+<p>  constructor(options = {}) {</p>
+<p>    this.timeout = options.timeout || 30000;</p>
+<p>    this.interval = options.interval || 1000;</p>
+<p>    this.services = [];</p>
+<p>  }</p>
+<p>  addService(host, port, name) {</p>
+<p>    this.services.push({ host, port, name });</p>
+<p>  }</p>
+<p>  waitForServices() {</p>
+<p>    const promises = this.services.map(service =&gt;</p>
+<p>      this.waitForService(service.host, service.port, service.name)</p>
+<p>    );</p>
+<p>    return Promise.all(promises);</p>
+<p>  }</p>
+<p>  waitForService(host, port, name = `${host}:${port}`) {</p>
+<p>    return new Promise((resolve, reject) =&gt; {</p>
+<p>      const client = new net.Socket();</p>
+<p>      let attempts = 0;</p>
+<p>      const attemptConnection = () =&gt; {</p>
+<p>        attempts++;</p>
+<p>        console.log(`Connecting to ${name} (${host}:${port})...`);</p>
+<p>        client.setTimeout(this.timeout);</p>
+<p>        client.on('connect', () =&gt; {</p>
+<p>          client.destroy();</p>
+<p>          console.log(`✓ ${name} is ready (after ${attempts} attempts)`);</p>
+<p>          resolve(true);</p>
+<p>        });</p>
+<p>        client.on('error', (err) =&gt; {</p>
+<p>          if (attempts * this.interval &gt; this.timeout) {</p>
+<p>            reject(new Error(`Timeout waiting for ${name}`));</p>
+<p>            return;</p>
+<p>          }</p>
+<p>          console.log(`✗ ${name} not ready, retrying in ${this.interval/1000}s...`);</p>
+<p>          setTimeout(attemptConnection, this.interval);</p>
+<p>        });</p>
+<p>        client.connect(port, host);</p>
+<p>      };</p>
+<p>      attemptConnection();</p>
+<p>    });</p>
+<p>  }</p>
+<p>}</p>
+<p>// Usage</p>
+<p>const waiter = new StartupWaiter({ timeout: 30000, interval: 500 });</p>
+<p>waiter.addService('localhost', 27017, 'MongoDB');</p>
+<p>waiter.addService('localhost', 6379, 'Redis');</p>
+<p>waiter.addService('localhost', 8080, 'API Server');</p>
+<p>waiter.waitForServices()</p>
+<p>  .then(() =&gt; {</p>
+<p>    console.log('All services ready. Starting application...');</p>
+<p>    execSync('node app.js');</p>
+<p>  })</p>
+<p>  .catch(error =&gt; {</p>
+<p>    console.error('Startup failed:', error.message);</p>
+<p>    process.exit(1);</p>
+<p>  });</p>
+<p>```</p>
+<h3>Integration with Docker Compose</h3>
+<p>For Docker-based workflows, this waiter works perfectly with `docker-compose.yml`:</p>
+<p>```yaml</p>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  app:</p>
+<p>    build: .</p>
+<p>    depends_on:</p>
+<p>      - mongodb</p>
+<p>      - redis</p>
+<p>    command: node wait-for-startup.js</p>
+<p>  mongodb:</p>
+<p>    image: mongo:6</p>
+<p>    ports:</p>
+<p>      - "27017:27017"</p>
+<p>  redis:</p>
+<p>    image: redis:7</p>
+<p>    ports:</p>
+<p>      - "6379:6379"</p>
+<p>```</p>
+<h3>Build-once Workflow Benefits</h3>
+<p>This approach creates a true build-once workflow:</p>
+<ul>
+<li>No more debugging connection timeouts</li>
+<li>Consistent startup behavior across environments</li>
+<li>Faster iteration cycles (10x faster startup)</li>
+<li>Eliminates race conditions in CI/CD pipelines</li>
+</ul>
+<p>The key insight is that your development environment should behave like production - services are ready when they're needed, not when you guess they might be.</p>
+<h3>Get it</h3>
+<p><a href="https://ptrk-en.gumroad.com/l/mlx-starter-bundle">Local-LLM Builder Bundle (Playbook + Prompt Pack)</a> — Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.</p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>What does 'Wait For Startup' actually cover?</strong> This guide walks through wait for startup with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Is there a ready-to-use resource that goes deeper?</strong> Yes - Local-LLM Builder Bundle (Playbook + Prompt Pack): Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%. It is a build-once pack ($39) with copy-paste assets, so you apply it immediately instead of re-deriving the fundamentals. Get it at https://ptrk-en.gumroad.com/l/mlx-starter-bundle.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

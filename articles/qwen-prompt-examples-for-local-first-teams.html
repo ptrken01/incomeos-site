@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Qwen Prompt Examples for Local-First Teams | Local-First AI Dev Notes</title>
+<meta name="description" content="# Qwen Prompt Examples for Local-First Teams  In the world of local-first AI, speed, privacy, and reproducibility are non-negotiable. Teams building applic">
+<meta property="og:title" content="Qwen Prompt Examples for Local-First Teams">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/qwen-prompt-examples-for-local-first-teams">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qwen Prompt Examples for Local-First Teams", "description": "# Qwen Prompt Examples for Local-First Teams  In the world of local-first AI, speed, privacy, and reproducibility are non-negotiable. Teams building applications that rely on LLMs in resource-constrained or offline environments need reliable, optimized prompt templates to avoid common pitfalls like", "url": "https://ptrk-en.github.io/incomeos-site/articles/qwen-prompt-examples-for-local-first-teams", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/qwen-prompt-examples-for-local-first-teams"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Qwen Prompt Examples for Local-First Teams</h1><h2>Qwen Prompt Examples for Local-First Teams</h2>
+<h2>Qwen Prompt Examples for Local-First Teams</h2>
+<p>In the world of local-first AI, speed, privacy, and reproducibility are non-negotiable. Teams building applications that rely on LLMs in resource-constrained or offline environments need reliable, optimized prompt templates to avoid common pitfalls like hallucinations, excessive token usage, or poor performance on smaller models.</p>
+<p>The <strong>MLX-Optimized Local-LLM Prompt Pack</strong> is a collection of 48 production-ready prompts, fine-tuned for smaller local models (like Qwen, Llama, Mistral) and optimized for MLX-based inference. These prompts are ready to use in agent loops, with JSON output formats and copy-paste-ready templates — no extra setup required.</p>
+<p>Below are real-world examples of how to use these prompts in a practical workflow.</p>
+<p>---</p>
+<h3>Example 1: Structured Output from Unstructured Text</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>You are a helpful assistant. Extract the following information from the text below:</p>
+<ul>
+<li>Name</li>
+<li>Email</li>
+<li>Phone Number</li>
+</ul>
+<p>Return only valid JSON with no extra explanation or markdown formatting.</p>
+<p>Text: John Doe, email john.doe@example.com, phone 123-456-7890.</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>{</p>
+<p>  "name": "John Doe",</p>
+<p>  "email": "john.doe@example.com",</p>
+<p>  "phone": "123-456-7890"</p>
+<p>}</p>
+<p>```</p>
+<p>This prompt is optimized to reduce token waste and works reliably on smaller models with consistent output formatting. It’s ideal for parsing user input or data extraction tasks.</p>
+<p>---</p>
+<h3>Example 2: Multi-Turn Conversation Summarization</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>You are a helpful assistant. Summarize the following conversation in one sentence.</p>
+<p>User: I need help with my account.</p>
+<p>Assistant: Sure, what seems to be the issue?</p>
+<p>User: My password isn't working.</p>
+<p>Assistant: Let me reset it for you.</p>
+<p>Summary:</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>{</p>
+<p>  "summary": "User needs help resetting their password."</p>
+<p>}</p>
+<p>```</p>
+<p>This prompt works well in agent loops where context is passed between steps. It's designed to be robust and not require long prompts, which helps avoid token limits on local models.</p>
+<p>---</p>
+<h3>Example 3: Code Generation with Constraints</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>You are a Python developer. Generate a function that takes two integers and returns their sum.</p>
+<p>The function must:</p>
+<ul>
+<li>Be named `add_numbers`</li>
+<li>Not use the `+` operator</li>
+<li>Use only basic arithmetic operations</li>
+</ul>
+<p>Return only the code block, no explanation.</p>
+<p>Example:</p>
+<p>def add_numbers(a, b):</p>
+<p>    return a - (-b)</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```python</p>
+<p>def add_numbers(a, b):</p>
+<p>    return a - (-b)</p>
+<p>```</p>
+<p>This is great for local agents that need to generate or validate code snippets. The prompt forces specific constraints, which reduces hallucinations and increases reliability.</p>
+<p>---</p>
+<h3>Example 4: Sentiment Classification with Confidence</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>Classify the sentiment of the following sentence into one of three categories:</p>
+<ul>
+<li>Positive</li>
+<li>Negative</li>
+<li>Neutral</li>
+</ul>
+<p>Return only a JSON object with the label and confidence score (0.0 to 1.0).</p>
+<p>Sentence: I love this product, it's amazing!</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>{</p>
+<p>  "label": "Positive",</p>
+<p>  "confidence": 0.95</p>
+<p>}</p>
+<p>```</p>
+<p>This is useful for feedback analysis or content moderation workflows where you need both classification and certainty.</p>
+<p>---</p>
+<h3>Example 5: Task Prioritization</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>You are a task prioritizer. Given the following list of tasks, rank them from highest to lowest priority based on urgency and impact.</p>
+<p>Return only a JSON array with task titles in order.</p>
+<p>Tasks:</p>
+<ul>
+<li>Fix login bug</li>
+<li>Add dark mode</li>
+<li>Update documentation</li>
+<li>Refactor API endpoints</li>
+</ul>
+<p>Priority ranking:</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>[</p>
+<p>  "Fix login bug",</p>
+<p>  "Refactor API endpoints",</p>
+<p>  "Add dark mode",</p>
+<p>  "Update documentation"</p>
+<p>]</p>
+<p>```</p>
+<p>This prompt is ideal for integrating into local workflows where tasks need to be dynamically prioritized.</p>
+<p>---</p>
+<h3>Example 6: JSON Schema Validation Prompt</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>Validate the following JSON against this schema:</p>
+<p>{</p>
+<p>  "type": "object",</p>
+<p>  "properties": {</p>
+<p>    "name": {"type": "string"},</p>
+<p>    "age": {"type": "integer", "minimum": 0}</p>
+<p>  },</p>
+<p>  "required": ["name", "age"]</p>
+<p>}</p>
+<p>If valid, return true. If invalid, return false and explain the error.</p>
+<p>JSON: {"name": "Alice", "age": 30}</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>{</p>
+<p>  "valid": true</p>
+<p>}</p>
+<p>```</p>
+<p>This is great for ensuring data integrity in pipelines where local LLMs are used to validate user input or API responses.</p>
+<p>---</p>
+<h3>Example 7: Data Enrichment from a Knowledge Base</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>You are an assistant. Based on the following knowledge base entry, extract the key facts and summarize them.</p>
+<p>Knowledge Base:</p>
+<ul>
+<li>Name: Qwen</li>
+<li>Type: Large Language Model</li>
+<li>Capabilities: Text generation, summarization, coding</li>
+</ul>
+<p>Summary:</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>{</p>
+<p>  "summary": "Qwen is a large language model capable of text generation, summarization, and coding tasks."</p>
+<p>}</p>
+<p>```</p>
+<p>This helps teams integrate local LLMs with knowledge bases or internal documentation to improve accuracy and relevance.</p>
+<p>---</p>
+<h3>Example 8: Multi-Step Reasoning with Step-by-Step Output</h3>
+<p><strong>Prompt:</strong></p>
+<p>```text</p>
+<p>You are a logical reasoning assistant. Solve the following problem step by step:</p>
+<p>If A is greater than B, and B is greater than C, then what can you conclude about A and C?</p>
+<p>Return only valid JSON with a list of steps and the conclusion.</p>
+<p>Problem: A &gt; B &gt; C</p>
+<p>```</p>
+<p><strong>Expected Output:</strong></p>
+<p>```json</p>
+<p>{</p>
+<p>  "steps": [</p>
+<p>    "A &gt; B",</p>
+<p>    "B &gt; C",</p>
+<p>    "Therefore A &gt; C"</p>
+<p>  ],</p>
+<p>  "conclusion": "A is greater than C."</p>
+<p>}</p>
+<p>```</p>
+<p>This is useful for reasoning agents that need to explain their logic, especially in domains like education or compliance.</p>
+<p>---</p>
+<h3>Get it</h3>
+<p>Get the <strong>MLX-Optimized Local-LLM Prompt Pack</strong> with 48 production-ready prompts optimized for local inference. Copy-paste + JSON for agent loops.</p>
+<p>👉 <a href="https://ptrk-en.gumroad.com/l/mlx-prompt-pack">Download on Gumroad</a></p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>In practice, what does 'Qwen Prompt Examples for Local-First Teams' actually cover?</strong> This guide walks through qwen prompt examples for local-first teams with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Is there a ready-to-use resource that goes deeper?</strong> Yes - The MLX-Optimized Local-LLM Prompt Pack: 48 production prompts tuned for smaller local models — copy-paste + JSON for agent loops. It is a build-once pack ($19) with copy-paste assets, so you apply it immediately instead of re-deriving the fundamentals. Get it at https://ptrk-en.gumroad.com/l/mlx-prompt-pack.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul><div class="cta"><p><strong>The MLX-Optimized Local-LLM Prompt Pack</strong> — 48 production prompts tuned for smaller local models — copy-paste + JSON for agent loops.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/mlx-prompt-pack">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

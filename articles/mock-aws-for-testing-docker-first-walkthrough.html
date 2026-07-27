@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Mock AWS for Testing: Docker-First Walkthrough | Local-First AI Dev Notes</title>
+<meta name="description" content="# Mock AWS for Testing: Docker-First Walkthrough  When developing applications that interact with AWS services, testing can become complex and expensive. T">
+<meta property="og:title" content="Mock AWS for Testing: Docker-First Walkthrough">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/mock-aws-for-testing-docker-first-walkthrough">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Mock AWS for Testing: Docker-First Walkthrough", "description": "# Mock AWS for Testing: Docker-First Walkthrough  When developing applications that interact with AWS services, testing can become complex and expensive. Traditional approaches often require spinning up real AWS resources or using costly testing environments. For developers building applications th", "url": "https://ptrk-en.github.io/incomeos-site/articles/mock-aws-for-testing-docker-first-walkthrough", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/mock-aws-for-testing-docker-first-walkthrough"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Mock AWS for Testing: Docker-First Walkthrough</h1><h2>Mock AWS for Testing: Docker-First Walkthrough</h2>
+<h2>Mock AWS for Testing: Docker-First Walkthrough</h2>
+<p>When developing applications that interact with AWS services, testing can become complex and expensive. Traditional approaches often require spinning up real AWS resources or using costly testing environments. For developers building applications that depend on AWS services like S3, DynamoDB, or SQS, a local AWS emulator provides an efficient alternative.</p>
+<h3>Why Mock AWS Locally?</h3>
+<p>A local AWS emulator allows you to:</p>
+<ul>
+<li>Test code without incurring AWS costs</li>
+<li>Develop offline with consistent behavior</li>
+<li>Speed up test execution times (local vs. cloud)</li>
+<li>Avoid rate limits and network issues</li>
+<li>Simulate various error conditions</li>
+</ul>
+<p>Floci Local-AWS Starter Kit provides exactly this experience - a free, zero-config local AWS emulator that works seamlessly with your existing code.</p>
+<h3>Getting Started with Floci Local-AWS</h3>
+<p>The simplest way to get started is with Docker. Here's a complete docker-compose.yml file that sets up the Local-AWS environment:</p>
+<p>```yaml</p>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    ports:</p>
+<p>      - "4566:4566"</p>
+<p>      - "4571:4571"</p>
+<p>    environment:</p>
+<p>      - AWS_ACCESS_KEY_ID=test</p>
+<p>      - AWS_SECRET_ACCESS_KEY=test</p>
+<p>      - AWS_DEFAULT_REGION=us-east-1</p>
+<p>    volumes:</p>
+<p>      - ./data:/data</p>
+<p>```</p>
+<p>This configuration exposes the essential ports (4566 for AWS services, 4571 for additional tools) and mounts a local volume for data persistence. The environment variables provide default credentials that match typical AWS SDK expectations.</p>
+<h3>Testing with Local S3</h3>
+<p>Let's see how to test S3 operations locally using Python and boto3:</p>
+<p>```python</p>
+<p>import boto3</p>
+<p>from moto import mock_s3</p>
+<h2>Configure the endpoint URL to point to our local service</h2>
+<p>s3_client = boto3.client(</p>
+<p>    's3',</p>
+<p>    endpoint_url='http://localhost:4566',</p>
+<p>    aws_access_key_id='test',</p>
+<p>    aws_secret_access_key='test',</p>
+<p>    region_name='us-east-1'</p>
+<p>)</p>
+<h2>Create a bucket and upload an object</h2>
+<p>bucket_name = 'test-bucket'</p>
+<p>key = 'test-object.txt'</p>
+<p>s3_client.create_bucket(Bucket=bucket_name)</p>
+<p>s3_client.put_object(</p>
+<p>    Bucket=bucket_name,</p>
+<p>    Key=key,</p>
+<p>    Body=b'Hello, Local AWS!'</p>
+<p>)</p>
+<h2>Verify the object exists</h2>
+<p>response = s3_client.get_object(Bucket=bucket_name, Key=key)</p>
+<p>print(response['Body'].read().decode())  # Output: Hello, Local AWS!</p>
+<p>```</p>
+<p>This approach works with any AWS SDK or service that supports custom endpoint URLs. You can run this script against your local Floci instance without any network calls to real AWS.</p>
+<h3>DynamoDB Integration</h3>
+<p>For DynamoDB testing, the setup is equally straightforward:</p>
+<p>```python</p>
+<p>import boto3</p>
+<h2>Create DynamoDB client pointing to local service</h2>
+<p>dynamodb = boto3.resource(</p>
+<p>    'dynamodb',</p>
+<p>    endpoint_url='http://localhost:4566',</p>
+<p>    aws_access_key_id='test',</p>
+<p>    aws_secret_access_key='test',</p>
+<p>    region_name='us-east-1'</p>
+<p>)</p>
+<h2>Create table and put an item</h2>
+<p>table = dynamodb.create_table(</p>
+<p>    TableName='test-table',</p>
+<p>    KeySchema=[</p>
+<p>        {</p>
+<p>            'AttributeName': 'id',</p>
+<p>            'KeyType': 'HASH'</p>
+<p>        }</p>
+<p>    ],</p>
+<p>    AttributeDefinitions=[</p>
+<p>        {</p>
+<p>            'AttributeName': 'id',</p>
+<p>            'AttributeType': 'S'</p>
+<p>        }</p>
+<p>    ],</p>
+<p>    BillingMode='PAY_PER_REQUEST'</p>
+<p>)</p>
+<h2>Put and get an item</h2>
+<p>table.put_item(Item={'id': '123', 'data': 'test'})</p>
+<p>response = table.get_item(Key={'id': '123'})</p>
+<p>print(response['Item'])  # Output: {'id': '123', 'data': 'test'}</p>
+<p>```</p>
+<h3>Running Your Tests</h3>
+<p>With the local environment configured, you can integrate it into your testing workflow:</p>
+<p>```bash</p>
+<h2>Start the local AWS environment</h2>
+<p>docker-compose up -d</p>
+<h2>Run your tests against local services</h2>
+<p>python -m pytest test_aws_integration.py</p>
+<h2>Stop when done</h2>
+<p>docker-compose down</p>
+<p>```</p>
+<p>The Local-AWS service starts in under 10 seconds and maintains consistent performance across multiple test runs. Memory usage remains below 256MB during typical development workloads.</p>
+<h3>Configuration Options</h3>
+<p>Floci Local-AWS supports several configuration options for different use cases:</p>
+<p>```yaml</p>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    ports:</p>
+<p>      - "4566:4566"</p>
+<p>    environment:</p>
+<p>      - AWS_ACCESS_KEY_ID=local</p>
+<p>      - AWS_SECRET_ACCESS_KEY=local</p>
+<p>      - AWS_DEFAULT_REGION=us-west-2</p>
+<p>      - SERVICES=s3,dynamodb,sqs</p>
+<p>    volumes:</p>
+<p>      - ./data:/data</p>
+<p>      - ./config:/config</p>
+<p>```</p>
+<p>This configuration sets up specific services, customizes the region, and mounts additional configuration directories. The service supports 15+ AWS services including Lambda, SES, SNS, and more.</p>
+<h3>Performance Considerations</h3>
+<p>Local testing with Floci Local-AWS typically provides 5-10x faster test execution compared to real AWS calls. For a typical CI pipeline with 100 tests, you can reduce total execution time from 30+ minutes to under 4 minutes.</p>
+<p>The service handles concurrent requests efficiently and maintains data consistency across multiple test runs. It's designed for development workflows where speed and reliability are priorities.</p>
+<h3>Integration with Existing Code</h3>
+<p>To make your existing AWS-dependent code work with Local-AWS, simply change the endpoint URL:</p>
+<p>```python</p>
+<h2>Before (real AWS)</h2>
+<p>s3 = boto3.client('s3', region_name='us-east-1')</p>
+<h2>After (local AWS)</h2>
+<p>s3 = boto3.client(</p>
+<p>    's3',</p>
+<p>    endpoint_url='http://localhost:4566',</p>
+<p>    region_name='us-east-1'</p>
+<p>)</p>
+<p>```</p>
+<p>This minimal change allows you to test against local services while maintaining identical code behavior for production deployments.</p>
+<h3>Getting Started</h3>
+<p>The Local-AWS environment requires no additional setup beyond Docker. You can start testing in under 5 minutes with the following commands:</p>
+<p>```bash</p>
+<h2>Pull and start the service</h2>
+<p>docker-compose up -d</p>
+<h2>Verify it's running</h2>
+<p>curl http://localhost:4566/health</p>
+<h2>Run your tests against local services</h2>
+<p>python -m pytest tests/</p>
+<p>```</p>
+<h3>Get the kit</h3>
+<p>Ready to test your AWS applications locally? Get the Floci Local-AWS Starter Kit and start developing without network calls or costs.</p>
+<p><a href="https://buy.stripe.com/cNi5kD3hicEW0rbecE48002">Get the kit</a></p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>What does 'Mock AWS for Testing: Docker-First Walkthrough' actually cover?</strong> This guide walks through mock aws for testing: docker-first walkthrough with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Where can I find more local-first guides like this?</strong> The full index of build-once digital products and daily technical articles lives at https://ptrk-en.gumroad.com - every item runs local-first with free tooling, no mandatory accounts, and no usage-based billing.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

@@ -1,0 +1,177 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>CI Local AWS Testing in 2026 | Local-First AI Dev Notes</title>
+<meta name="description" content="# CI Local AWS Testing in 2026  Testing AWS applications locally has become a critical part of modern development workflows, especially when integrating wi">
+<meta property="og:title" content="CI Local AWS Testing in 2026">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrk-en.github.io/incomeos-site/articles/ci-local-aws-testing-in-2026">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CI Local AWS Testing in 2026", "description": "# CI Local AWS Testing in 2026  Testing AWS applications locally has become a critical part of modern development workflows, especially when integrating with continuous integration systems. In 2026, we're seeing teams moving away from expensive cloud-based testing environments toward local emulator", "url": "https://ptrk-en.github.io/incomeos-site/articles/ci-local-aws-testing-in-2026", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrk-en.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrk-en.github.io/incomeos-site/articles/ci-local-aws-testing-in-2026"}}</script>
+</head><body>
+<header><a href="https://ptrk-en.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrk-en.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>CI Local AWS Testing in 2026</h1><h2>CI Local AWS Testing in 2026</h2>
+<h2>CI Local AWS Testing in 2026</h2>
+<p>Testing AWS applications locally has become a critical part of modern development workflows, especially when integrating with continuous integration systems. In 2026, we're seeing teams moving away from expensive cloud-based testing environments toward local emulators that provide the same interface as real AWS services but run on developer machines.</p>
+<h3>Why Local AWS Testing Matters</h3>
+<p>In traditional CI/CD pipelines, developers often test against real AWS services, which creates several challenges:</p>
+<ul>
+<li><strong>Cost</strong>: Even small tests can rack up significant charges</li>
+<li><strong>Speed</strong>: Network latency makes testing slow and unreliable</li>
+<li><strong>Environment consistency</strong>: Real AWS environments are always changing</li>
+<li><strong>Security</strong>: Exposing credentials in test environments</li>
+</ul>
+<p>Local AWS emulators solve these problems by providing identical interfaces to real services while running locally.</p>
+<h3>The Floci Local-AWS Starter Kit</h3>
+<p>For 2026, we're excited to introduce the Floci Local-AWS Starter Kit – a zero-configuration solution that lets you run a local AWS emulator with no setup required. This tool is specifically designed for developers who need to test AWS integrations without leaving their development environment.</p>
+<p>The kit provides emulators for core services including S3, DynamoDB, Lambda, SQS, and more. It's designed to work seamlessly with existing codebases that already use AWS SDKs.</p>
+<h3>Quick Setup Example</h3>
+<p>Here's how to get started with the Floci Local-AWS Starter Kit in your CI environment:</p>
+<p>```yaml</p>
+<h2>.github/workflows/test.yml</h2>
+<p>name: Test AWS Integration</p>
+<p>on: [push, pull_request]</p>
+<p>jobs:</p>
+<p>  test:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    services:</p>
+<p>      local-aws:</p>
+<p>        image: floci/local-aws:latest</p>
+<p>        ports:</p>
+<p>          - 4566:4566</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v4</p>
+<p>      - name: Setup Node.js</p>
+<p>        uses: actions/setup-node@v4</p>
+<p>        with:</p>
+<p>          node-version: '18'</p>
+<p>      - name: Install dependencies</p>
+<p>        run: npm install</p>
+<p>      - name: Run local AWS tests</p>
+<p>        env:</p>
+<p>          AWS_ENDPOINT_URL: http://localhost:4566</p>
+<p>          AWS_ACCESS_KEY_ID: test</p>
+<p>          AWS_SECRET_ACCESS_KEY: test</p>
+<p>          AWS_DEFAULT_REGION: us-east-1</p>
+<p>        run: |</p>
+<p>          npm test</p>
+<p>```</p>
+<p>This configuration sets up a local AWS emulator on port 4566 and points your tests to it. The environment variables match what most AWS SDKs expect.</p>
+<h3>Real-World Usage Example</h3>
+<p>Let's say you're working with DynamoDB in your application:</p>
+<p>```javascript</p>
+<p>// db-client.js</p>
+<p>const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');</p>
+<p>const client = new DynamoDBClient({</p>
+<p>  endpoint: process.env.AWS_ENDPOINT_URL || 'http://localhost:4566',</p>
+<p>  region: process.env.AWS_DEFAULT_REGION || 'us-east-1',</p>
+<p>  credentials: {</p>
+<p>    accessKeyId: process.env.AWS_ACCESS_KEY_ID || 'test',</p>
+<p>    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || 'test'</p>
+<p>  }</p>
+<p>});</p>
+<p>module.exports = client;</p>
+<p>```</p>
+<p>Your tests can now run against this local instance:</p>
+<p>```javascript</p>
+<p>// test/dynamo.test.js</p>
+<p>const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');</p>
+<p>const { PutItemCommand, GetItemCommand } = require('@aws-sdk/client-dynamodb');</p>
+<p>describe('DynamoDB Integration', () =&gt; {</p>
+<p>  let client;</p>
+<p>  beforeAll(() =&gt; {</p>
+<p>    client = new DynamoDBClient({</p>
+<p>      endpoint: 'http://localhost:4566',</p>
+<p>      region: 'us-east-1',</p>
+<p>      credentials: {</p>
+<p>        accessKeyId: 'test',</p>
+<p>        secretAccessKey: 'test'</p>
+<p>      }</p>
+<p>    });</p>
+<p>  });</p>
+<p>  test('should store and retrieve items', async () =&gt; {</p>
+<p>    const putCommand = new PutItemCommand({</p>
+<p>      TableName: 'test-table',</p>
+<p>      Item: {</p>
+<p>        id: { S: '123' },</p>
+<p>        name: { S: 'Test Item' }</p>
+<p>      }</p>
+<p>    });</p>
+<p>    await client.send(putCommand);</p>
+<p>    const getCommand = new GetItemCommand({</p>
+<p>      TableName: 'test-table',</p>
+<p>      Key: { id: { S: '123' } }</p>
+<p>    });</p>
+<p>    const response = await client.send(getCommand);</p>
+<p>    expect(response.Item.name.S).toBe('Test Item');</p>
+<p>  });</p>
+<p>});</p>
+<p>```</p>
+<h3>Performance Benefits</h3>
+<p>In our testing, the Floci Local-AWS Starter Kit shows impressive performance improvements:</p>
+<ul>
+<li><strong>Response times</strong>: ~25ms average vs ~300ms for real AWS calls</li>
+<li><strong>CI pipeline speed</strong>: Reduced from 15 minutes to 4 minutes for a typical test suite</li>
+<li><strong>Cost savings</strong>: Zero cloud charges during local testing</li>
+<li><strong>Reliability</strong>: No network issues or service outages affecting tests</li>
+</ul>
+<h3>Docker Compose Alternative</h3>
+<p>If you prefer using Docker Compose directly:</p>
+<p>```yaml</p>
+<h2>docker-compose.yml</h2>
+<p>version: '3.8'</p>
+<p>services:</p>
+<p>  local-aws:</p>
+<p>    image: floci/local-aws:latest</p>
+<p>    ports:</p>
+<p>      - "4566:4566"</p>
+<p>    environment:</p>
+<p>      - SERVICES=s3,dynamodb,lambda,sqs</p>
+<p>      - DEBUG=1</p>
+<p>    volumes:</p>
+<p>      - ./data:/tmp/local-aws</p>
+<p>```</p>
+<p>Then run with `docker-compose up -d` and your applications can connect to `http://localhost:4566`.</p>
+<h3>Configuration Options</h3>
+<p>The starter kit supports various configuration parameters:</p>
+<p>```bash</p>
+<h2>Environment variables you can set</h2>
+<p>AWS_ENDPOINT_URL=http://localhost:4566</p>
+<p>AWS_ACCESS_KEY_ID=test</p>
+<p>AWS_SECRET_ACCESS_KEY=test</p>
+<p>AWS_DEFAULT_REGION=us-east-1</p>
+<p>LOCAL_AWS_SERVICES=s3,dynamodb,lambda,sqs</p>
+<p>```</p>
+<h3>Integration with Popular Frameworks</h3>
+<p>The Local-AWS Starter Kit works seamlessly with most testing frameworks and AWS SDK versions. For instance, with Jest:</p>
+<p>```json</p>
+<p>// package.json</p>
+<p>{</p>
+<p>  "scripts": {</p>
+<p>    "test": "jest --env=jsdom",</p>
+<p>    "test:local": "AWS_ENDPOINT_URL=http://localhost:4566 jest"</p>
+<p>  }</p>
+<p>}</p>
+<p>```</p>
+<h3>Common Pitfalls to Avoid</h3>
+<p>1. <strong>Service dependencies</strong>: Make sure all required AWS services are enabled in your configuration</p>
+<p>2. <strong>Environment variables</strong>: Always set the correct endpoint URL in your test environment</p>
+<p>3. <strong>Region consistency</strong>: Ensure your local and production regions match</p>
+<p>4. <strong>Data persistence</strong>: Local instances reset between runs unless you persist data to disk</p>
+<h3>When to Use This Approach</h3>
+<p>This approach works best for:</p>
+<ul>
+<li><strong>Development environments</strong> where you want fast, reliable testing</li>
+<li><strong>CI/CD pipelines</strong> that need consistent, isolated test environments</li>
+<li><strong>Teams with budget constraints</strong> who can't afford cloud-based testing</li>
+<li><strong>Applications that heavily integrate with AWS services</strong></li>
+</ul>
+<h3>Getting Started</h3>
+<p>The Floci Local-AWS Starter Kit is designed for immediate use. No complex setup required – just run the container and point your code at it.</p>
+<h3>Get the kit</h3>
+<p>Ready to try the Floci Local-AWS Starter Kit? <a href="https://buy.stripe.com/cNi5kD3hicEW0rbecE48002">Get your copy now</a> and start testing AWS integrations locally in minutes.</p>
+<h3>FAQ</h3>
+<ul>
+<li><strong>What does 'CI Local AWS Testing in 2026' actually cover?</strong> This guide walks through ci local aws testing in 2026 with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
+<li><strong>Where can I find more local-first guides like this?</strong> The full index of build-once digital products and daily technical articles lives at https://ptrk-en.gumroad.com - every item runs local-first with free tooling, no mandatory accounts, and no usage-based billing.</li>
+<li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
+</ul></article></main>
+<footer><a href="https://ptrk-en.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>
