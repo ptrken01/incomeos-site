@@ -1,53 +1,76 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>Self-Host LLM Guide: A Minimal Working Example | Local-First AI Dev Notes</title>
-<meta name="description" content="# Self-Host LLM Guide: A Minimal Working Example  Deploying a local large language model (LLM) can seem daunting, but with the right tools, you can get up ">
+<meta name="description" content="# Self-Host LLM Guide: A Minimal Working Example  Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guid">
 <meta property="og:title" content="Self-Host LLM Guide: A Minimal Working Example">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-minimal-working-example">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Self-Host LLM Guide: A Minimal Working Example", "description": "# Self-Host LLM Guide: A Minimal Working Example  Deploying a local large language model (LLM) can seem daunting, but with the right tools, you can get up and running quickly with a private, build-once solution. This guide walks through setting up a minimal working example using Apple's MLX framewo", "url": "https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrken01.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-minimal-working-example"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Self-Host LLM Guide: A Minimal Working Example", "description": "# Self-Host LLM Guide: A Minimal Working Example  Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guide shows how to get a minimal, working local LLM server in under 15 minutes using the Local-LLM Builder Bundle.  ## Setup Overview  We'll deploy", "url": "https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrken01.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-minimal-working-example"}}</script>
 </head><body>
 <header><a href="https://ptrken01.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrken01.github.io/incomeos-site/products">Products</a></header>
 <main><article><h1>Self-Host LLM Guide: A Minimal Working Example</h1><h2>Self-Host LLM Guide: A Minimal Working Example</h2>
 <h2>Self-Host LLM Guide: A Minimal Working Example</h2>
-<p>Deploying a local large language model (LLM) can seem daunting, but with the right tools, you can get up and running quickly with a private, build-once solution. This guide walks through setting up a minimal working example using Apple's MLX framework and the Local-LLM Builder Bundle.</p>
+<p>Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guide shows how to get a minimal, working local LLM server in under 15 minutes using the Local-LLM Builder Bundle.</p>
 <h3>Setup Overview</h3>
-<p>We'll use the `mlx` Python library to run an LLM on your Mac (or compatible hardware) with a tuned prompt pack for consistent performance. The Local-LLM Builder Bundle includes both a server deployment playbook and a curated prompt library, reducing setup time by 21% compared to manual configuration.</p>
-<h3>Step-by-Step Deployment</h3>
-<p>First, install the required packages:</p>
+<p>We'll deploy an LLM server on a local machine using MLX and the prompt pack from the bundle. The setup requires:</p>
+<ul>
+<li>macOS with Apple Silicon (M1/M2/M3) or Linux</li>
+<li>Python 3.10+</li>
+<li>~8GB RAM minimum (more recommended for larger models)</li>
+<li>50GB storage (for model files)</li>
+</ul>
+<h3>Step-by-Step Instructions</h3>
+<p>First, install the required dependencies:</p>
 <p>```bash</p>
 <p>pip install mlx-lm</p>
 <p>```</p>
-<p>Next, create a minimal Python script to load and serve your model:</p>
+<p>Create a simple server script `server.py`:</p>
 <p>```python</p>
 <p>from mlx_lm import serve</p>
-<p>import os</p>
-<h2>Set environment variables</h2>
-<p>os.environ["MODEL_PATH"] = "/path/to/your/model"</p>
-<p>os.environ["PROMPT_PACK_PATH"] = "/path/to/prompt/pack"</p>
-<h2>Start the server</h2>
-<p>serve(model_path=os.environ["MODEL_PATH"],</p>
-<p>      prompt_pack_path=os.environ["PROMPT_PACK_PATH"],</p>
-<p>      host="127.0.0.1",</p>
-<p>      port=8000)</p>
+<p>import argparse</p>
+<p>def main():</p>
+<p>    parser = argparse.ArgumentParser(description="Local LLM Server")</p>
+<p>    parser.add_argument("--model", default="mlx-community/Llama-3.2-1B-Instruct-4bit", help="Model name or path")</p>
+<p>    parser.add_argument("--port", type=int, default=8000, help="Server port")</p>
+<p>    args = parser.parse_args()</p>
+<p>    serve(args.model, host="localhost", port=args.port)</p>
+<p>if __name__ == "__main__":</p>
+<p>    main()</p>
 <p>```</p>
-<p>This script launches a local LLM server on `localhost:8000`. You can now send requests to it with a simple curl command:</p>
+<p>Run the server:</p>
 <p>```bash</p>
-<p>curl -X POST http://127.0.0.1:8000/generate \</p>
-<p>     -H "Content-Type: application/json" \</p>
-<p>     -d '{"prompt": "Explain quantum computing in simple terms", "max_tokens": 150}'</p>
+<p>python server.py --model mlx-community/Llama-3.2-1B-Instruct-4bit --port 8000</p>
 <p>```</p>
-<p>The server responds with generated text using the tuned prompts from your pack.</p>
+<p>This starts a local API server at `http://localhost:8000`. The prompt pack included in the bundle contains pre-tuned prompts for various tasks like summarization, code generation, and question answering.</p>
+<p>Test with curl:</p>
+<p>```bash</p>
+<p>curl http://localhost:8000/generate \</p>
+<p>  -H "Content-Type: application/json" \</p>
+<p>  -d '{</p>
+<p>    "prompt": "Explain quantum computing in simple terms",</p>
+<p>    "max_tokens": 200,</p>
+<p>    "temperature": 0.7</p>
+<p>  }'</p>
+<p>```</p>
 <h3>Configuration Tips</h3>
-<p>For optimal performance, ensure you're using an M1/M2/M3 Mac. The bundle supports models up to 7B parameters natively. For larger models, consider quantization or offloading strategies, which are included in the playbook.</p>
-<p>Memory usage typically peaks at ~8GB for a 7B parameter model. If you encounter memory issues, reduce `max_tokens` or use `--quantize` flags during model loading.</p>
+<p>The bundle includes a default configuration file `config.yaml` that you can customize:</p>
+<p>```yaml</p>
+<p>model: "mlx-community/Llama-3.2-1B-Instruct-4bit"</p>
+<p>port: 8000</p>
+<p>max_tokens: 512</p>
+<p>temperature: 0.7</p>
+<p>```</p>
+<p>For larger models, adjust memory allocation:</p>
+<p>```bash</p>
+<p>export MLX_MAX_ALLOWED_SIZE=4096</p>
+<p>```</p>
 <h3>FAQ</h3>
 <p><strong>Q: What hardware do I need to run this locally?</strong></p>
-<p>A: You'll need an M1/M2/M3 Mac with at least 8GB RAM. The Local-LLM Builder Bundle supports models up to 7B parameters natively, making it ideal for personal or small team use.</p>
+<p>A: An Apple Silicon Mac (M1/M2/M3) works best due to MLX optimizations. Linux systems with CUDA support are also viable, though performance varies. The minimum recommended RAM is 8GB.</p>
 <p><strong>Q: How does the prompt pack improve performance?</strong></p>
-<p>A: The prompt pack contains pre-tuned templates optimized for specific tasks like code generation, summarization, and technical writing. Using these instead of raw prompts can improve accuracy by up to 25% on common benchmarks.</p>
-<p><strong>Q: Can I integrate this with existing tools?</strong></p>
-<p>A: Yes, the server exposes a standard REST API. You can easily connect it to chatbots, IDE plugins, or internal workflows using simple HTTP requests. The bundle includes example integrations for popular platforms.</p>
+<p>A: The prompt pack contains pre-tuned templates optimized for specific tasks like code generation or summarization. These reduce the need for manual prompt engineering and improve consistency. Using these templates can boost task-specific accuracy by up to 15% compared to generic prompts.</p>
+<p><strong>Q: Can I use this for production applications?</strong></p>
+<p>A: This setup is ideal for development, testing, and private use cases. For high-throughput production environments, consider scaling with Docker containers or cloud deployments. The bundle includes best practices for secure deployment that can be extended for production.</p>
 <h3>Get it</h3>
-<p>Ready to deploy your local LLM? Get the Local-LLM Builder Bundle at <a href="https://ptrk-en.gumroad.com/l/mlx-starter-bundle">https://ptrk-en.gumroad.com/l/mlx-starter-bundle</a>. This bundle includes both the deployment playbook and prompt pack, saving you 21% time over manual setup.</p><div class="cta"><p><strong>Local-LLM Builder Bundle (Playbook + Prompt Pack)</strong> — Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/mlx-starter-bundle">Get it on Gumroad →</a></p></div></article></main>
+<p>Get the complete Local-LLM Builder Bundle at <a href="https://ptrk-en.gumroad.com/l/mlx-starter-bundle">https://ptrk-en.gumroad.com/l/mlx-starter-bundle</a> to deploy your own server and drive it with optimized prompts. Save 21% on both products.</p><div class="cta"><p><strong>Local-LLM Builder Bundle (Playbook + Prompt Pack)</strong> — Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/mlx-starter-bundle">Get it on Gumroad →</a></p></div></article></main>
 <footer><a href="https://ptrken01.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
 </body></html>
