@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ptrken01.github.io/incomeos-site/</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/products</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/tools</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/products/mlx-deploy-playbook</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/products/mlx-prompt-pack</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/products/mlx-starter-bundle</loc></url>
@@ -67,6 +68,7 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/ci-local-aws-testing-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/client-dm-templates-common-pitfalls</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/client-dm-templates-for-local-first-teams</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/client-email-templates-benchmarks-numbers</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/client-email-templates-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/consultant-prompt-pack-setup-that-actually-works</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/consultant-prompt-pack-vs-the-alternatives</loc></url>
@@ -81,9 +83,11 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/define-our-production-tuned-system-instruction-from-the-pack</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/docker-aws-emulator-docker-first-walkthrough</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/email-open-rate-prompts-for-local-first-teams</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/email-open-rate-prompts-step-by-step</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/etsy-product-description-prompts-a-minimal-working-example</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/etsy-product-description-prompts-vs-the-alternatives</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/etsy-seo-prompts-for-local-first-teams</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/etsy-seo-prompts-step-by-step</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/fitness-coach-prompts-setup-that-actually-works</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/fitness-coach-prompts-vs-the-alternatives</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/free-aws-emulator-mac-common-pitfalls</loc></url>
@@ -98,8 +102,10 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/hyperstition-explained-explained</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/ideas-that-make-their-own-future-real-a-practical-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/issue-intro-prompts-a-minimal-working-example</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/issue-intro-prompts-common-pitfalls</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/issue-intro-prompts-setup-that-actually-works</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/launch-email-prompts-a-practical-dev-guide</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/launch-email-prompts-setup-that-actually-works</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/lead-magnet-prompts-common-pitfalls</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/lead-magnet-prompts-step-by-step</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/lesson-script-prompts-a-minimal-working-example</loc></url>
@@ -115,6 +121,7 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-ai-stack-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-aws-emulator-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-aws-emulator-ci-cd-setup-that-actually-works</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-business-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-business-prompts-common-pitfalls</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-business-prompts-step-by-step</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/local-llm-bundle-for-local-first-teams</loc></url>
@@ -173,6 +180,7 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/run-llama-mac-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/script-hook-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/script-hook-prompts-benchmarks-numbers</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/script-hook-prompts-setup-that-actually-works</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/self-fulfilling-narrative-brand-growth-why-it-matters-for-br</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-minimal-working-example</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/self-host-llm-guide-a-practical-dev-guide</loc></url>
@@ -180,12 +188,15 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/sell-digital-products-gumroad-setup-that-actually-works</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/sell-to-ai-agents-vs-the-alternatives</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/service-quote-templates-a-practical-dev-guide</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/service-quote-templates-benchmarks-numbers</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/shop-title-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/shop-title-prompts-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/side-hustle-ai-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/small-business-automation-common-pitfalls</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/solopreneur-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/solopreneur-prompts-common-pitfalls</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/solopreneur-prompts-step-by-step</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/subject-line-prompts-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/subject-line-prompts-step-by-step</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/substack-prompts-in-2026</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/substack-prompts-step-by-step</loc></url>
@@ -195,9 +206,16 @@
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/thumbnail-idea-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/thumbnail-idea-prompts-for-local-first-teams</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/typical-python-loop-setup-is-slow-brittle</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/video-title-prompts-a-minimal-working-example</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/video-title-prompts-vs-the-alternatives</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/wait-for-startup</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/why-markets-behave-like-an-ai-benchmarks-numbers</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/workout-caption-prompts-benchmarks-numbers</loc></url>
   <url><loc>https://ptrken01.github.io/incomeos-site/articles/workout-caption-prompts-in-2026</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/articles/youtube-script-prompts-a-practical-dev-guide</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/tools/catalog-cluster</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/tools/tool-automatisch</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/tools/tool-scrapegraphai</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/tools/tool-scrapy</loc></url>
+  <url><loc>https://ptrken01.github.io/incomeos-site/tools/tool-trafilatura</loc></url>
 </urlset>

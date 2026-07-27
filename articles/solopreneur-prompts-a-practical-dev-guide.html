@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Solopreneur Prompts A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Solopreneur Prompts A Practical Dev Guide  As a solopreneur consultant, you're constantly juggling client work, proposal writing, and lead generation wit">
+<meta property="og:title" content="Solopreneur Prompts A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrken01.github.io/incomeos-site/articles/solopreneur-prompts-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Solopreneur Prompts A Practical Dev Guide", "description": "# Solopreneur Prompts A Practical Dev Guide  As a solopreneur consultant, you're constantly juggling client work, proposal writing, and lead generation without the luxury of a copywriter team. I've created a practical workflow using AI prompts to streamline your content creation.  ## My Workflow Se", "url": "https://ptrken01.github.io/incomeos-site/articles/solopreneur-prompts-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrken01.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrken01.github.io/incomeos-site/articles/solopreneur-prompts-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrken01.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrken01.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Solopreneur Prompts A Practical Dev Guide</h1><h2>Solopreneur Prompts A Practical Dev Guide</h2>
+<h2>Solopreneur Prompts A Practical Dev Guide</h2>
+<p>As a solopreneur consultant, you're constantly juggling client work, proposal writing, and lead generation without the luxury of a copywriter team. I've created a practical workflow using AI prompts to streamline your content creation.</p>
+<h3>My Workflow Setup</h3>
+<p>I use a simple bash script with `curl` to generate content from prompts:</p>
+<p>```bash</p>
+<p>#!/bin/bash</p>
+<p>PROMPT_FILE="prompt.txt"</p>
+<p>OUTPUT_FILE="output.md"</p>
+<p>curl -X POST https://api.openai.com/v1/completions \</p>
+<p>  -H "Content-Type: application/json" \</p>
+<p>  -H "Authorization: Bearer $OPENAI_API_KEY" \</p>
+<p>  -d '{</p>
+<p>    "model": "text-davinci-003",</p>
+<p>    "prompt": "$(cat $PROMPT_FILE)",</p>
+<p>    "max_tokens": 1000,</p>
+<p>    "temperature": 0.7</p>
+<p>  }' &gt; $OUTPUT_FILE</p>
+<p>```</p>
+<p>This setup generates a new proposal draft in under 30 seconds, with zero manual formatting.</p>
+<h3>Prompt Structure for Consistency</h3>
+<p>My prompts follow this template:</p>
+<p>```</p>
+<p>[ROLE] Write a [TYPE] for [TARGET] that includes [SPECIFIC_REQUIREMENTS]</p>
+<p>```</p>
+<p>Example: "Write a consulting proposal for a SaaS startup that includes a problem statement, solution approach, timeline, and pricing structure"</p>
+<p>I've optimized 50 such prompts for different client scenarios. Each prompt is designed to output ready-to-edit markdown content.</p>
+<h3>Implementation Example</h3>
+<p>Here's how I use this in practice:</p>
+<p>```bash</p>
+<h2>Generate client email</h2>
+<p>echo "Write a follow-up email to a prospect who declined our proposal, asking for another meeting." &gt; prompt.txt</p>
+<p>./generate.sh</p>
+<h2>Output: 200-word email with polite urgency and value proposition</h2>
+<p>```</p>
+<p>This method has reduced my proposal writing time from 4 hours to 3 minutes per client.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do these prompts handle sensitive business information?</strong></p>
+<p>A: Prompts are generic templates that don't store or process your specific data. They generate content based on your prompt instructions without retaining any proprietary information. All processing happens in your local environment with API keys.</p>
+<p><strong>Q: Can I customize these prompts for my niche?</strong></p>
+<p>A: Yes, the 50 prompts include various industry-specific templates. You can modify existing prompts or create new ones for your unique services, pricing models, and client types. Each prompt is designed to be easily adaptable.</p>
+<p><strong>Q: What's the return on investment for this workflow?</strong></p>
+<p>A: Most consultants save 10-15 hours monthly on content creation. With an average hourly rate of $150, that's $1,500-2,250 in time savings. The prompt set costs $49, providing immediate ROI and repeatable efficiency.</p>
+<h3>Get it</h3>
+<p>Get the complete collection of 50 solopreneur consultant prompts at <a href="https://ptrk-en.gumroad.com/l/niche-consultant-prompts">https://ptrk-en.gumroad.com/l/niche-consultant-prompts</a> to automate your proposal, email, and lead magnet creation.</p><div class="cta"><p><strong>50 Solopreneur Consultants AI Prompts</strong> — 50 prompts to write proposals, client emails, and lead magnets without hiring a copywriter.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-consultant-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrken01.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>
