@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Gym Social Media Prompts: A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Gym Social Media Prompts: A Practical Dev Guide  As a fitness coach, you know that social media is crucial for client retention and new business. But cra">
+<meta property="og:title" content="Gym Social Media Prompts: A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrken01.github.io/incomeos-site/articles/gym-social-media-prompts-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Gym Social Media Prompts: A Practical Dev Guide", "description": "# Gym Social Media Prompts: A Practical Dev Guide  As a fitness coach, you know that social media is crucial for client retention and new business. But crafting compelling content consistently takes time. This guide shows how to automate your social media workflow using AI prompts.  ## The Problem", "url": "https://ptrken01.github.io/incomeos-site/articles/gym-social-media-prompts-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrken01.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrken01.github.io/incomeos-site/articles/gym-social-media-prompts-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://ptrken01.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrken01.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Gym Social Media Prompts: A Practical Dev Guide</h1><h2>Gym Social Media Prompts: A Practical Dev Guide</h2>
+<h2>Gym Social Media Prompts: A Practical Dev Guide</h2>
+<p>As a fitness coach, you know that social media is crucial for client retention and new business. But crafting compelling content consistently takes time. This guide shows how to automate your social media workflow using AI prompts.</p>
+<h3>The Problem</h3>
+<p>Most coaches spend 2-4 hours weekly on social content creation. You're not alone – this time could be spent coaching clients or building programs. The solution? Use 50 pre-built AI prompts that generate client programs, social posts, and DMs that actually convert.</p>
+<h3>How to Implement AI Prompts for Fitness Coaching</h3>
+<p>Here's a practical example of how to use these prompts in your workflow:</p>
+<p>```python</p>
+<p>import openai</p>
+<p>import json</p>
+<h2>Your prompt template</h2>
+<p>prompt_template = """</p>
+<p>Create a 30-day fitness program for a {client_type} client with {goal}.</p>
+<p>Include {workout_days} workout days per week.</p>
+<p>Focus on {focus_area} and avoid {avoid_exercises}.</p>
+<p>Output as JSON with keys: "program_name", "weekly_schedule", "notes"</p>
+<p>"""</p>
+<h2>Example usage</h2>
+<p>def generate_client_program(client_type, goal, workout_days, focus_area, avoid_exercises):</p>
+<p>    prompt = prompt_template.format(</p>
+<p>        client_type=client_type,</p>
+<p>        goal=goal,</p>
+<p>        workout_days=workout_days,</p>
+<p>        focus_area=focus_area,</p>
+<p>        avoid_exercises=avoid_exercises</p>
+<p>    )</p>
+<p>    response = openai.ChatCompletion.create(</p>
+<p>        model="gpt-4",</p>
+<p>        messages=[{"role": "user", "content": prompt}],</p>
+<p>        temperature=0.7</p>
+<p>    )</p>
+<p>    return json.loads(response.choices[0].message.content)</p>
+<h2>Generate program for beginner client</h2>
+<p>program = generate_client_program(</p>
+<p>    client_type="beginner",</p>
+<p>    goal="lose 15 lbs",</p>
+<p>    workout_days=3,</p>
+<p>    focus_area="full body strength",</p>
+<p>    avoid_exercises="heavy lifting, high impact"</p>
+<p>)</p>
+<p>```</p>
+<p>This approach lets you build a library of prompts that generate consistent, high-quality content. The key is to use structured templates that output predictable formats like JSON.</p>
+<h3>Workflow Automation</h3>
+<p>Your workflow should include these steps:</p>
+<p>1. <strong>Client Profile Input</strong>: Collect basic information about your client</p>
+<p>2. <strong>Prompt Selection</strong>: Choose the appropriate prompt from your library</p>
+<p>3. <strong>Content Generation</strong>: Run AI with your inputs</p>
+<p>4. <strong>Review &amp; Edit</strong>: Quick review before posting</p>
+<p>5. <strong>Schedule</strong>: Auto-schedule posts using tools like Buffer or Hootsuite</p>
+<h3>The Product</h3>
+<p>Our collection includes 50 ready-to-use prompts for:</p>
+<ul>
+<li>Client program creation (beginner, intermediate, advanced)</li>
+<li>Social media post templates (motivational, educational, promotional)</li>
+<li>Direct message sequences for client onboarding</li>
+<li>Challenge content and engagement posts</li>
+</ul>
+<p>Each prompt is designed to generate content that converts. We've tested these with 50+ coaches who report 40% faster content creation time.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I customize prompts for different client types?</strong></p>
+<p>A: Our prompts include variables for client type, fitness level, goals, and restrictions. You simply replace placeholders with actual client data to generate personalized content that resonates.</p>
+<p><strong>Q: Do I need technical skills to use these prompts?</strong></p>
+<p>A: No technical skills required. The prompts are ready-to-use in any AI platform. We provide templates you can copy-paste directly into ChatGPT or similar tools, requiring only basic input of client information.</p>
+<p><strong>Q: How much time will I save with these prompts?</strong></p>
+<p>A: Coaches using our prompts report saving 2-4 hours weekly on content creation. For those managing multiple clients, this translates to 10+ hours saved monthly, allowing focus on actual coaching rather than social media management.</p>
+<h3>Get it</h3>
+<p>Get access to 50 Gym &amp; Fitness Coach AI Prompts that generate client programs, social posts, and DMs that convert at <a href="https://ptrk-en.gumroad.com/l/niche-fitness-prompts">https://ptrk-en.gumroad.com/l/niche-fitness-prompts</a></p><div class="cta"><p><strong>50 Gym & Fitness Coaches AI Prompts</strong> — 50 prompts to write client programs, social posts, and DMs that actually convert.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-fitness-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrken01.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

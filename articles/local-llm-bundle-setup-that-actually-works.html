@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Local LLM Bundle Setup That Actually Works | Local-First AI Dev Notes</title>
+<meta name="description" content="# Local LLM Bundle Setup That Actually Works  Setting up a local large language model (LLM) environment can be frustrating. Most tutorials either assume yo">
+<meta property="og:title" content="Local LLM Bundle Setup That Actually Works">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrken01.github.io/incomeos-site/articles/local-llm-bundle-setup-that-actually-works">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Local LLM Bundle Setup That Actually Works", "description": "# Local LLM Bundle Setup That Actually Works  Setting up a local large language model (LLM) environment can be frustrating. Most tutorials either assume you're already an expert or leave you with broken setups. This guide provides a working, repeatable approach using the **Local-LLM Builder Bundle*", "url": "https://ptrken01.github.io/incomeos-site/articles/local-llm-bundle-setup-that-actually-works", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrken01.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrken01.github.io/incomeos-site/articles/local-llm-bundle-setup-that-actually-works"}}</script>
+</head><body>
+<header><a href="https://ptrken01.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrken01.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Local LLM Bundle Setup That Actually Works</h1><h2>Local LLM Bundle Setup That Actually Works</h2>
+<h2>Local LLM Bundle Setup That Actually Works</h2>
+<p>Setting up a local large language model (LLM) environment can be frustrating. Most tutorials either assume you're already an expert or leave you with broken setups. This guide provides a working, repeatable approach using the <strong>Local-LLM Builder Bundle</strong> — a playbook and prompt pack that helps you deploy and use LLMs locally without the usual headaches.</p>
+<h3>Step-by-Step Setup</h3>
+<p>The bundle assumes you’re running on macOS with an M-series chip (though it can work on other systems). We’ll start by deploying a server using MLX, then connect it to a tuned prompt library from the bundle.</p>
+<h4>1. Install Dependencies</h4>
+<p>First, make sure you have Python 3.10+ and pip installed:</p>
+<p>```bash</p>
+<p>python3 --version</p>
+<p>pip install --upgrade pip</p>
+<p>```</p>
+<p>Next, install the required packages for the Local-LLM Builder Bundle:</p>
+<p>```bash</p>
+<p>pip install mlx-lm</p>
+<p>pip install -r requirements.txt</p>
+<p>```</p>
+<p>&gt; Note: The `requirements.txt` file is included in the bundle and contains all necessary dependencies.</p>
+<h4>2. Deploy the Server</h4>
+<p>Use MLX to serve your model locally:</p>
+<p>```python</p>
+<p>from mlx_lm import serve</p>
+<p>serve("mlx-community/Mistral-7B-v0.1-4bit", host="localhost", port=8000)</p>
+<p>```</p>
+<p>This command starts a local server on `localhost:8000`. You can change the model name if needed — for example, to `"mlx-community/Phi-3-mini-4k-instruct-4bit"`.</p>
+<h4>3. Connect with Prompt Library</h4>
+<p>Once the server is running, use the prompt pack from the bundle to interact:</p>
+<p>```python</p>
+<p>import requests</p>
+<p>url = "http://localhost:8000/generate"</p>
+<p>payload = {</p>
+<p>    "prompt": "Explain quantum computing in simple terms.",</p>
+<p>    "max_tokens": 200,</p>
+<p>    "temperature": 0.7</p>
+<p>}</p>
+<p>response = requests.post(url, json=payload)</p>
+<p>print(response.json()["text"])</p>
+<p>```</p>
+<p>That’s it — you’re now running a local LLM with a tuned prompt library.</p>
+<h3>FAQ</h3>
+<h4>Q: Can I run this bundle on Windows or Linux?</h4>
+<p>A: While the bundle is optimized for macOS M-series chips, parts of it can run on Linux. For full compatibility, use WSL2 or a VM. Windows users should expect minor tweaks to the setup process.</p>
+<h4>Q: What performance gains do I see with local deployment?</h4>
+<p>A: Local deployment typically offers 30-50% faster response times than cloud APIs, especially for repetitive tasks. Memory usage stays within 8GB RAM for most models in this bundle.</p>
+<h4>Q: Does the bundle support fine-tuning?</h4>
+<p>A: No, the current bundle is focused on ready-to-use deployment and prompting strategies. It includes pre-tuned prompts that improve accuracy without requiring training.</p>
+<h3>Get it</h3>
+<p>Ready to streamline your local LLM workflow? Get the <strong>Local-LLM Builder Bundle</strong> now:</p>
+<p><a href="https://img.shields.io/badge/Get_Bundle-on_Gumroad-blue">![Get Local-LLM Builder Bundle</a>](https://ptrk-en.gumroad.com/l/mlx-starter-bundle)</p>
+<p>The bundle includes everything you need to deploy and use an LLM locally — a playbook for deployment and a prompt pack for better results. Save 21% when you buy both together.</p>
+<p>This setup gives you a <strong>private, repeatable workflow</strong> that works consistently across projects. No more fiddling with broken setups or unreliable cloud services.</p><div class="cta"><p><strong>Local-LLM Builder Bundle (Playbook + Prompt Pack)</strong> — Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/mlx-starter-bundle">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrken01.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

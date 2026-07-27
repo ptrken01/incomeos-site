@@ -44,6 +44,7 @@
 - [Ai Passive Income Step-by-Step](https://ptrken01.github.io/incomeos-site/articles/ai-passive-income-step-by-step)
 - [Ai Prompt Library: A Practical 2026 Guide](https://ptrken01.github.io/incomeos-site/articles/ai-prompt-library-a-practical-2026-guide)
 - [Ai Prompts For Realtors Setup That Actually Works](https://ptrken01.github.io/incomeos-site/articles/ai-prompts-for-realtors-setup-that-actually-works)
+- [AI Prompts For Realtors vs the Alternatives](https://ptrken01.github.io/incomeos-site/articles/ai-prompts-for-realtors-vs-the-alternatives)
 - [Ai Shopping Agents Common Pitfalls](https://ptrken01.github.io/incomeos-site/articles/ai-shopping-agents-common-pitfalls)
 - [AI Skills For Professionals Setup That Actually Works](https://ptrken01.github.io/incomeos-site/articles/ai-skills-for-professionals-setup-that-actually-works)
 - [AI Workflow Pack in 2026](https://ptrken01.github.io/incomeos-site/articles/ai-workflow-pack-in-2026)
@@ -62,4 +63,3 @@
 - [Build Digital Products With AI: A Minimal Working Example](https://ptrken01.github.io/incomeos-site/articles/build-digital-products-with-ai-a-minimal-working-example)
 - [Capitalism Is AI Thesis in Plain English](https://ptrken01.github.io/incomeos-site/articles/capitalism-is-ai-thesis-in-plain-english)
 - [ChatGPT Prompt Pack: A Practical Dev Guide](https://ptrken01.github.io/incomeos-site/articles/chatgpt-prompt-pack-a-practical-dev-guide)
-- [Ci Local Aws Testing: A Minimal Working Example](https://ptrken01.github.io/incomeos-site/articles/ci-local-aws-testing-a-minimal-working-example)
