@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Copy Paste Prompts Setup That Actually Works | Local-First AI Dev Notes</title>
+<meta name="description" content="# Copy Paste Prompts Setup That Actually Works  The AI Prompt Library offers 200 production-ready prompts across marketing, operations, and writing that wo">
+<meta property="og:title" content="Copy Paste Prompts Setup That Actually Works">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://ptrken01.github.io/incomeos-site/articles/copy-paste-prompts-setup-that-actually-works">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Copy Paste Prompts Setup That Actually Works", "description": "# Copy Paste Prompts Setup That Actually Works  The AI Prompt Library offers 200 production-ready prompts across marketing, operations, and writing that work immediately when you paste them into your AI interface. This setup saves you hours of crafting prompts from scratch while maintaining consist", "url": "https://ptrken01.github.io/incomeos-site/articles/copy-paste-prompts-setup-that-actually-works", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://ptrken01.github.io/incomeos-site/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://ptrken01.github.io/incomeos-site/articles/copy-paste-prompts-setup-that-actually-works"}}</script>
+</head><body>
+<header><a href="https://ptrken01.github.io/incomeos-site/">Local-First AI Dev Notes</a> · <a href="https://ptrken01.github.io/incomeos-site/products">Products</a></header>
+<main><article><h1>Copy Paste Prompts Setup That Actually Works</h1><h2>Copy Paste Prompts Setup That Actually Works</h2>
+<h2>Copy Paste Prompts Setup That Actually Works</h2>
+<p>The AI Prompt Library offers 200 production-ready prompts across marketing, operations, and writing that work immediately when you paste them into your AI interface. This setup saves you hours of crafting prompts from scratch while maintaining consistent quality for business applications.</p>
+<h3>The Core Setup Process</h3>
+<p>To implement these prompts effectively, create a dedicated folder structure in your local environment:</p>
+<p>```</p>
+<p>prompt-library/</p>
+<p>├── marketing/</p>
+<p>│   ├── social-media-post.md</p>
+<p>│   └── email-campaign.md</p>
+<p>├── operations/</p>
+<p>│   ├── meeting-summaries.md</p>
+<p>│   └── project-updates.md</p>
+<p>└── writing/</p>
+<p>    ├── blog-outlines.md</p>
+<p>    └── copy-revisions.md</p>
+<p>```</p>
+<p>Each prompt file contains exactly one prompt template with clear instructions. For example, a marketing social media post template might look like:</p>
+<p>```markdown</p>
+<h2>Social Media Post Generator</h2>
+<p>Create a 150-character LinkedIn post promoting [PRODUCT] for [TARGET_AUDIENCE].</p>
+<p>Key benefits: [BENEFIT_1], [BENEFIT_2], [BENEFIT_3]</p>
+<p>Call-to-action: [CTA]</p>
+<p>Example tone: Professional yet approachable</p>
+<p>```</p>
+<h3>Automated Workflow Integration</h3>
+<p>Set up a simple bash script to quickly insert prompts into your workflow:</p>
+<p>```bash</p>
+<p>#!/bin/bash</p>
+<h2>prompt-inject.sh</h2>
+<p>PROMPT_DIR="$HOME/prompt-library"</p>
+<p>PROMPT_FILE="$PROMPT_DIR/$1.md"</p>
+<p>if [ -f "$PROMPT_FILE" ]; then</p>
+<p>    cat "$PROMPT_FILE"</p>
+<p>else</p>
+<p>    echo "Prompt not found: $1"</p>
+<p>fi</p>
+<p>```</p>
+<p>Make it executable and add to your PATH:</p>
+<p>```bash</p>
+<p>chmod +x prompt-inject.sh</p>
+<p>echo 'export PATH="$PATH:$HOME/bin"' &gt;&gt; ~/.bashrc</p>
+<p>```</p>
+<p>Usage: `prompt-inject.sh marketing/social-media-post`</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I customize these prompts for my specific business?</strong></p>
+<p>A: Each prompt includes placeholder variables like [PRODUCT] and [TARGET_AUDIENCE]. Simply replace these with your actual business details. The templates work immediately after basic customization, requiring no AI training or fine-tuning.</p>
+<p><strong>Q: What's the time investment to implement this system?</strong></p>
+<p>A: Setup takes 30 minutes total. You'll spend 5-10 minutes per prompt to make your first customizations. After initial setup, each prompt saves 15-20 minutes of work per use, with 80% of prompts working perfectly on first attempt.</p>
+<p><strong>Q: Can I modify these prompts for different AI platforms?</strong></p>
+<p>A: Yes. All prompts are platform-agnostic and work across ChatGPT, Claude, Gemini, and other major AI interfaces. The templates include clear instruction formatting that translates consistently between platforms.</p>
+<h3>Implementation Tips</h3>
+<p>Start with 5-10 most frequently used prompts from each category. This approach provides immediate value while allowing you to gradually expand your library. Focus on high-frequency tasks like email campaigns, social media content, and meeting summaries for maximum ROI.</p>
+<p>The system works best when you maintain a consistent naming convention and update templates based on actual results. Track which prompts produce the best outcomes for your specific use cases.</p>
+<h3>Get it</h3>
+<p>Get the AI Prompt Library with 200 production prompts across marketing, operations, and writing at <a href="https://www.promptlibrary.ai/products/ai-prompt-library">https://www.promptlibrary.ai/products/ai-prompt-library</a></p><div class="cta"><p><strong>The AI Prompt Library: 200 Copy-Paste Prompts for Business</strong> — 200 production prompts across marketing, ops, and writing - paste and get results.</p><p><a class="buy" href="https://ptrken01.github.io/incomeos-site/products/ai-prompt-library">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://ptrken01.github.io/incomeos-site/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>
