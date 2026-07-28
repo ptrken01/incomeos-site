@@ -5,63 +5,63 @@
 ## Products
 - [Local LLM on Apple Silicon — The MLX Deploy Playbook](https://ptrk-en.gumroad.com/l/rwgjx): The exact recipe to serve fast, private LLMs on your Mac — including the silent failures nobody documents.
 - [The MLX-Optimized Local-LLM Prompt Pack](https://ptrk-en.gumroad.com/l/zvniv): 48 production prompts tuned for smaller local models — copy-paste + JSON for agent loops.
-- [Local-LLM Builder Bundle (Playbook + Prompt Pack)](https://ptrken01.github.io/incomeos-site/products/mlx-starter-bundle): Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.
+- [Local-LLM Builder Bundle (Playbook + Prompt Pack)](https://autoincomesys.com/products/mlx-starter-bundle): Both products together: deploy the server, then drive it with the tuned prompt library. Save 21%.
 - [50 Real Estate Agents AI Prompts](https://ptrk-en.gumroad.com/l/skaskr): 50 ready-to-use prompts so real estate agents write listings, follow-ups, and ads in minutes.
 - [50 Gym & Fitness Coaches AI Prompts](https://ptrk-en.gumroad.com/l/stmnn): 50 prompts to write client programs, social posts, and DMs that actually convert.
-- [50 Etsy & Small-Shop Sellers AI Prompts](https://ptrken01.github.io/incomeos-site/products/niche-etsy-prompts): 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.
-- [50 Solopreneur Consultants AI Prompts](https://ptrken01.github.io/incomeos-site/products/niche-consultant-prompts): 50 prompts to write proposals, client emails, and lead magnets without hiring a copywriter.
-- [50 Youtubers & Video Creators AI Prompts](https://ptrken01.github.io/incomeos-site/products/niche-youtuber-prompts): 50 prompts for video scripts, titles, and thumbnails that get clicked.
-- [50 Newsletter Authors AI Prompts](https://ptrken01.github.io/incomeos-site/products/niche-newsletter-prompts): 50 prompts for issue openers, subject lines, and growth tweets that build a list.
-- [50 Local Service Businesses AI Prompts](https://ptrken01.github.io/incomeos-site/products/niche-localservice-prompts): 50 prompts for local service businesses to write Google posts, quotes, and review requests.
-- [50 Course Creators AI Prompts](https://ptrken01.github.io/incomeos-site/products/niche-coursecreator-prompts): 50 prompts for course outlines, lesson scripts, and launch emails that sell.
-- [The AI Automation Playbook: 51 Workflows for Small Business](https://ptrken01.github.io/incomeos-site/products/ai-automation-playbook): 51 ready-to-deploy AI workflows that cut admin time for small teams - copy-paste, not theory.
-- [The AI Prompt Library: 200 Copy-Paste Prompts for Business](https://ptrken01.github.io/incomeos-site/products/ai-prompt-library): 200 production prompts across marketing, ops, and writing - paste and get results.
-- [AI for Non-Techies: The 2026 Productivity Guide](https://ptrken01.github.io/incomeos-site/products/ai-skills-ebook): The plain-English guide to using AI for real work - no code, no jargon.
-- [The 2026 AI Stack: 60 Tools + Local-LLM Setup Guide](https://ptrken01.github.io/incomeos-site/products/ai-tools-stack-guide): The 60 tools worth using in 2026, plus how to run a private LLM on your Mac.
-- [The Passive Income Playbook: Build Digital Products with AI](https://ptrken01.github.io/incomeos-site/products/passive-income-playbook): The exact system to launch AI-built digital products that sell while you sleep.
-- [The AI Agentic Commerce System: Sell to Autonomous Buyers](https://ptrken01.github.io/incomeos-site/products/ai-agentic-commerce-system): The blueprint for building products and listings that autonomous AI buyers purchase.
-- [AI Philosophy & Hyperstition Strategy Notes](https://ptrken01.github.io/incomeos-site/products/ai-philosophy): How self-fulfilling ideas, positive feedback, and the 'capitalism is AI' thesis actually inform practical brand + automation strategy.
-- [Mechanism-Design Pricing Playbook for AI Agents](https://ptrken01.github.io/incomeos-site/products/math-mechanism-design-pricing): How to design revenue-maximizing pricing and auction rules an AI agent can compute and a client can trust.
-- [Optimal-Stopping Decisions Playbook for Agents](https://ptrken01.github.io/incomeos-site/products/math-optimal-stopping): When to act, sell, or stop under uncertainty — the math a decision agent should run for a client.
-- [Operations Optimization Pack for AI Agents](https://ptrken01.github.io/incomeos-site/products/math-operations-optimization): Solve client logistics, scheduling, and allocation problems with combinatorial-optimization math.
+- [50 Etsy & Small-Shop Sellers AI Prompts](https://autoincomesys.com/products/niche-etsy-prompts): 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.
+- [50 Solopreneur Consultants AI Prompts](https://autoincomesys.com/products/niche-consultant-prompts): 50 prompts to write proposals, client emails, and lead magnets without hiring a copywriter.
+- [50 Youtubers & Video Creators AI Prompts](https://autoincomesys.com/products/niche-youtuber-prompts): 50 prompts for video scripts, titles, and thumbnails that get clicked.
+- [50 Newsletter Authors AI Prompts](https://autoincomesys.com/products/niche-newsletter-prompts): 50 prompts for issue openers, subject lines, and growth tweets that build a list.
+- [50 Local Service Businesses AI Prompts](https://autoincomesys.com/products/niche-localservice-prompts): 50 prompts for local service businesses to write Google posts, quotes, and review requests.
+- [50 Course Creators AI Prompts](https://autoincomesys.com/products/niche-coursecreator-prompts): 50 prompts for course outlines, lesson scripts, and launch emails that sell.
+- [The AI Automation Playbook: 51 Workflows for Small Business](https://autoincomesys.com/products/ai-automation-playbook): 51 ready-to-deploy AI workflows that cut admin time for small teams - copy-paste, not theory.
+- [The AI Prompt Library: 200 Copy-Paste Prompts for Business](https://autoincomesys.com/products/ai-prompt-library): 200 production prompts across marketing, ops, and writing - paste and get results.
+- [AI for Non-Techies: The 2026 Productivity Guide](https://autoincomesys.com/products/ai-skills-ebook): The plain-English guide to using AI for real work - no code, no jargon.
+- [The 2026 AI Stack: 60 Tools + Local-LLM Setup Guide](https://autoincomesys.com/products/ai-tools-stack-guide): The 60 tools worth using in 2026, plus how to run a private LLM on your Mac.
+- [The Passive Income Playbook: Build Digital Products with AI](https://autoincomesys.com/products/passive-income-playbook): The exact system to launch AI-built digital products that sell while you sleep.
+- [The AI Agentic Commerce System: Sell to Autonomous Buyers](https://autoincomesys.com/products/ai-agentic-commerce-system): The blueprint for building products and listings that autonomous AI buyers purchase.
+- [AI Philosophy & Hyperstition Strategy Notes](https://autoincomesys.com/products/ai-philosophy): How self-fulfilling ideas, positive feedback, and the 'capitalism is AI' thesis actually inform practical brand + automation strategy.
+- [Mechanism-Design Pricing Playbook for AI Agents](https://autoincomesys.com/products/math-mechanism-design-pricing): How to design revenue-maximizing pricing and auction rules an AI agent can compute and a client can trust.
+- [Optimal-Stopping Decisions Playbook for Agents](https://autoincomesys.com/products/math-optimal-stopping): When to act, sell, or stop under uncertainty — the math a decision agent should run for a client.
+- [Operations Optimization Pack for AI Agents](https://autoincomesys.com/products/math-operations-optimization): Solve client logistics, scheduling, and allocation problems with combinatorial-optimization math.
 - [Time-Series Forecasting Pack for Agents](https://ptrk-en.gumroad.com/l/math-time-series-forecasting): Forecast demand, load, and revenue for a client with transformer-based time-series models.
 - [Queueing & Service-Throughput Pack for Agents](https://ptrk-en.gumroad.com/l/math-queueing-service): Optimize a client's service/throughput system with queueing-theory math an agent can apply.
 - [Game-Theoretic Multi-Agent Strategy Pack](https://ptrk-en.gumroad.com/l/math-game-theory-multiagent): Model competitor and multi-agent interactions so an agent can price and move strategically.
 - [Stochastic-Control Trading Policy Pack](https://ptrk-en.gumroad.com/l/math-stochastic-control-trading): Run a mathematical trading and portfolio policy an agent can execute and explain.
 - [Learning-to-Rank & Retrieval Pack for Agents](https://ptrk-en.gumroad.com/l/math-learning-to-rank): Build a client search/recommendation ranking model with learning-to-rank math.
 - [Embeddings & Similarity Pack for Agents](https://ptrk-en.gumroad.com/l/math-linear-algebra-embeddings): Build recommendation, similarity, and embedding systems with linear-algebra math.
-- [Risk & Actuarial Pricing Pack for Agents](https://ptrken01.github.io/incomeos-site/products/math-risk-actuarial-pricing): Price insurance and risk models for a client with coherent risk-measure math.
-- [Web Scrapers Compared — Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, Free)](https://ptrken01.github.io/incomeos-site/products/web-scrapers-compared): Which free, local-first scraper to use for which job — with license honesty and a real smoke test.
-- [Self-Hosted Automation Compared — Automatisch vs n8n (Why n8n Costs You, Automatisch Doesn't)](https://ptrken01.github.io/incomeos-site/products/self-hosted-automation-compared): The n8n fair-code license trap, and how to deploy Automatisch free with a working docker-compose.
+- [Risk & Actuarial Pricing Pack for Agents](https://autoincomesys.com/products/math-risk-actuarial-pricing): Price insurance and risk models for a client with coherent risk-measure math.
+- [Web Scrapers Compared — Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, Free)](https://autoincomesys.com/products/web-scrapers-compared): Which free, local-first scraper to use for which job — with license honesty and a real smoke test.
+- [Self-Hosted Automation Compared — Automatisch vs n8n (Why n8n Costs You, Automatisch Doesn't)](https://autoincomesys.com/products/self-hosted-automation-compared): The n8n fair-code license trap, and how to deploy Automatisch free with a working docker-compose.
 
 ## Latest articles
-- [Agent Loop Prompts Setup That Actually Works](https://ptrken01.github.io/incomeos-site/articles/agent-loop-prompts-setup-that-actually-works)
-- [Agentic Commerce: A Practical 2026 Guide](https://ptrken01.github.io/incomeos-site/articles/agentic-commerce-a-practical-2026-guide)
-- [Agentic Commerce Benchmarks & Numbers](https://ptrken01.github.io/incomeos-site/articles/agentic-commerce-benchmarks-numbers)
-- [AI Automation Workflows: A Practical 2026 Guide](https://ptrken01.github.io/incomeos-site/articles/ai-automation-workflows-a-practical-2026-guide)
-- [AI Automation Workflows: A Practical Dev Guide](https://ptrken01.github.io/incomeos-site/articles/ai-automation-workflows-a-practical-dev-guide)
-- [Ai Automation Workflows Step-by-Step](https://ptrken01.github.io/incomeos-site/articles/ai-automation-workflows-step-by-step)
-- [AI For Beginners vs the Alternatives](https://ptrken01.github.io/incomeos-site/articles/ai-for-beginners-vs-the-alternatives)
-- [AI For Non Technical: A Practical 2026 Guide](https://ptrken01.github.io/incomeos-site/articles/ai-for-non-technical-a-practical-2026-guide)
-- [AI For Non Technical: Common Pitfalls](https://ptrken01.github.io/incomeos-site/articles/ai-for-non-technical-common-pitfalls)
-- [Ai Passive Income Step-by-Step](https://ptrken01.github.io/incomeos-site/articles/ai-passive-income-step-by-step)
-- [AI Productivity Guide: Common Pitfalls](https://ptrken01.github.io/incomeos-site/articles/ai-productivity-guide-common-pitfalls)
-- [Ai Prompt Library: A Minimal Working Example](https://ptrken01.github.io/incomeos-site/articles/ai-prompt-library-a-minimal-working-example)
-- [Ai Prompt Library: A Practical 2026 Guide](https://ptrken01.github.io/incomeos-site/articles/ai-prompt-library-a-practical-2026-guide)
-- [Ai Prompts For Realtors Setup That Actually Works](https://ptrken01.github.io/incomeos-site/articles/ai-prompts-for-realtors-setup-that-actually-works)
-- [AI Prompts For Realtors vs the Alternatives](https://ptrken01.github.io/incomeos-site/articles/ai-prompts-for-realtors-vs-the-alternatives)
-- [Ai Shopping Agents Common Pitfalls](https://ptrken01.github.io/incomeos-site/articles/ai-shopping-agents-common-pitfalls)
-- [AI Skills For Professionals Setup That Actually Works](https://ptrken01.github.io/incomeos-site/articles/ai-skills-for-professionals-setup-that-actually-works)
-- [AI Workflow Pack Benchmarks & Numbers](https://ptrken01.github.io/incomeos-site/articles/ai-workflow-pack-benchmarks-numbers)
-- [AI Workflow Pack in 2026](https://ptrken01.github.io/incomeos-site/articles/ai-workflow-pack-in-2026)
-- [Apple Silicon LLM Server for Local-First Teams](https://ptrken01.github.io/incomeos-site/articles/apple-silicon-llm-server-for-local-first-teams)
-- [Apple Silicon Llm Server Step By Step](https://ptrken01.github.io/incomeos-site/articles/apple-silicon-llm-server-step-by-step)
-- [Autonomous Commerce 2026: A Practical Dev Guide](https://ptrken01.github.io/incomeos-site/articles/autonomous-commerce-2026-a-practical-dev-guide)
-- [AWS S3 Local Development: A Minimal Working Example](https://ptrken01.github.io/incomeos-site/articles/aws-s3-local-development-a-minimal-working-example)
-- [AWS S3 Local Development - A Practical Dev Guide](https://ptrken01.github.io/incomeos-site/articles/aws-s3-local-development-a-practical-dev-guide)
-- [AWS S3 Local Development CI/CD Setup That Actually Works](https://ptrken01.github.io/incomeos-site/articles/aws-s3-local-development-ci-cd-setup-that-actually-works)
-- [AWS S3 Local Development Step-by-Step](https://ptrken01.github.io/incomeos-site/articles/aws-s3-local-development-step-by-step)
-- [AWS Sandbox Local: A Practical Dev Guide](https://ptrken01.github.io/incomeos-site/articles/aws-sandbox-local-a-practical-dev-guide)
-- [AWS Sandbox Local Benchmarks & Numbers](https://ptrken01.github.io/incomeos-site/articles/aws-sandbox-local-benchmarks-numbers)
-- [AWS Sandbox Local vs the Alternatives](https://ptrken01.github.io/incomeos-site/articles/aws-sandbox-local-vs-the-alternatives)
-- [Best AI Tools 2026: A Practical 2026 Guide](https://ptrken01.github.io/incomeos-site/articles/best-ai-tools-2026-a-practical-2026-guide)
+- [Agent Loop Prompts Setup That Actually Works](https://autoincomesys.com/articles/agent-loop-prompts-setup-that-actually-works)
+- [Agentic Commerce: A Practical 2026 Guide](https://autoincomesys.com/articles/agentic-commerce-a-practical-2026-guide)
+- [Agentic Commerce Benchmarks & Numbers](https://autoincomesys.com/articles/agentic-commerce-benchmarks-numbers)
+- [AI Automation Workflows: A Practical 2026 Guide](https://autoincomesys.com/articles/ai-automation-workflows-a-practical-2026-guide)
+- [AI Automation Workflows: A Practical Dev Guide](https://autoincomesys.com/articles/ai-automation-workflows-a-practical-dev-guide)
+- [Ai Automation Workflows Step-by-Step](https://autoincomesys.com/articles/ai-automation-workflows-step-by-step)
+- [AI For Beginners vs the Alternatives](https://autoincomesys.com/articles/ai-for-beginners-vs-the-alternatives)
+- [AI For Non Technical: A Practical 2026 Guide](https://autoincomesys.com/articles/ai-for-non-technical-a-practical-2026-guide)
+- [AI For Non Technical: Common Pitfalls](https://autoincomesys.com/articles/ai-for-non-technical-common-pitfalls)
+- [Ai Passive Income Step-by-Step](https://autoincomesys.com/articles/ai-passive-income-step-by-step)
+- [AI Productivity Guide: Common Pitfalls](https://autoincomesys.com/articles/ai-productivity-guide-common-pitfalls)
+- [Ai Prompt Library: A Minimal Working Example](https://autoincomesys.com/articles/ai-prompt-library-a-minimal-working-example)
+- [Ai Prompt Library: A Practical 2026 Guide](https://autoincomesys.com/articles/ai-prompt-library-a-practical-2026-guide)
+- [Ai Prompts For Realtors Setup That Actually Works](https://autoincomesys.com/articles/ai-prompts-for-realtors-setup-that-actually-works)
+- [AI Prompts For Realtors vs the Alternatives](https://autoincomesys.com/articles/ai-prompts-for-realtors-vs-the-alternatives)
+- [Ai Shopping Agents Common Pitfalls](https://autoincomesys.com/articles/ai-shopping-agents-common-pitfalls)
+- [AI Skills For Professionals Setup That Actually Works](https://autoincomesys.com/articles/ai-skills-for-professionals-setup-that-actually-works)
+- [AI Workflow Pack Benchmarks & Numbers](https://autoincomesys.com/articles/ai-workflow-pack-benchmarks-numbers)
+- [AI Workflow Pack in 2026](https://autoincomesys.com/articles/ai-workflow-pack-in-2026)
+- [Apple Silicon LLM Server for Local-First Teams](https://autoincomesys.com/articles/apple-silicon-llm-server-for-local-first-teams)
+- [Apple Silicon Llm Server Step By Step](https://autoincomesys.com/articles/apple-silicon-llm-server-step-by-step)
+- [Autonomous Commerce 2026: A Practical Dev Guide](https://autoincomesys.com/articles/autonomous-commerce-2026-a-practical-dev-guide)
+- [AWS S3 Local Development: A Minimal Working Example](https://autoincomesys.com/articles/aws-s3-local-development-a-minimal-working-example)
+- [AWS S3 Local Development - A Practical Dev Guide](https://autoincomesys.com/articles/aws-s3-local-development-a-practical-dev-guide)
+- [AWS S3 Local Development CI/CD Setup That Actually Works](https://autoincomesys.com/articles/aws-s3-local-development-ci-cd-setup-that-actually-works)
+- [AWS S3 Local Development Step-by-Step](https://autoincomesys.com/articles/aws-s3-local-development-step-by-step)
+- [AWS Sandbox Local: A Practical Dev Guide](https://autoincomesys.com/articles/aws-sandbox-local-a-practical-dev-guide)
+- [AWS Sandbox Local Benchmarks & Numbers](https://autoincomesys.com/articles/aws-sandbox-local-benchmarks-numbers)
+- [AWS Sandbox Local vs the Alternatives](https://autoincomesys.com/articles/aws-sandbox-local-vs-the-alternatives)
+- [Best AI Tools 2026: A Practical 2026 Guide](https://autoincomesys.com/articles/best-ai-tools-2026-a-practical-2026-guide)
