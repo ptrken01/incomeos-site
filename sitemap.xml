@@ -237,6 +237,7 @@
   <url><loc>https://autoincomesys.com/tools/99</loc></url>
   <url><loc>https://autoincomesys.com/tools/a-curated-list-of-awesome-llm-agents-frameworks-github</loc></url>
   <url><loc>https://autoincomesys.com/tools/a-directory-of-open-source-mcp-servers-r-claudeai-reddit</loc></url>
+  <url><loc>https://autoincomesys.com/tools/activepieces</loc></url>
   <url><loc>https://autoincomesys.com/tools/agent-framework</loc></url>
   <url><loc>https://autoincomesys.com/tools/agent-s</loc></url>
   <url><loc>https://autoincomesys.com/tools/agenta</loc></url>
@@ -261,6 +262,7 @@
   <url><loc>https://autoincomesys.com/tools/best-7-python-web-scraping-libraries-in-2026-scraperapi</loc></url>
   <url><loc>https://autoincomesys.com/tools/best-free-mcp-servers-in-2026-top-open-source-picks</loc></url>
   <url><loc>https://autoincomesys.com/tools/best-free-open-source-mcp-servers-2026-guide</loc></url>
+  <url><loc>https://autoincomesys.com/tools/best-local-llm-runners-agents</loc></url>
   <url><loc>https://autoincomesys.com/tools/best-local-llm-runners-for-agents-2025-benchmarks-fastio</loc></url>
   <url><loc>https://autoincomesys.com/tools/best-open-source-web-scraping-libraries-in-2026-firecrawl</loc></url>
   <url><loc>https://autoincomesys.com/tools/bitnet</loc></url>
@@ -271,6 +273,193 @@
   <url><loc>https://autoincomesys.com/tools/bullshit-benchmark</loc></url>
   <url><loc>https://autoincomesys.com/tools/cai</loc></url>
   <url><loc>https://autoincomesys.com/tools/camel</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-12-factor-agents</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-4o-ghibli-at-home</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-500-ai-agents-projects</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-99</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agent-framework</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agent-s</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agenta</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agents-towards-production</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agents.md</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agentskills</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-agno</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-ai-notes</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-aider</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-anything-llm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-aphrodite-engine</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-archgw</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-augmentoolkit</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-autogen</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-autogpt</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-awesome-context-engineering</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-bitnet</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-browser-use</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-bullshit-benchmark</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-cai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-camel</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-chatbox</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-chrome-devtools-mcp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-claraverse</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-claude-context</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-cline</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-codex</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-cognee</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-context-engineering</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-context7</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-continue</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-controllable-rag-agent</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-courses</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-crewai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-crush</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-cua</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-cubesandbox</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-dbhub</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-deepwiki-open</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-distributed-llama</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-dynamo</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-evaluator</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-executorch</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-exo</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-fastflowlm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-firecrawl</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-flashinfer</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-flowise</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-gabber</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-garak</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-genai_agents</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-genkit</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-gguf-docs</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-giskard</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-github-mcp-server</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-goose</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-gpt-researcher</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-gpustack</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-graphiti</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-graphrag</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-guardrails</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-gym</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-haystack</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-heretic</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-humanlayer</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-ik_llama.cpp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-jan</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-kiln</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-kilocode</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-koboldcpp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-krasis</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-langchain-rag-cookbook</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-langchain</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-langflow</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-langfuse</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-lemonade</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-letta</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-lightrag</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-litert-lm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-litert</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llama-swap</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llama.cpp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llama_index</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llguidance</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llm-agents-ecosystem-handbook</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llm-app</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llm-scaler</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-llmfit</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-lmcache</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-lobe-chat</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-local-deep-research</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-local-deep-researcher</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-local-llm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-localai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-maestro</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mcp-atlassian</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mcp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mem0</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mempalace</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-memu</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-miles</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mindsdb</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mini-sglang</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mistral.rs</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mlx-lm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mlx-vlm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-mobile-use</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-n8n-mcp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-nano-vllm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-nanobrowser</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-nanochat</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-nemo-agent-toolkit</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-nemoclaw</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-observer</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-ollama</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-omlx</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-omnigen2</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-omniparser</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-onyx</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-open-interpreter</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-open-notebook</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-open-webui</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openai-agents-python</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-opencode</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openenv</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openhands</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openllmetry</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openrlhf</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openroom</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openshell</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-openwork</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-opik</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-outlines</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-page-assist</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-pathway</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-perplexica</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-pi</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-pipeshub-ai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-playwright-mcp</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-playwright</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-presenton</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-production-stack</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-prompt-engineering-guide</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-prompt_engineering</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-promptcat</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-proxyai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-puppeteer</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-pydantic-ai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-rag_techniques</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-ragbits</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-rd-agent</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-reasoning-bank</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-rl</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-roo-code</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-self-operating-computer</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-sentence-transformers</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-sglang</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-sillytavern</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-sim</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-skills</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-slime</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-speakr</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-stagehand</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-superagi</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-supermemory</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-superpowers</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-surfsense</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-system-prompts-and-models-of-ai-tools</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-system_prompts_leaks</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-tabby</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-tensorrt-llm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-text-generation-webui</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-tokenspeed</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-trl</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-txtai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-unsloth</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-vakra</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-vanna</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-vllm-gfx906</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-vllm</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-void</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-zed</loc></url>
+  <url><loc>https://autoincomesys.com/tools/cat-zluda</loc></url>
   <url><loc>https://autoincomesys.com/tools/catalog-cluster</loc></url>
   <url><loc>https://autoincomesys.com/tools/chatbox</loc></url>
   <url><loc>https://autoincomesys.com/tools/choosing-the-right-llm-agent-framework-in-2026-botpress</loc></url>
@@ -285,6 +474,7 @@
   <url><loc>https://autoincomesys.com/tools/continue</loc></url>
   <url><loc>https://autoincomesys.com/tools/controllable-rag-agent</loc></url>
   <url><loc>https://autoincomesys.com/tools/courses</loc></url>
+  <url><loc>https://autoincomesys.com/tools/crawlee</loc></url>
   <url><loc>https://autoincomesys.com/tools/crewai</loc></url>
   <url><loc>https://autoincomesys.com/tools/crush</loc></url>
   <url><loc>https://autoincomesys.com/tools/cua</loc></url>
@@ -370,6 +560,53 @@
   <url><loc>https://autoincomesys.com/tools/nanochat</loc></url>
   <url><loc>https://autoincomesys.com/tools/nemo-agent-toolkit</loc></url>
   <url><loc>https://autoincomesys.com/tools/nemoclaw</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-0191d0638c58</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-1389216dd664</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-17fdeb8e9808</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-19e191f7eb95</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-1bde75b8aace</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-1be671ba29d4</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-2a1a5e7448be</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-2abc24f3a521</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-2dcd88981a3d</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-3769c148cf05</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-39217bafd159</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-3c182807b8d6</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-3f7d16162b42</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-428dd1988761</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-43fb7434706a</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-4617a64457e3</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-5fcd6bc027d6</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-6843880b39bc</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-6adab03bdbf0</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-6d6547bcaaba</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-71031944cf42</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-7794cf2e98c9</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-779b74a9a876</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-79f8ab8cd1cd</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-7be786551ca9</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-7ef1ebda259b</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-9e0eba52a169</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-9fd2c0e1648c</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-a46a1140105e</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-a5923a4e6ba0</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-a84a5a07eb07</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-ab570992ab3f</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-af949a47c2d4</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-c2dc8ed2be62</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-c588ad5d1318</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-cf82b3057aba</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-e152986cbd9c</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-e42b0d085e39</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-e5491c8a1672</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-e59462dc6003</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-ee285b7d9bab</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-f008db66f520</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-f561c5eeddfb</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-f84c5b8b1459</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-f89b68ba60e1</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-f97fba2df3f2</loc></url>
+  <url><loc>https://autoincomesys.com/tools/note-acq-tool-fca8ba216392</loc></url>
   <url><loc>https://autoincomesys.com/tools/observer</loc></url>
   <url><loc>https://autoincomesys.com/tools/ollama</loc></url>
   <url><loc>https://autoincomesys.com/tools/omlx</loc></url>
@@ -461,6 +698,10 @@
   <url><loc>https://autoincomesys.com/tools/using-local-llms-for-agentic-coding-alex-ewerl-f-notes</loc></url>
   <url><loc>https://autoincomesys.com/tools/vakra</loc></url>
   <url><loc>https://autoincomesys.com/tools/vanna</loc></url>
+  <url><loc>https://autoincomesys.com/tools/verified-automatisch</loc></url>
+  <url><loc>https://autoincomesys.com/tools/verified-scrapegraphai</loc></url>
+  <url><loc>https://autoincomesys.com/tools/verified-scrapy</loc></url>
+  <url><loc>https://autoincomesys.com/tools/verified-trafilatura</loc></url>
   <url><loc>https://autoincomesys.com/tools/vllm-gfx906</loc></url>
   <url><loc>https://autoincomesys.com/tools/vllm</loc></url>
   <url><loc>https://autoincomesys.com/tools/void</loc></url>
