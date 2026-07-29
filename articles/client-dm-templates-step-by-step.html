@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Client DM Templates Step-by-Step | Local-First AI Dev Notes</title>
+<meta name="description" content="# Client DM Templates Step-by-Step  As a fitness coach, your time is precious. You're not just training clients—you're building relationships that convert.">
+<meta property="og:title" content="Client DM Templates Step-by-Step">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/client-dm-templates-step-by-step">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Client DM Templates Step-by-Step", "description": "# Client DM Templates Step-by-Step  As a fitness coach, your time is precious. You're not just training clients—you're building relationships that convert. The most effective coaches automate their communication workflows without sacrificing personal touch.  Here's how to build a repeatable DM temp", "url": "https://autoincomesys.com/articles/client-dm-templates-step-by-step", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/client-dm-templates-step-by-step"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Client DM Templates Step-by-Step</h1><h2>Client DM Templates Step-by-Step</h2>
+<h2>Client DM Templates Step-by-Step</h2>
+<p>As a fitness coach, your time is precious. You're not just training clients—you're building relationships that convert. The most effective coaches automate their communication workflows without sacrificing personal touch.</p>
+<p>Here's how to build a repeatable DM template system using AI prompts that actually scale.</p>
+<h3>Your First Template Structure</h3>
+<p>Start with this minimal viable template:</p>
+<p>```python</p>
+<p>def create_client_dm_template(client_name, goal, current_status):</p>
+<p>    return f"""</p>
+<p>Hey {client_name}!</p>
+<p>I've reviewed your progress on {goal}.</p>
+<p>Current status: {current_status}</p>
+<p>Here's what we'll focus on next:</p>
+<ul>
+<li>[ ] [Specific action]</li>
+<li>[ ] [Specific action]</li>
+</ul>
+<p>Let me know when you're ready to tackle these.</p>
+<p>Best,</p>
+<p>[Your Name]</p>
+<p>"""</p>
+<p>```</p>
+<p>This simple structure works for 80% of your client conversations. It's fast, consistent, and personal.</p>
+<h3>Step-by-Step Implementation</h3>
+<p>1. <strong>Define Your Template Variables</strong></p>
+<p>   - Client name (required)</p>
+<p>   - Goal type (weight loss, strength gain, etc.)</p>
+<p>   - Current status (progress, plateau, new goal)</p>
+<p>2. <strong>Create the Prompt Library</strong></p>
+<p>   Save these prompts in a JSON file:</p>
+<p>```json</p>
+<p>{</p>
+<p>  "welcome": "Welcome {name}! Your journey starts here...",</p>
+<p>  "checkin": "How are you feeling about {goal}, {name}?",</p>
+<p>  "motivation": "{name}, remember why you started. You've got this!",</p>
+<p>  "progress": "Great work on {goal}! Here's your next step..."</p>
+<p>}</p>
+<p>```</p>
+<p>3. <strong>Build Your Workflow</strong></p>
+<p>```python</p>
+<p>import json</p>
+<p>def generate_dm(template_key, client_data):</p>
+<p>    templates = load_templates()</p>
+<p>    template = templates[template_key]</p>
+<p>    return template.format(**client_data)</p>
+<h2>Usage</h2>
+<p>client = {"name": "Sarah", "goal": "weight loss", "status": "slightly plateaued"}</p>
+<p>dm = generate_dm("checkin", client)</p>
+<p>```</p>
+<h3>Advanced Template Patterns</h3>
+<p>For more sophisticated DMs, use this pattern:</p>
+<p>```python</p>
+<p>def advanced_client_dm(client_name, goal, progress_score, next_step):</p>
+<p>    return f"""</p>
+<p>{client_name}!</p>
+<p>Your {goal} progress: {progress_score}/10</p>
+<p>{get_motivational_quote(progress_score)}</p>
+<p>Next step:</p>
+<p>{next_step}</p>
+<p>Let's keep pushing forward together.</p>
+<p>[Your Name]</p>
+<p>"""</p>
+<p>```</p>
+<p>This structure works for all your client types. Use it with 50 pre-built prompts to create personalized DMs in seconds.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do I avoid sounding robotic with AI-generated DMs?</strong></p>
+<p>A: The key is variable personalization. Include specific client details, progress metrics, and tailored next steps. Use templates as frameworks, not rigid scripts. Your authentic voice shines through when you're genuinely engaged with each client's journey.</p>
+<p><strong>Q: What percentage of my DMs can be automated using these templates?</strong></p>
+<p>A: Most coaches automate 70-80% of their routine communications. Welcome messages, check-ins, progress updates, and basic encouragement are ideal for templates. Only highly sensitive or unique situations require fully custom messages.</p>
+<p><strong>Q: How do I maintain privacy when using AI prompts in client DMs?</strong></p>
+<p>A: Never include actual client data in your prompt code. Use placeholders only. Store client information separately in encrypted databases or spreadsheets. Your templates should be generic enough to work across any client while remaining personal through variable substitution.</p>
+<h3>Get it</h3>
+<p>Ready to build your own workflow that scales? Get the <strong>50 Gym &amp; Fitness Coaches AI Prompts</strong> package with 50 ready-to-use DM templates, program prompts, and social media copy that converts.</p>
+<p>https://ptrk-en.gumroad.com/l/stmnn</p>
+<p>This package gives you everything needed to automate client communications while maintaining personal connection—saving you 10+ hours weekly on repetitive messaging tasks.</p><div class="cta"><p><strong>50 Gym & Fitness Coaches AI Prompts</strong> — 50 prompts to write client programs, social posts, and DMs that actually convert.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/stmnn">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>
