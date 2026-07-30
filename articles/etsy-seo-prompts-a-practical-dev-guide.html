@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Etsy SEO Prompts: A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="# Etsy SEO Prompts: A Practical Dev Guide  When selling on Etsy, effective SEO isn't just about keywords—it's about crafting compelling, optimized content ">
+<meta property="og:title" content="Etsy SEO Prompts: A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/etsy-seo-prompts-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Etsy SEO Prompts: A Practical Dev Guide", "description": "# Etsy SEO Prompts: A Practical Dev Guide  When selling on Etsy, effective SEO isn't just about keywords—it's about crafting compelling, optimized content that converts. For sellers managing multiple listings, the challenge is scaling this process without sacrificing quality.  ## The Core Problem", "url": "https://autoincomesys.com/articles/etsy-seo-prompts-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/etsy-seo-prompts-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Etsy SEO Prompts: A Practical Dev Guide</h1><h2>Etsy SEO Prompts: A Practical Dev Guide</h2>
+<h2>Etsy SEO Prompts: A Practical Dev Guide</h2>
+<p>When selling on Etsy, effective SEO isn't just about keywords—it's about crafting compelling, optimized content that converts. For sellers managing multiple listings, the challenge is scaling this process without sacrificing quality.</p>
+<h3>The Core Problem</h3>
+<p>Most Etsy sellers spend hours manually optimizing product titles and descriptions. A typical small shop might have 50-100 listings, each requiring unique optimization. This manual approach becomes unsustainable as your inventory grows.</p>
+<h3>Solution: Prompt-Based Automation</h3>
+<p>Instead of writing titles from scratch, use a structured prompt system that generates optimized content consistently. Here's a practical implementation:</p>
+<p>```python</p>
+<p>import openai</p>
+<p>import os</p>
+<p>def generate_etsy_title(product_name, category, key_features):</p>
+<p>    prompt = f"""</p>
+<p>    Create an Etsy SEO-optimized title for: {product_name}</p>
+<p>    Category: {category}</p>
+<p>    Key features: {key_features}</p>
+<p>    Requirements:</p>
+<p>    - 80 characters max</p>
+<p>    - Include primary keyword naturally</p>
+<p>    - Mention 2-3 key features</p>
+<p>    - Use active voice</p>
+<p>    - Avoid stock phrases like "perfect for"</p>
+<p>    Example format:</p>
+<p>    "Handmade Wooden Jewelry Box with Lock, 6 Compartment, Gift for Women, 8x6x4in"</p>
+<p>    Your title:</p>
+<p>    """</p>
+<p>    response = openai.ChatCompletion.create(</p>
+<p>        model="gpt-3.5-turbo",</p>
+<p>        messages=[{"role": "user", "content": prompt}],</p>
+<p>        temperature=0.7</p>
+<p>    )</p>
+<p>    return response.choices[0].message.content.strip()</p>
+<h2>Usage example</h2>
+<p>title = generate_etsy_title(</p>
+<p>    "Handmade Ceramic Mug",</p>
+<p>    "Kitchen &amp; Dining",</p>
+<p>    "Ceramic, Microwave safe, Unique design"</p>
+<p>)</p>
+<p>print(title)</p>
+<p>```</p>
+<h3>Your 50-Listing Workflow</h3>
+<p>This approach scales to your entire inventory:</p>
+<p>1. <strong>Create a template library</strong> with 50 prompts covering different product types</p>
+<p>2. <strong>Build a data pipeline</strong> that pulls product information from your shop</p>
+<p>3. <strong>Automate generation</strong> using the prompt system above</p>
+<p>4. <strong>Review and refine</strong> the output before publishing</p>
+<h3>Implementation Tips</h3>
+<p>Use CSV files to store your prompts, making updates easy:</p>
+<p>```csv</p>
+<p>prompt_type,template</p>
+<p>title,"Create an Etsy SEO-optimized title for: {product_name}</p>
+<p>Category: {category}</p>
+<p>Key features: {key_features}</p>
+<p>Requirements:</p>
+<ul>
+<li>80 characters max</li>
+<li>Include primary keyword naturally</li>
+<li>Mention 2-3 key features</li>
+<li>Use active voice</li>
+<li>Avoid stock phrases like "perfect for"</li>
+</ul>
+<p>Your title:"</p>
+<p>description,"Write a compelling Etsy product description for: {product_name}</p>
+<p>Category: {category}</p>
+<p>Key features: {key_features}</p>
+<p>Include:</p>
+<ul>
+<li>150-200 words</li>
+<li>Storytelling elements</li>
+<li>Specific benefits</li>
+<li>Material details</li>
+<li>Care instructions</li>
+</ul>
+<p>Keep it conversational but professional."</p>
+<p>```</p>
+<h3>FAQ</h3>
+<p><strong>Q: How much time does this save compared to manual writing?</strong></p>
+<p>A: Sellers typically reduce listing creation time by 70-80%. A shop with 100 listings can go from 20+ hours of manual work to 4-6 hours, with consistent quality.</p>
+<p><strong>Q: Can I customize prompts for specific niches?</strong></p>
+<p>A: Absolutely. Your 50 prompts should include niche-specific templates. For example, jewelry listings need different keyword focus than home decor. Each prompt can be tailored to your unique product categories.</p>
+<p><strong>Q: What's the best way to integrate with Etsy's API?</strong></p>
+<p>A: Use Etsy's API endpoints for listing updates. Combine with a local database of your prompts and product data. The workflow becomes: fetch products → apply prompts → submit via API → store results.</p>
+<h3>Get it</h3>
+<p>Get the complete set of 50 Etsy &amp; Small-Shop Seller AI Prompts at <a href="/products/niche-etsy-prompts">/products/niche-etsy-prompts</a>. This ready-to-use collection provides optimized prompts for titles, descriptions, and shop policies that convert.</p><div class="cta"><p><strong>50 Etsy & Small-Shop Sellers AI Prompts</strong> — 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.</p><p><a class="buy" href="https://autoincomesys.com/products/niche-etsy-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

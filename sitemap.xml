@@ -85,6 +85,7 @@
   <url><loc>https://autoincomesys.com/articles/client-dm-templates-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/client-email-templates-benchmarks-numbers</loc></url>
   <url><loc>https://autoincomesys.com/articles/client-email-templates-in-2026</loc></url>
+  <url><loc>https://autoincomesys.com/articles/client-email-templates-setup-that-actually-works</loc></url>
   <url><loc>https://autoincomesys.com/articles/consultant-prompt-pack-a-minimal-working-example</loc></url>
   <url><loc>https://autoincomesys.com/articles/consultant-prompt-pack-setup-that-actually-works</loc></url>
   <url><loc>https://autoincomesys.com/articles/consultant-prompt-pack-vs-the-alternatives</loc></url>
@@ -101,10 +102,12 @@
   <url><loc>https://autoincomesys.com/articles/creator-ai-prompts-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/define-our-production-tuned-system-instruction-from-the-pack</loc></url>
   <url><loc>https://autoincomesys.com/articles/docker-aws-emulator-docker-first-walkthrough</loc></url>
+  <url><loc>https://autoincomesys.com/articles/email-open-rate-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/email-open-rate-prompts-for-local-first-teams</loc></url>
   <url><loc>https://autoincomesys.com/articles/email-open-rate-prompts-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/etsy-product-description-prompts-a-minimal-working-example</loc></url>
   <url><loc>https://autoincomesys.com/articles/etsy-product-description-prompts-vs-the-alternatives</loc></url>
+  <url><loc>https://autoincomesys.com/articles/etsy-seo-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/etsy-seo-prompts-for-local-first-teams</loc></url>
   <url><loc>https://autoincomesys.com/articles/etsy-seo-prompts-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/fitness-coach-prompts-setup-that-actually-works</loc></url>
@@ -125,6 +128,7 @@
   <url><loc>https://autoincomesys.com/articles/ideas-that-make-their-own-future-real-a-practical-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/issue-intro-prompts-a-minimal-working-example</loc></url>
   <url><loc>https://autoincomesys.com/articles/issue-intro-prompts-common-pitfalls</loc></url>
+  <url><loc>https://autoincomesys.com/articles/issue-intro-prompts-for-local-first-teams</loc></url>
   <url><loc>https://autoincomesys.com/articles/issue-intro-prompts-setup-that-actually-works</loc></url>
   <url><loc>https://autoincomesys.com/articles/launch-email-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/launch-email-prompts-setup-that-actually-works</loc></url>
@@ -146,6 +150,7 @@
   <url><loc>https://autoincomesys.com/articles/local-aws-emulator-ci-cd-setup-that-actually-works</loc></url>
   <url><loc>https://autoincomesys.com/articles/local-business-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/local-business-prompts-common-pitfalls</loc></url>
+  <url><loc>https://autoincomesys.com/articles/local-business-prompts-in-2026</loc></url>
   <url><loc>https://autoincomesys.com/articles/local-business-prompts-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/local-llm-bundle-for-local-first-teams</loc></url>
   <url><loc>https://autoincomesys.com/articles/local-llm-bundle-setup-that-actually-works</loc></url>
@@ -179,6 +184,7 @@
   <url><loc>https://autoincomesys.com/articles/online-course-ai-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/passive-income-digital-products-a-practical-2026-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/passive-income-digital-products-common-pitfalls</loc></url>
+  <url><loc>https://autoincomesys.com/articles/personal-trainer-ai-prompts-common-pitfalls</loc></url>
   <url><loc>https://autoincomesys.com/articles/personal-trainer-ai-prompts-vs-the-alternatives</loc></url>
   <url><loc>https://autoincomesys.com/articles/positive-feedback-loop-marketing-a-minimal-example</loc></url>
   <url><loc>https://autoincomesys.com/articles/private-llm-mac-in-2026</loc></url>
@@ -208,6 +214,7 @@
   <url><loc>https://autoincomesys.com/articles/script-hook-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/script-hook-prompts-benchmarks-numbers</loc></url>
   <url><loc>https://autoincomesys.com/articles/script-hook-prompts-setup-that-actually-works</loc></url>
+  <url><loc>https://autoincomesys.com/articles/script-hook-prompts-vs-the-alternatives</loc></url>
   <url><loc>https://autoincomesys.com/articles/self-fulfilling-narrative-brand-growth-why-it-matters-for-br</loc></url>
   <url><loc>https://autoincomesys.com/articles/self-host-llm-guide-a-minimal-working-example</loc></url>
   <url><loc>https://autoincomesys.com/articles/self-host-llm-guide-a-practical-dev-guide</loc></url>
@@ -221,8 +228,10 @@
   <url><loc>https://autoincomesys.com/articles/shop-title-prompts-in-2026</loc></url>
   <url><loc>https://autoincomesys.com/articles/side-hustle-ai-in-2026</loc></url>
   <url><loc>https://autoincomesys.com/articles/small-business-automation-common-pitfalls</loc></url>
+  <url><loc>https://autoincomesys.com/articles/small-shop-ai-prompts-for-local-first-teams</loc></url>
   <url><loc>https://autoincomesys.com/articles/solopreneur-prompts-a-practical-dev-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/solopreneur-prompts-common-pitfalls</loc></url>
+  <url><loc>https://autoincomesys.com/articles/solopreneur-prompts-in-2026</loc></url>
   <url><loc>https://autoincomesys.com/articles/solopreneur-prompts-step-by-step</loc></url>
   <url><loc>https://autoincomesys.com/articles/subject-line-prompts-in-2026</loc></url>
   <url><loc>https://autoincomesys.com/articles/subject-line-prompts-step-by-step</loc></url>
@@ -237,6 +246,7 @@
   <url><loc>https://autoincomesys.com/articles/thumbnail-idea-prompts-in-2026</loc></url>
   <url><loc>https://autoincomesys.com/articles/typical-python-loop-setup-is-slow-brittle</loc></url>
   <url><loc>https://autoincomesys.com/articles/video-title-prompts-a-minimal-working-example</loc></url>
+  <url><loc>https://autoincomesys.com/articles/video-title-prompts-common-pitfalls</loc></url>
   <url><loc>https://autoincomesys.com/articles/video-title-prompts-vs-the-alternatives</loc></url>
   <url><loc>https://autoincomesys.com/articles/wait-for-startup</loc></url>
   <url><loc>https://autoincomesys.com/articles/why-markets-behave-like-an-ai-benchmarks-numbers</loc></url>
