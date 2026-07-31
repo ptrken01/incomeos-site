@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Handmade Listing Prompts Step-by-Step | Local-First AI Dev Notes</title>
+<meta name="description" content="# Handmade Listing Prompts Step-by-Step  When you're running an Etsy shop, every listing matters. But crafting compelling titles, descriptions, and policie">
+<meta property="og:title" content="Handmade Listing Prompts Step-by-Step">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/handmade-listing-prompts-step-by-step">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Handmade Listing Prompts Step-by-Step", "description": "# Handmade Listing Prompts Step-by-Step  When you're running an Etsy shop, every listing matters. But crafting compelling titles, descriptions, and policies for 50+ products manually is exhausting. That's where AI prompts come in — but not the generic ones. This guide shows how to build a **private", "url": "https://autoincomesys.com/articles/handmade-listing-prompts-step-by-step", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/handmade-listing-prompts-step-by-step"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Handmade Listing Prompts Step-by-Step</h1><h2>Handmade Listing Prompts Step-by-Step</h2>
+<h2>Handmade Listing Prompts Step-by-Step</h2>
+<p>When you're running an Etsy shop, every listing matters. But crafting compelling titles, descriptions, and policies for 50+ products manually is exhausting. That's where AI prompts come in — but not the generic ones. This guide shows how to build a <strong>private, reusable workflow</strong> using <strong>handmade prompts</strong> that work specifically for Etsy SEO and conversion.</p>
+<p>We're going to create a step-by-step system to generate 50 custom AI prompts — one for each product category — that you can plug into any prompt engine (like ChatGPT or Claude) to instantly generate shop listings. No copy-pasting, no template bloat — just real, usable output.</p>
+<h3>Step 1: Define Your Product Categories</h3>
+<p>Start by grouping your products into categories. For example:</p>
+<ul>
+<li><strong>Jewelry</strong></li>
+<li><strong>Home Decor</strong></li>
+<li><strong>Stationery</strong></li>
+<li><strong>Pet Accessories</strong></li>
+</ul>
+<p>Let’s say you have 50 items across 8 categories. Each category needs a unique prompt that guides the AI to create SEO-optimized titles, descriptions, and shop policies.</p>
+<h3>Step 2: Create Your Prompt Template</h3>
+<p>Each prompt should be specific to the category and tell the AI exactly what to generate. Here's an example template:</p>
+<p>```</p>
+<p>You are a professional Etsy listing writer for [CATEGORY]. Write:</p>
+<p>1. A compelling SEO-optimized title (under 80 characters) that includes keywords like [KEYWORDS].</p>
+<p>2. A detailed product description (300–400 words) with benefits, materials, and use cases.</p>
+<p>3. A clear shop policy (return, shipping, customization) that builds trust.</p>
+<p>Use a friendly, conversational tone. Avoid generic phrases like "perfect for" or "lovely". Instead, focus on what the buyer *wants* and how your product solves their problem.</p>
+<p>```</p>
+<h3>Step 3: Customize for Each Category</h3>
+<p>For each of your 8 categories, you’ll tweak this template slightly to reflect the product type. Here's an example for <strong>Pet Accessories</strong>:</p>
+<p>```</p>
+<p>You are a professional Etsy listing writer for Pet Accessories. Write:</p>
+<p>1. A compelling SEO-optimized title (under 80 characters) that includes keywords like [dog toy], [pet collar], [pet bed].</p>
+<p>2. A detailed product description (300–400 words) with benefits, materials, and use cases.</p>
+<p>3. A clear shop policy (return, shipping, customization) that builds trust.</p>
+<p>Use a friendly, conversational tone. Avoid generic phrases like "perfect for" or "lovely". Instead, focus on what the buyer *wants* and how your product solves their problem.</p>
+<p>```</p>
+<h3>Step 4: Automate with a Script</h3>
+<p>You can use a Python script to generate all 50 prompts programmatically. Here's a working snippet:</p>
+<p>```python</p>
+<p>categories = [</p>
+<p>    "Jewelry", "Home Decor", "Stationery", "Pet Accessories",</p>
+<p>    "Bath &amp; Body", "Art Prints", "Baby Items", "Seasonal Decor"</p>
+<p>]</p>
+<p>keywords = {</p>
+<p>    "Jewelry": ["necklace", "bracelet", "earrings"],</p>
+<p>    "Home Decor": ["wall art", "candle holder", "vase"],</p>
+<p>    "Stationery": ["notebook", "pen set", "journal"],</p>
+<p>    # Add more categories and keywords</p>
+<p>}</p>
+<p>template = """</p>
+<p>You are a professional Etsy listing writer for {category}. Write:</p>
+<p>1. A compelling SEO-optimized title (under 80 characters) that includes keywords like {keywords}.</p>
+<p>2. A detailed product description (300–400 words) with benefits, materials, and use cases.</p>
+<p>3. A clear shop policy (return, shipping, customization) that builds trust.</p>
+<p>Use a friendly, conversational tone. Avoid generic phrases like "perfect for" or "lovely". Instead, focus on what the buyer *wants* and how your product solves their problem.</p>
+<p>"""</p>
+<p>for cat in categories:</p>
+<p>    prompt = template.format(category=cat, keywords=", ".join(keywords[cat]))</p>
+<p>    print(f"### {cat} Prompt\n{prompt}\n")</p>
+<p>```</p>
+<p>This script generates 8 unique prompts — one per category. You can extend it to 50 by adding more categories and keyword lists.</p>
+<h3>Step 5: Test &amp; Refine</h3>
+<p>Run your prompts through a few AI tools to see how they perform. Look for:</p>
+<ul>
+<li>Titles that include 2–3 relevant keywords</li>
+<li>Descriptions with clear benefits</li>
+<li>Policies that feel trustworthy, not robotic</li>
+</ul>
+<p>Make small tweaks as needed — for example, asking the AI to add "handmade" or "eco-friendly" if it's relevant.</p>
+<h3>Step 6: Use It Daily</h3>
+<p>Once you’ve generated your prompts, create a <strong>private workflow</strong>:</p>
+<p>1. Copy the prompt for a category.</p>
+<p>2. Paste into ChatGPT or Claude.</p>
+<p>3. Copy output and paste into Etsy listing editor.</p>
+<p>4. Add any final personalization (like brand name).</p>
+<p>This process takes 30 seconds per item — not 30 minutes.</p>
+<h3>FAQ</h3>
+<h4>Q: How many prompts do I need for a 50-product shop?</h4>
+<p>A: You don't need 50 unique prompts. Group similar products and reuse templates. For 50 items, 8–12 categories will be sufficient to cover all variations while keeping your workflow scalable.</p>
+<h4>Q: Can I use these prompts with other AI tools besides ChatGPT?</h4>
+<p>A: Yes. These prompts are generic enough to work across tools like Claude, Gemini, or even local LLMs. Just make sure your tool supports detailed instructions and multi-part output formatting.</p>
+<h4>Q: Are these prompts SEO-optimized for Etsy?</h4>
+<p>A: Yes — they're designed to include keywords, buyer benefits, and structured formats that align with Etsy’s search algorithm and listing best practices.</p>
+<h3>Get it</h3>
+<p><a href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">Get the full set of 50 handmade Etsy &amp; Small-Shop AI Prompts</a> — optimized for SEO titles, product descriptions, and shop policies. Save hours of writing with a private, reusable prompt library.</p><div class="cta"><p><strong>50 Etsy & Small-Shop Sellers AI Prompts</strong> — 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

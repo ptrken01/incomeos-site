@@ -41,6 +41,7 @@
 - [50 Ai/Ml Engineers Building Self-Improving Systems Recursive Self-Improvement Prompts](https://ptrk-en.gumroad.com/l/niche-ai-engineers-rsi-prompts): 50 copy-paste prompts built for AI/ML engineers building self-improving systems in the recursive self-improvement / meta-loop stack — specific to the job, not generic.
 - [50 Autonomous-Systems Operators / Platform Leads Recursive Self-Improvement Prompts](https://ptrk-en.gumroad.com/l/niche-operators-rsi-prompts): 50 copy-paste prompts built for autonomous-systems operators / platform leads in the recursive self-improvement / meta-loop stack — specific to the job, not generic.
 - [50 Ai Product Leads / Founders Recursive Self-Improvement Prompts](https://ptrk-en.gumroad.com/l/niche-product-leads-rsi-prompts): 50 copy-paste prompts built for AI product leads / founders in the recursive self-improvement / meta-loop stack — specific to the job, not generic.
+- [AI Listing Optimizer: Speedrun Prompt Pack for Etsy Sellers](https://autoincomesys.com/products/arena-ai-listing-optimizer-speedrun-prompt-pack-for-et): For Etsy sellers using AI for listings. Grounded in verified open-source tools.
 
 ## Latest articles
 - [Agent Loop Prompts Setup That Actually Works](https://autoincomesys.com/articles/agent-loop-prompts-setup-that-actually-works)
