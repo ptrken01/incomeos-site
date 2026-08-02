@@ -1,14 +1,13 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>Qwen Mlx 4Bit A Minimal Working Example | Local-First AI Dev Notes</title>
-<meta name="description" content="# Qwen Mlx 4Bit A Minimal Working Example  If you're building local LLM workflows on Apple Silicon, you know how critical performance and privacy are. The ">
+<meta name="description" content="If you're building local LLM workflows on Apple Silicon, you know how critical performance and privacy are. The MLX framework enables fast inference on Mac">
 <meta property="og:title" content="Qwen Mlx 4Bit A Minimal Working Example">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://autoincomesys.com/articles/qwen-mlx-4bit-a-minimal-working-example">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qwen Mlx 4Bit A Minimal Working Example", "description": "# Qwen Mlx 4Bit A Minimal Working Example  If you're building local LLM workflows on Apple Silicon, you know how critical performance and privacy are. The MLX framework enables fast inference on Macs, but navigating the ecosystem can be tricky — especially when documentation skips over silent failu", "url": "https://autoincomesys.com/articles/qwen-mlx-4bit-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/qwen-mlx-4bit-a-minimal-working-example"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qwen Mlx 4Bit A Minimal Working Example", "description": "If you're building local LLM workflows on Apple Silicon, you know how critical performance and privacy are. The MLX framework enables fast inference on Macs, but navigating the ecosystem can be tricky — especially when documentation skips over silent failures or assumes prior knowledge.  In this a", "url": "https://autoincomesys.com/articles/qwen-mlx-4bit-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/qwen-mlx-4bit-a-minimal-working-example"}}</script>
 </head><body>
 <header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
 <main><article><h1>Qwen Mlx 4Bit A Minimal Working Example</h1><h2>Qwen Mlx 4Bit A Minimal Working Example</h2>
-<h2>Qwen Mlx 4Bit A Minimal Working Example</h2>
 <p>If you're building local LLM workflows on Apple Silicon, you know how critical performance and privacy are. The MLX framework enables fast inference on Macs, but navigating the ecosystem can be tricky — especially when documentation skips over silent failures or assumes prior knowledge.</p>
 <p>In this article, we'll walk through a minimal, runnable example of deploying Qwen 4-bit models with MLX using `mlx-lm`, which is part of the <a href="https://ptrk-en.gumroad.com/l/mlx-deploy-playbook">MLX Deploy Playbook</a>. This setup ensures you can run private, fast LLMs — like Qwen 7B or Qwen 14B — on your Mac in under a minute.</p>
 <h3>Prerequisites</h3>
@@ -46,13 +45,13 @@
 <p>MLX enables fast LLM inference on Apple Silicon by leveraging the Metal Performance Shaders (MPS) backend, which optimizes tensor operations for GPU-like performance on macOS. This allows models to run efficiently without external dependencies or cloud services.</p>
 <p>```</p>
 <h4>Runtime &amp; Memory</h4>
-<p>On an M2 Max with 64 GB RAM:</p>
+<p>On an M2 Max with RAM:</p>
 <ul>
-<li><strong>Load time</strong>: ~10 seconds</li>
-<li><strong>Generation time</strong> (100 tokens): ~3 seconds</li>
-<li><strong>Memory usage</strong>: ~8–10 GB VRAM (with 4-bit quantization)</li>
+<li><strong>Load time</strong>: ~onds</li>
+<li><strong>Generation time</strong> (100 tokens): ~onds</li>
+<li><strong>Memory usage</strong>: ~8– VRAM (with 4-bit quantization)</li>
 </ul>
-<p>&gt; Note: If you're using a model larger than 7B (like Qwen 14B), memory usage can spike to ~15–20 GB, depending on prompt length and token generation.</p>
+<p>&gt; Note: If you're using a model larger than 7B (like Qwen 14B), memory usage can spike to ~15– depending on prompt length and token generation.</p>
 <h3>Common Gotchas</h3>
 <p>1. <strong>Model Not Found</strong>: Ensure you have internet access during the initial load.</p>
 <p>2. <strong>Quantization Errors</strong>: If you see an error like `No such file or directory`, try loading with a specific revision:</p>
@@ -90,7 +89,7 @@
 <h3>FAQ</h3>
 <ul>
 <li><strong>What does 'Qwen Mlx 4Bit A Minimal Working Example' actually cover?</strong> This guide walks through qwen mlx 4bit a minimal working example with runnable steps you can apply on your own machine. Nothing here depends on a paid account or a cloud subscription - it is local-first by design. The focus is the parts that break in production, not the happy path you already know.</li>
-<li><strong>Is there a ready-to-use resource that goes deeper?</strong> Yes - Local LLM on Apple Silicon — The MLX Deploy Playbook: The exact recipe to serve fast, private LLMs on your Mac — including the silent failures nobody documents. It is a build-once pack ($29) with copy-paste assets, so you apply it immediately instead of re-deriving the fundamentals. Get it at https://ptrk-en.gumroad.com/l/mlx-deploy-playbook.</li>
+<li><strong>Is there a ready-to-use resource that goes deeper?</strong> Yes - Local LLM on Apple Silicon — The MLX Deploy Playbook: The exact recipe to serve fast, private LLMs on your Mac — including the silent failures nobody documents. It is a build-once pack (9) with copy-paste assets, so you apply it immediately instead of re-deriving the fundamentals. Get it at https://ptrk-en.gumroad.com/l/mlx-deploy-playbook.</li>
 <li><strong>Do I need any API keys or paid tools to follow along?</strong> No. The approach is local-first: you run it on your own hardware with free, open tooling. There are no mandatory accounts, no usage-based billing, and nothing stops working if you cancel a subscription.</li>
 </ul><div class="cta"><p><strong>Local LLM on Apple Silicon — The MLX Deploy Playbook</strong> — The exact recipe to serve fast, private LLMs on your Mac — including the silent failures nobody documents.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/mlx-deploy-playbook">Get it on Gumroad →</a></p></div></article></main>
 <footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>

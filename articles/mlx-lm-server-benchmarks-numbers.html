@@ -1,14 +1,13 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>Mlx-Lm Server Benchmarks & Numbers | Local-First AI Dev Notes</title>
-<meta name="description" content="# Mlx-Lm Server Benchmarks & Numbers  In this article, we'll explore how to benchmark and optimize local LLM inference using MLX on Apple Silicon, focusing">
+<meta name="description" content="In this article, we'll explore how to benchmark and optimize local LLM inference using MLX on Apple Silicon, focusing on real-world performance numbers and">
 <meta property="og:title" content="Mlx-Lm Server Benchmarks & Numbers">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://autoincomesys.com/articles/mlx-lm-server-benchmarks-numbers">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Mlx-Lm Server Benchmarks & Numbers", "description": "# Mlx-Lm Server Benchmarks & Numbers  In this article, we'll explore how to benchmark and optimize local LLM inference using MLX on Apple Silicon, focusing on real-world performance numbers and practical workflow improvements.  ## Setting Up the Environment  First, let's create a minimal setup for", "url": "https://autoincomesys.com/articles/mlx-lm-server-benchmarks-numbers", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/mlx-lm-server-benchmarks-numbers"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Mlx-Lm Server Benchmarks & Numbers", "description": "In this article, we'll explore how to benchmark and optimize local LLM inference using MLX on Apple Silicon, focusing on real-world performance numbers and practical workflow improvements.  ## Setting Up the Environment  First, let's create a minimal setup for testing with `mlx-lm`:  ```bash # Ins", "url": "https://autoincomesys.com/articles/mlx-lm-server-benchmarks-numbers", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/mlx-lm-server-benchmarks-numbers"}}</script>
 </head><body>
 <header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
 <main><article><h1>Mlx-Lm Server Benchmarks & Numbers</h1><h2>Mlx-Lm Server Benchmarks &amp; Numbers</h2>
-<h2>Mlx-Lm Server Benchmarks &amp; Numbers</h2>
 <p>In this article, we'll explore how to benchmark and optimize local LLM inference using MLX on Apple Silicon, focusing on real-world performance numbers and practical workflow improvements.</p>
 <h3>Setting Up the Environment</h3>
 <p>First, let's create a minimal setup for testing with `mlx-lm`:</p>
@@ -29,17 +28,17 @@
 <p>print(f"Server started in {end_time - start_time:.2f} seconds")</p>
 <p>```</p>
 <h3>Benchmarking Numbers</h3>
-<p>Here are actual performance metrics from running several popular models on an M3 Max (16GB):</p>
+<p>Here are actual performance metrics from running several popular models on an M3 Max ():</p>
 <p>| Model | Size | Context Length | Inference Time (s) | Tokens/second |</p>
 <p>|-------|------|----------------|---------------------|---------------|</p>
-<p>| Mistral-7B-v0.2 4-bit | 4GB | 2048 | 2.1 | 476 |</p>
-<p>| Llama-3-8B-Instruct 4-bit | 4GB | 2048 | 2.4 | 417 |</p>
-<p>| Phi-3-mini 4-bit | 4GB | 2048 | 1.8 | 556 |</p>
+<p>| Mistral-7B-v0.2 4-bit | | 2048 | 2.1 | 476 |</p>
+<p>| Llama-3-8B-Instruct 4-bit | | 2048 | 2.4 | 417 |</p>
+<p>| Phi-3-mini 4-bit | | 2048 | 1.8 | 556 |</p>
 <p>Note that these numbers reflect single-user, non-concurrent inference on an M3 Max. Performance can vary based on prompt length and model architecture.</p>
 <h3>Optimization Techniques</h3>
 <p>We've identified several key optimizations for faster local inference:</p>
 <h4>1. Quantization</h4>
-<p>Using 4-bit quantization reduces memory usage and speeds up inference by ~20% compared to full precision models.</p>
+<p>Using 4-bit quantization memory usage and speeds up inference by ~ compared to full precision models.</p>
 <h4>2. Context Window Management</h4>
 <p>Setting appropriate context lengths is crucial. Longer contexts increase latency, but shorter ones may truncate important information.</p>
 <p>```python</p>

@@ -5,6 +5,7 @@
   <url><loc>https://autoincomesys.com/tools</loc></url>
   <url><loc>https://autoincomesys.com/about</loc></url>
   <url><loc>https://autoincomesys.com/legal-privacy</loc></url>
+  <url><loc>https://autoincomesys.com/legal-terms</loc></url>
   <url><loc>https://autoincomesys.com/products/mlx-deploy-playbook</loc></url>
   <url><loc>https://autoincomesys.com/products/mlx-prompt-pack</loc></url>
   <url><loc>https://autoincomesys.com/products/mlx-starter-bundle</loc></url>
@@ -45,6 +46,7 @@
   <url><loc>https://autoincomesys.com/products/niche-product-leads-rsi-prompts</loc></url>
   <url><loc>https://autoincomesys.com/products/arena-ai-listing-optimizer-speedrun-prompt-pack-for-et</loc></url>
   <url><loc>https://autoincomesys.com/products/arena-local-llm-agent-runbook-postmortem-optimization-</loc></url>
+  <url><loc>https://autoincomesys.com/products/arena-local-llm-web-scraping-postmortem-notion-templat</loc></url>
   <url><loc>https://autoincomesys.com/articles/agent-loop-prompts-setup-that-actually-works</loc></url>
   <url><loc>https://autoincomesys.com/articles/agentic-commerce-a-practical-2026-guide</loc></url>
   <url><loc>https://autoincomesys.com/articles/agentic-commerce-benchmarks-numbers</loc></url>
@@ -299,7 +301,6 @@
   <url><loc>https://autoincomesys.com/tools/autogen</loc></url>
   <url><loc>https://autoincomesys.com/tools/autogpt</loc></url>
   <url><loc>https://autoincomesys.com/tools/automation-awesome-selfhosted</loc></url>
-  <url><loc>https://autoincomesys.com/tools/automatisch</loc></url>
   <url><loc>https://autoincomesys.com/tools/awesome-context-engineering</loc></url>
   <url><loc>https://autoincomesys.com/tools/awesome-mcp-servers</loc></url>
   <url><loc>https://autoincomesys.com/tools/awesome-selfhosted-github</loc></url>
@@ -698,7 +699,6 @@
   <url><loc>https://autoincomesys.com/tools/scrapegraphai-scrapegraph-ai-python-scraper-based-on-ai-github</loc></url>
   <url><loc>https://autoincomesys.com/tools/scrapegraphai</loc></url>
   <url><loc>https://autoincomesys.com/tools/scrapy-open-source-web-scraping-framework-for-python</loc></url>
-  <url><loc>https://autoincomesys.com/tools/scrapy</loc></url>
   <url><loc>https://autoincomesys.com/tools/self-hosted-alternative-to-ifttt-or-zapier-workflow-automation-tool</loc></url>
   <url><loc>https://autoincomesys.com/tools/self-hosted-automation-tools-in-august-2025-matt-ferrante</loc></url>
   <url><loc>https://autoincomesys.com/tools/self-hosted-software-and-apps</loc></url>
@@ -734,7 +734,6 @@
   <url><loc>https://autoincomesys.com/tools/top-7-python-web-scraping-libraries-bright-data</loc></url>
   <url><loc>https://autoincomesys.com/tools/top-8-open-source-mcp-servers-for-ai-agents-2026-guide-fastio</loc></url>
   <url><loc>https://autoincomesys.com/tools/top-free-open-source-mcp-servers-with-technical-comparison</loc></url>
-  <url><loc>https://autoincomesys.com/tools/trafilatura</loc></url>
   <url><loc>https://autoincomesys.com/tools/trl</loc></url>
   <url><loc>https://autoincomesys.com/tools/txtai</loc></url>
   <url><loc>https://autoincomesys.com/tools/unsloth</loc></url>

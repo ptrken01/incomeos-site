@@ -29,6 +29,7 @@
 <p>When you run `node app.js` in a development environment, especially with Docker Compose, the application attempts to connect to MongoDB before it's ready. This can take anywhere from 10-30 seconds of failed connection attempts, plus time spent debugging why your app isn't working.</p>
 <h3>A Better Approach</h3>
 <p>We can create a simple startup waiter that polls for service availability before proceeding:</p>
+<p>&gt; [illustrative template — not runnable as-is]</p>
 <p>```javascript</p>
 <p>// wait-for-startup.js</p>
 <p>const net = require('net');</p>
@@ -87,6 +88,7 @@
 </ul>
 <h3>Advanced Implementation</h3>
 <p>For production-like environments, here's a more robust version that handles multiple services and provides better logging:</p>
+<p>&gt; [illustrative template — not runnable as-is]</p>
 <p>```javascript</p>
 <p>// advanced-waiter.js</p>
 <p>const net = require('net');</p>
