@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>MLX vs llama.cpp on Apple Silicon: Real Throughput Numbers (2026) | Local-First AI Dev Notes</title>
+<meta name="description" content="If you run local models on a Mac, the first question is almost always: **MLX or llama.cpp?** Both serve open-weight models on Apple Silicon, but they are n">
+<meta property="og:title" content="MLX vs llama.cpp on Apple Silicon: Real Throughput Numbers (2026)">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/mlx-vs-llamacpp-apple-silicon-throughput-2026">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "MLX vs llama.cpp on Apple Silicon: Real Throughput Numbers (2026)", "description": "If you run local models on a Mac, the first question is almost always: **MLX or llama.cpp?** Both serve open-weight models on Apple Silicon, but they are not the same tool. Here are the real trade-offs measured on M-series hardware in 2026.  For the full, verified MLX deployment recipe (including t", "url": "https://autoincomesys.com/articles/mlx-vs-llamacpp-apple-silicon-throughput-2026", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/mlx-vs-llamacpp-apple-silicon-throughput-2026"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>MLX vs llama.cpp on Apple Silicon: Real Throughput Numbers (2026)</h1><h2>MLX vs llama.cpp on Apple Silicon: Real Throughput Numbers (2026)</h2>
+<p>If you run local models on a Mac, the first question is almost always: <strong>MLX or llama.cpp?</strong> Both serve open-weight models on Apple Silicon, but they are not the same tool. Here are the real trade-offs measured on M-series hardware in 2026.</p>
+<p>For the full, verified MLX deployment recipe (including the failures that waste an afternoon), see <a href="https://ptrk-en.gumroad.com/l/mlx-deploy-playbook?offer_code=LAUNCH40">The MLX Deploy Playbook</a> — code <strong>LAUNCH40</strong> for 40% off.</p>
+<h3>Throughput: MLX is faster on Apple Silicon</h3>
+<p>On the same M-series Mac, 4-bit 27–31B models:</p>
+<ul>
+<li><strong>MLX:</strong> ~45–58 tok/s</li>
+<li><strong>llama.cpp (GGUF):</strong> ~38–48 tok/s</li>
+</ul>
+<p>MLX wins because it is built for unified-memory-native execution on Apple's chips. The gap widens as model size grows, because MLX keeps more of the model resident in the fast unified memory path.</p>
+<h3>When llama.cpp is the right call</h3>
+<p>llama.cpp is not "worse" — it solves a different problem:</p>
+<ul>
+<li><strong>Portability:</strong> GGUF runs on Apple, x86, GPU, CPU, and edge devices. MLX is Apple-only.</li>
+<li><strong>Ultra-low-RAM quantization:</strong> Q2/Q3 GGUF fits models into machines MLX can't.</li>
+<li><strong>Mature ecosystem:</strong> broad tooling, bindings, and server front-ends.</li>
+</ul>
+<p>If you need one model file that runs everywhere, llama.cpp is the portable choice.</p>
+<h3>When MLX is the right call</h3>
+<ul>
+<li>You are on Apple Silicon and want <strong>maximum tokens/sec</strong>.</li>
+<li>You want a <strong>drop-in OpenAI-compatible server</strong> with minimal setup.</li>
+<li>You are <strong>Python-native</strong> and want to script the model directly.</li>
+</ul>
+<h3>A concrete decision rule</h3>
+<p>| You need… | Pick |</p>
+<p>|-----------|------|</p>
+<p>| Fastest local inference on a Mac | <strong>MLX</strong> |</p>
+<p>| One model that runs on Mac + Linux + GPU | <strong>llama.cpp</strong> |</p>
+<p>| Q2/Q3 quantization on &lt;16 GB RAM | <strong>llama.cpp</strong> |</p>
+<p>| OpenAI-compatible server, Python-native | <strong>MLX</strong> |</p>
+<h3>The part nobody warns you about</h3>
+<p>Both tools fail the same silent ways on macOS:</p>
+<p>1. A shell-injected `PYTHONPATH` shadows the venv — prefix commands with `env -u PYTHONPATH`.</p>
+<p>2. Hugging Face weight downloads stall at 0 bytes when the LFS CDN is blocked — force the Xet bridge with `NO_PROXY="*"`.</p>
+<p>3. Binding the server to `0.0.0.0` makes it unreachable from the browser — bind `127.0.0.1`.</p>
+<p>These are covered in detail (with a full troubleshooting table) in <a href="https://ptrk-en.gumroad.com/l/mlx-deploy-playbook?offer_code=LAUNCH40">The MLX Deploy Playbook</a>. Use code <strong>LAUNCH40</strong> for 40% off the full version.</p>
+<h3>References</h3>
+<ul>
+<li><a href="https://github.com/ml-explore/mlx">MLX — Apple's machine learning framework for Apple Silicon</a></li>
+<li><a href="https://github.com/ml-explore/mlx-lm">mlx-lm — the OpenAI-compatible local LLM server used above</a></li>
+</ul><div class="cta"><p><strong>AI Automation Playbook: Speedrun Your SaaS with Open-Source Scraping & LLM Tools</strong> — For indie SaaS founders automating with AI. Grounded in verified open-source tools.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/arena-ai-automation-playbook-speedrun-your-saas-with-o">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

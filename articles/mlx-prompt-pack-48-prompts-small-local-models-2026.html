@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>48 Prompts That Get Smaller Local Models to Actually Do the Work | Local-First AI Dev Notes</title>
+<meta name="description" content="Running prompts against a 7B–14B local model is not the same as prompting GPT-4. Small models are literal, forget context fast, and confabulate when a task">
+<meta property="og:title" content="48 Prompts That Get Smaller Local Models to Actually Do the Work">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/mlx-prompt-pack-48-prompts-small-local-models-2026">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "48 Prompts That Get Smaller Local Models to Actually Do the Work", "description": "Running prompts against a 7B–14B local model is not the same as prompting GPT-4. Small models are literal, forget context fast, and confabulate when a task is ambiguous. The fix is prompt structure, not a bigger GPU. These are the patterns that make local models reliable enough to ship.  For the fu", "url": "https://autoincomesys.com/articles/mlx-prompt-pack-48-prompts-small-local-models-2026", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/mlx-prompt-pack-48-prompts-small-local-models-2026"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>48 Prompts That Get Smaller Local Models to Actually Do the Work</h1><h2>48 Prompts That Get Smaller Local Models to Actually Do the Work</h2>
+<p>Running prompts against a 7B–14B local model is not the same as prompting GPT-4. Small models are literal, forget context fast, and confabulate when a task is ambiguous. The fix is prompt structure, not a bigger GPU. These are the patterns that make local models reliable enough to ship.</p>
+<p>For the full set, see <a href="https://ptrk-en.gumroad.com/l/mlx-prompt-pack">The MLX-Optimized Local-LLM Prompt Pack on Gumroad</a>.</p>
+<h3>Patterns that work on small models</h3>
+<ul>
+<li><strong>One job per prompt.</strong> A 7B model told to "summarize and reply and translate" does none of them well. Split into three calls.</li>
+<li><strong>Show the output shape.</strong> Give a one-line example of the exact format you want. Local models match structure better than they follow prose instructions.</li>
+<li><strong>Constrain, don't hope.</strong> "Pick from A, B, C" beats "pick the best option." Fewer degrees of freedom, fewer hallucinations.</li>
+<li><strong>Recipe, then execute.</strong> Ask for a plan first, confirm, then ask it to run the plan. Two passes cut errors sharply.</li>
+</ul>
+<h3>A minimal template</h3>
+<p>```</p>
+<p>You are &lt;role&gt;. Given &lt;input&gt;, return ONLY valid JSON:</p>
+<p>{"decision": "A|B|C", "reason": "&lt;one sentence&gt;"}</p>
+<p>Do not explain outside the JSON.</p>
+<p>```</p>
+<p>That single shape turns a flaky local model into a dependable component.</p>
+<h3>Multi-pass in practice</h3>
+<p>For a real task, run two calls: first, "list the three steps to solve this"; second, "execute step 1 only, returning the result." Each call stays small, so the model stays on task. Because <a href="https://github.com/ml-explore/mlx-lm">MLX</a> on Apple Silicon makes every token free and private, the extra passes cost you nothing but latency.</p>
+<h3>Few-shot beats zero-shot</h3>
+<p>When the format is unusual, drop one worked example into the prompt. A single demonstration outperforms a paragraph of instructions on small models — they pattern-match the example far more reliably than they parse a rule.</p>
+<p>The prompt pack extends this into 48 production-tested prompts you can paste or wire into an agent loop. Get <a href="https://ptrk-en.gumroad.com/l/mlx-prompt-pack">The MLX-Optimized Local-LLM Prompt Pack</a> for the full set.</p><div class="cta"><p><strong>AI Listing Optimizer: Speedrun Prompt Pack for Etsy Sellers</strong> — For Etsy sellers using AI for listings. Grounded in verified open-source tools.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/arena-ai-listing-optimizer-speedrun-prompt-pack-for-et">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

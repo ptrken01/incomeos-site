@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Run a Local LLM on Apple Silicon with MLX (vs llama.cpp): The Setup That Actually Works (2026) | Local-First AI Dev Notes</title>
+<meta name="description" content="Want to run a local LLM on Apple Silicon with MLX — and know when llama.cpp is the better call? This is the setup that actually works in 2026: every comman">
+<meta property="og:title" content="Run a Local LLM on Apple Silicon with MLX (vs llama.cpp): The Setup That Actually Works (2026)">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/mlx-local-llm-apple-silicon-setup-2026">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Run a Local LLM on Apple Silicon with MLX (vs llama.cpp): The Setup That Actually Works (2026)", "description": "Want to run a local LLM on Apple Silicon with MLX — and know when llama.cpp is the better call? This is the setup that actually works in 2026: every command below was run on a real M-series Mac, not copied from a blog that never shipped.  If you want the complete version (full troubleshooting table", "url": "https://autoincomesys.com/articles/mlx-local-llm-apple-silicon-setup-2026", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/mlx-local-llm-apple-silicon-setup-2026"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Run a Local LLM on Apple Silicon with MLX (vs llama.cpp): The Setup That Actually Works (2026)</h1><h2>Run a Local LLM on Apple Silicon with MLX (vs llama.cpp): The Setup That Actually Works (2026)</h2>
+<p>Want to run a local LLM on Apple Silicon with MLX — and know when llama.cpp is the better call? This is the setup that actually works in 2026: every command below was run on a real M-series Mac, not copied from a blog that never shipped.</p>
+<p>If you want the complete version (full troubleshooting table, vision-model serving, and a commercial-use license), it's in <a href="https://ptrk-en.gumroad.com/l/mlx-deploy-playbook?offer_code=LAUNCH40">The MLX Deploy Playbook</a>. Use code <strong>LAUNCH40</strong> for 40% off.</p>
+<h3>Why MLX (and when llama.cpp instead)</h3>
+<p><a href="https://github.com/ml-explore/mlx">MLX</a> is Apple's array framework with unified-memory-native execution. On Apple Silicon it consistently serves <strong>~45–58 tok/s</strong> on 4-bit 27–31B models versus <strong>~38–48 tok/s</strong> for llama.cpp GGUF on the same hardware, and it exposes a drop-in OpenAI-compatible server.</p>
+<ul>
+<li><strong>Use MLX</strong> when: you want max throughput on Apple Silicon, an OpenAI-compatible endpoint, and Python-native integration.</li>
+<li><strong>Use llama.cpp</strong> when: you need GGUF portability across non-Apple hardware or ultra-low-RAM quantization (Q2/Q3).</li>
+</ul>
+<h3>The five-minute setup</h3>
+<p>```bash</p>
+<h2>create a clean venv, install a known-good pair, serve a 32B model</h2>
+<p>PYBIN=/opt/homebrew/opt/python@3.12/bin/python3.12</p>
+<p>DIR=$HOME/mlx-serve; mkdir -p "$DIR"; cd "$DIR"</p>
+<p>"$PYBIN" -m venv .venv</p>
+<p>.venv/bin/python -m pip install -q "mlx-lm==0.31.3" "transformers==5.6.0"</p>
+<p>env -u PYTHONPATH NO_PROXY="*" .venv/bin/python -m mlx_lm.server \</p>
+<p>  --host 127.0.0.1 --port 8081 \</p>
+<p>  --model mlx-community/Qwen2.5-32B-Instruct-4bit</p>
+<p>```</p>
+<p>Any OpenAI client now works against `http://127.0.0.1:8081/v1`:</p>
+<p>```bash</p>
+<p>curl http://127.0.0.1:8081/v1/chat/completions \</p>
+<p>  -H "Content-Type: application/json" \</p>
+<p>  -d '{"model":"local","messages":[{"role":"user","content":"Say hi"}]}'</p>
+<p>```</p>
+<h3>Model picks by RAM (4-bit)</h3>
+<p>| RAM | Chat / coding | Vision |</p>
+<p>|-----|---------------|--------|</p>
+<p>| 16 GB | Qwen2.5-7B, Gemma-2-9B | Qwen2-VL-7B |</p>
+<p>| 32 GB | Qwen2.5-14B / 32B | Qwen2-VL-7B |</p>
+<p>| 64 GB+ | Qwen2.5-32B, Gemma-2-27B | Qwen2-VL-72B (4-bit) |</p>
+<h3>The three silent failures nobody documents</h3>
+<p>These look like MLX bugs but aren't:</p>
+<p>1. <strong>`ImportError` on start</strong> — your shell injects a `PYTHONPATH` that shadows the venv's `numpy`/`pydantic`. Prefix every command with `env -u PYTHONPATH`.</p>
+<p>2. <strong>Weight download stalls at 0 bytes</strong> — the Hugging Face LFS CDN (`cdn-lfs.huggingface.co`) is blocked on some networks even though the API host works. Route through the Xet bridge CDN: `env -u PYTHONPATH NO_PROXY="*" hf download mlx-community/Qwen2.5-32B-Instruct-4bit`.</p>
+<p>3. <strong>Browser can't connect to the server</strong> — you bound to `0.0.0.0`. Browsers can *listen* on `0.0.0.0` but cannot *dial* it as a destination. Always bind `127.0.0.1`.</p>
+<h3>Keep it running across reboots (launchd)</h3>
+<p>A login-scoped `launchd` agent keeps the server alive. The trap: launchd does <strong>not</strong> inherit your interactive shell's `PYTHONPATH` or venv, so third-party imports vanish. Give it the venv's own interpreter and an explicit clean environment:</p>
+<p>```xml</p>
+<p>&lt;key&gt;ProgramArguments&lt;/key&gt;</p>
+<p>&lt;array&gt;</p>
+<p>  &lt;string&gt;/Users/YOU/mlx-serve/.venv/bin/python&lt;/string&gt;</p>
+<p>  &lt;string&gt;-m&lt;/string&gt;&lt;string&gt;mlx_lm.server&lt;/string&gt;</p>
+<p>  &lt;string&gt;--host&lt;/string&gt;&lt;string&gt;127.0.0.1&lt;/string&gt;</p>
+<p>  &lt;string&gt;--port&lt;/string&gt;&lt;string&gt;8081&lt;/string&gt;</p>
+<p>  &lt;string&gt;--model&lt;/string&gt;&lt;string&gt;mlx-community/Qwen2.5-32B-Instruct-4bit&lt;/string&gt;</p>
+<p>&lt;/array&gt;</p>
+<p>&lt;key&gt;EnvironmentVariables&lt;/key&gt;</p>
+<p>&lt;dict&gt;&lt;key&gt;NO_PROXY&lt;/key&gt;&lt;string&gt;*&lt;/string&gt;&lt;/dict&gt;</p>
+<p>&lt;key&gt;KeepAlive&lt;/key&gt;&lt;true/&gt;</p>
+<p>&lt;key&gt;RunAtLoad&lt;/key&gt;&lt;true/&gt;</p>
+<p>```</p>
+<p>If a `KeepAlive` server ignores your kill, respawn it with `launchctl kickstart -k gui/$(id -u)/com.you.mlx-serve`.</p>
+<h3>What the full playbook adds</h3>
+<p>The free steps above get you a working server. <a href="https://ptrk-en.gumroad.com/l/mlx-deploy-playbook?offer_code=LAUNCH40">The MLX Deploy Playbook</a> adds the complete 60-second troubleshooting table, vision-model (VLM) serving with a local browser chat page, launchd persistence that survives logout, and a commercial-use license for client and product work — including every silent failure that cost hours. Use code <strong>LAUNCH40</strong> for 40% off.</p>
+<h3>References</h3>
+<ul>
+<li><a href="https://github.com/ml-explore/mlx">MLX — Apple's machine learning framework for Apple Silicon</a></li>
+<li><a href="https://github.com/ml-explore/mlx-lm">mlx-lm — the OpenAI-compatible local LLM server used above</a></li>
+</ul><div class="cta"><p><strong>AI Automation Playbook: Speedrun Your SaaS with Open-Source Scraping & LLM Tools</strong> — For indie SaaS founders automating with AI. Grounded in verified open-source tools.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/arena-ai-automation-playbook-speedrun-your-saas-with-o">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

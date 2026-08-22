@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Small Shop Ai Prompts: A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="Building a successful Etsy shop requires more than great products—it demands strategic SEO, compelling copy, and clear communication. AI tools like ChatGPT">
+<meta property="og:title" content="Small Shop Ai Prompts: A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/small-shop-ai-prompts-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Small Shop Ai Prompts: A Practical Dev Guide", "description": "Building a successful Etsy shop requires more than great products—it demands strategic SEO, compelling copy, and clear communication. AI tools like ChatGPT can dramatically accelerate content creation, but only if you have the right prompts ready to go.  This guide shows how to build a repeatable w", "url": "https://autoincomesys.com/articles/small-shop-ai-prompts-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/small-shop-ai-prompts-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Small Shop Ai Prompts: A Practical Dev Guide</h1><h2>Small Shop Ai Prompts: A Practical Dev Guide</h2>
+<p>Building a successful Etsy shop requires more than great products—it demands strategic SEO, compelling copy, and clear communication. AI tools like ChatGPT can dramatically accelerate content creation, but only if you have the right prompts ready to go.</p>
+<p>This guide shows how to build a repeatable workflow for generating Etsy titles, descriptions, and policies using 50 pre-built prompts. Each prompt is designed to produce shop-ready content that converts.</p>
+<h3>Building Your Prompt Library</h3>
+<p>Start with a simple Python script to organize your prompts into a reusable system:</p>
+<p>```python</p>
+<p>import json</p>
+<p>from pathlib import Path</p>
+<h2>Define your prompts in a structured way</h2>
+<p>prompts = {</p>
+<p>    "seo_title": [</p>
+<p>        "Create an SEO-optimized Etsy title for {product_type} with {keywords} that includes {brand}",</p>
+<p>        "Generate a compelling Etsy title for {product_type} focusing on {target_audience} and {use_case}"</p>
+<p>    ],</p>
+<p>    "description": [</p>
+<p>        "Write a 200-word product description for {product_type} highlighting {features} and targeting {audience}",</p>
+<p>        "Create an engaging Etsy description for {product_type} that addresses {pain_points} and shows {benefits}"</p>
+<p>    ],</p>
+<p>    "policy": [</p>
+<p>        "Draft a clear return policy for {shop_name} selling {product_category} that includes {terms}",</p>
+<p>        "Write a shop policy for {shop_name} covering {shipping_method} with {timeframe} delivery guarantee"</p>
+<p>    ]</p>
+<p>}</p>
+<h2>Save to JSON file</h2>
+<p>with open('etsy_prompts.json', 'w') as f:</p>
+<p>    json.dump(prompts, f, indent=2)</p>
+<p>```</p>
+<p>This system lets you maintain 50 unique prompts per category. You can load these dynamically into your workflow:</p>
+<p>```python</p>
+<p>def generate_content(prompt_type, variables):</p>
+<p>    with open('etsy_prompts.json', 'r') as f:</p>
+<p>        all_prompts = json.load(f)</p>
+<p>    prompt_template = all_prompts[prompt_type][0]</p>
+<p>    return prompt_template.format(**variables)</p>
+<h2>Example usage</h2>
+<p>variables = {</p>
+<p>    "product_type": "handmade ceramic mug",</p>
+<p>    "keywords": "ceramic, handmade, mug, coffee",</p>
+<p>    "brand": "Brew &amp; Bower"</p>
+<p>}</p>
+<p>title_prompt = generate_content("seo_title", variables)</p>
+<p>print(title_prompt)</p>
+<h2>Output: Create an SEO-optimized Etsy title for handmade ceramic mug with ceramic, handmade, mug, coffee that includes Brew &amp; Bower</h2>
+<p>```</p>
+<h3>Your Content Workflow</h3>
+<p>Your workflow should integrate prompt execution with content generation:</p>
+<p>1. <strong>Prepare Variables</strong>: Collect product data, target audience, and keywords</p>
+<p>2. <strong>Select Prompt</strong>: Choose from your 50 categorized prompts</p>
+<p>3. <strong>Generate Content</strong>: Run the AI query with your variables</p>
+<p>4. <strong>Review &amp; Edit</strong>: Make final tweaks before publishing</p>
+<p>This process takes 3-5 minutes per item when properly automated.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How many prompts do I need for a complete Etsy shop?</strong></p>
+<p>A: The 50 prompts cover all major content types—titles, descriptions, policies, FAQs. You can expand with variations based on your product categories. Most shops need 3-5 different prompt variations per content type to avoid repetition.</p>
+<p><strong>Q: Can these prompts work with any AI platform?</strong></p>
+<p>A: Yes. These prompts are designed for general use across platforms like ChatGPT, Claude, and Gemini. They're structured to work with most modern LLMs. The key is using consistent variables and clear formatting.</p>
+<p><strong>Q: What's the ROI of using AI prompts over manual writing?</strong></p>
+<p>A: Time savings average 60-80% for content creation tasks. A shop with 20 products can generate all SEO titles, descriptions, and policies in under an hour. This translates to roughly $150-300 in time savings monthly for a small shop.</p>
+<h3>Get it</h3>
+<p>Get the complete collection of 50 Etsy &amp; Small-Shop Sellers AI Prompts at <a href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts?offer_code=Launch40">https://ptrk-en.gumroad.com/l/niche-etsy-prompts?offer_code=Launch40</a> to accelerate your content creation workflow.</p><div class="cta"><p><strong>50 Etsy & Small-Shop Sellers AI Prompts</strong> — 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

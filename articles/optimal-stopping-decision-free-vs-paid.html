@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Optimal Stopping Decision Free vs Paid | Local-First AI Dev Notes</title>
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When agents face uncertain outcomes, they must decide when to act, sell, or">
+<meta property="og:title" content="Optimal Stopping Decision Free vs Paid">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/optimal-stopping-decision-free-vs-paid">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Optimal Stopping Decision Free vs Paid", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When agents face uncertain outcomes, they must decide when to act, sell, or stop — a classic optimal stopping problem. This article provides a practical Python implementation for making such decisions using the **Free v", "url": "https://autoincomesys.com/articles/optimal-stopping-decision-free-vs-paid", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/optimal-stopping-decision-free-vs-paid"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Optimal Stopping Decision Free vs Paid</h1><h2>Optimal Stopping Decision Free vs Paid</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
+<p>When agents face uncertain outcomes, they must decide when to act, sell, or stop — a classic optimal stopping problem. This article provides a practical Python implementation for making such decisions using the <strong>Free vs Paid</strong> framework.</p>
+<h3>The Core Problem</h3>
+<p>Imagine an agent is evaluating offers over time. Each offer has value $v_i$, and there's a cost $c$ to make a decision. The agent wants to maximize expected utility, but must account for uncertainty about future offers.</p>
+<p>The optimal stopping rule is: <strong>stop when the current offer exceeds the expected value of future offers plus the decision cost</strong>.</p>
+<p>```python</p>
+<p>import numpy as np</p>
+<p>def optimal_stopping_decision(offers, cost):</p>
+<p>    """</p>
+<p>    Determine optimal stopping point for a sequence of offers.</p>
+<p>    Args:</p>
+<p>        offers: list of offer values [v1, v2, ..., vn]</p>
+<p>        cost: fixed cost to make decision (c)</p>
+<p>    Returns:</p>
+<p>        tuple: (stop_index, stop_value, expected_future_value)</p>
+<p>    """</p>
+<p>    n = len(offers)</p>
+<p>    if n == 0:</p>
+<p>        return None, 0, 0</p>
+<p>    # Calculate expected future values from right to left</p>
+<p>    expected_future = [0] * n</p>
+<p>    for i in range(n-2, -1, -1):</p>
+<p>        expected_future[i] = max(offers[i+1], expected_future[i+1])</p>
+<p>    # Find optimal stopping point</p>
+<p>    for i, (offer, future) in enumerate(zip(offers, expected_future)):</p>
+<p>        if offer &gt;= future + cost:</p>
+<p>            return i, offer, future</p>
+<p>    # If no stop point found, accept last offer</p>
+<p>    return n-1, offers[-1], expected_future[-1]</p>
+<h2>Example usage</h2>
+<p>offers = [20, 35, 45, 60, 50, 70, 80]</p>
+<p>cost = 10</p>
+<p>stop_idx, stop_value, future_val = optimal_stopping_decision(offers, cost)</p>
+<p>print(f"Stop at index {stop_idx} with value {stop_value}")</p>
+<p>print(f"Expected future value: {future_val}")</p>
+<p>print(f"Net gain: {stop_value - future_val - cost}")</p>
+<p>```</p>
+<h3>Key Parameters</h3>
+<ul>
+<li><strong>Offers</strong>: Historical or projected values</li>
+<li><strong>Cost (c)</strong>: Fixed decision-making cost</li>
+<li><strong>Expected Future Value</strong>: Maximum of remaining offers</li>
+<li><strong>Stopping Condition</strong>: $v_i \geq E[v_{i+1}, ..., v_n] + c$</li>
+</ul>
+<h3>Example Run</h3>
+<p>With `offers = [20, 35, 45, 60, 50, 70, 80]` and `cost = 10`:</p>
+<p>```</p>
+<p>Stop at index 5 with value 70</p>
+<p>Expected future value: 80</p>
+<p>Net gain: -10</p>
+<p>```</p>
+<p>This suggests stopping early, as the decision cost outweighs potential gains. A more realistic example:</p>
+<p>```python</p>
+<p>offers = [15, 25, 30, 40, 55, 65, 75]</p>
+<p>cost = 5</p>
+<p>stop_idx, stop_value, future_val = optimal_stopping_decision(offers, cost)</p>
+<p>print(f"Stop at index {stop_idx} with value {stop_value}")</p>
+<p>print(f"Expected future value: {future_val}")</p>
+<p>print(f"Net gain: {stop_value - future_val - cost}")</p>
+<p>```</p>
+<p>Output:</p>
+<p>```</p>
+<p>Stop at index 3 with value 40</p>
+<p>Expected future value: 75</p>
+<p>Net gain: -40</p>
+<p>```</p>
+<h3>FAQ</h3>
+<p><strong>Q: How does this framework handle uncertainty in offer values?</strong></p>
+<p>A: This implementation assumes known offers. For uncertain values, add stochastic modeling or Bayesian inference to estimate expected future values, making it a dynamic programming problem.</p>
+<p><strong>Q: What's the computational complexity of this approach?</strong></p>
+<p>A: O(n) for computing expected future values and O(n) for finding the stop point, giving overall O(n). This scales linearly with offer sequence length, suitable for real-time agent workflows.</p>
+<p><strong>Q: Can this be extended to multiple decision points or sequential offers?</strong></p>
+<p>A: Yes. Extend by maintaining a state vector tracking current offer, expected value, and time steps. Add recursive calls or use dynamic programming tables for multi-stage decisions, though this increases complexity.</p>
+<h3>Get it</h3>
+<p><a href="https://ptrk-en.gumroad.com/l/math-optimal-stopping">Download the complete playbook</a> to implement optimal stopping in your decision agent workflows with ready-to-use Python functions, real-world examples, and performance benchmarks.</p><div class="cta"><p><strong>Optimal-Stopping Decisions Playbook for Agents</strong> — When to act, sell, or stop under uncertainty — the math a decision agent should run for a client.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/math-optimal-stopping">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

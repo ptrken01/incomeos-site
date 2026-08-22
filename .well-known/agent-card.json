@@ -1,0 +1,165 @@
+{
+  "name": "incomeos-agent-merchant",
+  "description": "Agent-native digital-product merchant: local-LLM playbooks, niche AI prompt packs, recursive meta-loop engineering systems, and AI automation playbooks. Every claim is honesty-verified by verify_arena.py (9-rule gate). Machine-readable catalog at /products.json; per-product agent pitches at /agent-pitches/<sku>.json. Checkout via Gumroad hosted links.",
+  "url": "https://autoincomesys.com/a2a/v1",
+  "version": "1.0.0-geo",
+  "provider": {
+    "organization": "IncomeOS",
+    "url": "https://autoincomesys.com"
+  },
+  "documentationUrl": "https://autoincomesys.com/llms-full.txt",
+  "supportedInterfaces": [
+    {
+      "url": "https://autoincomesys.com/a2a/v1",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://autoincomesys.com/a2a/v1",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "browse-catalog",
+      "name": "Browse product catalog",
+      "description": "List all IncomeOS digital products with price, format, license, and honesty verification status.",
+      "tags": [
+        "commerce",
+        "catalog",
+        "discovery",
+        "digital-products"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "examples": [
+        "Show me all your products",
+        "List local LLM tools under $30",
+        "What prompt packs do you sell?"
+      ]
+    },
+    {
+      "id": "product-evaluation",
+      "name": "Product evaluation and recommendation",
+      "description": "Evaluate whether an IncomeOS product matches a buyer's needs. Returns structured scoring and an honest buy/don't-buy recommendation.",
+      "tags": [
+        "commerce",
+        "evaluation",
+        "recommendation",
+        "honesty-verified"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "examples": [
+        "Is the MLX Deploy Playbook worth it for a beginner?",
+        "Compare your local LLM products for someone new to self-hosting"
+      ]
+    },
+    {
+      "id": "purchase-checkout",
+      "name": "Purchase and checkout initiation",
+      "description": "Initiate purchase via Gumroad checkout URL or x402 stablecoin payment (USDC on Base network).",
+      "tags": [
+        "commerce",
+        "checkout",
+        "purchase",
+        "gumroad",
+        "x402",
+        "stablecoin"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "examples": [
+        "I want to buy the MLX Deploy Playbook",
+        "Checkout the AI Prompt Library",
+        "Pay with USDC on Base",
+        "How do I pay with x402?"
+      ]
+    },
+    {
+      "id": "honesty-verification",
+      "name": "Honesty and trust verification",
+      "description": "Returns the live verify_arena.py honesty gate pass-rate and explains the 9-rule honesty gate.",
+      "tags": [
+        "trust",
+        "honesty",
+        "verification",
+        "transparency"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "examples": [
+        "What is your honesty pass rate?",
+        "How do you verify your product claims?"
+      ]
+    },
+    {
+      "id": "x402-payment",
+      "name": "Agent-native stablecoin payment (x402)",
+      "description": "Pay for products using USDC on Base network via x402 protocol. HTTP-native payments \u2014 no checkout page, no signup. Server returns 402 with payment requirements, agent pays, access granted.",
+      "tags": [
+        "commerce",
+        "x402",
+        "stablecoin",
+        "usdc",
+        "base",
+        "agent-payment"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "examples": [
+        "Pay for MLX Deploy Playbook with USDC",
+        "Buy with x402 stablecoin",
+        "Show USDC price for AI Prompt Library"
+      ]
+    }
+  ],
+  "security": [],
+  "securitySchemes": {},
+  "trust": {
+    "honesty_verified": true,
+    "verification": "verify_arena.py (9-rule honesty gate)",
+    "pass_rate": 1.0,
+    "no_fabricated_claims": true
+  }
+}

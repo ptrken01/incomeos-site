@@ -44,35 +44,57 @@
 - [AI Listing Optimizer: Speedrun Prompt Pack for Etsy Sellers](https://ptrk-en.gumroad.com/l/arena-ai-listing-optimizer-speedrun-prompt-pack-for-et): For Etsy sellers using AI for listings. Grounded in verified open-source tools.
 - [Local LLM Agent Runbook: Postmortem & Optimization for Ollama/MLX/llama.cpp](https://ptrk-en.gumroad.com/l/arena-local-llm-agent-runbook-postmortem-optimization-): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
 - [Local LLM Web Scraping Postmortem Notion Template](https://ptrk-en.gumroad.com/l/arena-local-llm-web-scraping-postmortem-notion-templat): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [AI Automation Playbook: Speedrun Your SaaS with Open-Source Scraping & LLM Tools](https://ptrk-en.gumroad.com/l/arena-ai-automation-playbook-speedrun-your-saas-with-o): For indie SaaS founders automating with AI. Grounded in verified open-source tools.
+- [Local LLM Agent Setup Checklist: For Runners Using Ollama, MLX, and llama.cpp](https://ptrk-en.gumroad.com/l/arena-local-llm-agent-setup-checklist-for-runners-usin): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [Speedrun Your Local LLM Agent: Build a Scraping & Automation Stack with Open Sou](https://ptrk-en.gumroad.com/l/arena-speedrun-your-local-llm-agent-build-a-scraping-a): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [The Contrarian's Guide to Scripting YouTube Content with AI: A Playbook for Creators](https://ptrk-en.gumroad.com/l/arena-the-contrarian-s-guide-to-scripting-youtube-cont): For YouTube creators scripting with AI. Grounded in verified open-source tools.
+- [Build Your Own No-Code Automation Stack with Open Source Tools](https://ptrk-en.gumroad.com/l/arena-build-your-own-no-code-automation-stack-with-ope): For no-code automation users (Zapier/n8n refugees). Grounded in verified open-source tools.
+- [AI Job Application Playbook: Automate Your Search with Open-Source Tools](https://ptrk-en.gumroad.com/l/arena-ai-job-application-playbook-automate-your-search): For job seekers using AI for applications. Grounded in verified open-source tools.
+- [AI for Etsy Listings: A Postmortem Guide to Choosing the Right Scraping & Automa](https://ptrk-en.gumroad.com/l/arena-ai-for-etsy-listings-a-postmortem-guide-to-choos): For Etsy sellers using AI for listings. Grounded in verified open-source tools.
+- [AI Job Seeker Speedrun: Master Applications Using Open-Source Scraping & Automat](https://ptrk-en.gumroad.com/l/arena-ai-job-seeker-speedrun-master-applications-using): For job seekers using AI for applications. Grounded in verified open-source tools.
+- [Local LLM Agent Toolkit: A Practical Guide to Running Agents with Open-Source To](https://ptrk-en.gumroad.com/l/arena-local-llm-agent-toolkit-a-practical-guide-to-run): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [AI Scripting Tools Comparison Guide: From Scrapy to Local LLM Runners](https://ptrk-en.gumroad.com/l/arena-ai-scripting-tools-comparison-guide-from-scrapy-): For YouTube creators scripting with AI. Grounded in verified open-source tools.
+- [MCP Server Playbook: Build Scalable Scraping & Automation Workflows](https://ptrk-en.gumroad.com/l/arena-mcp-server-playbook-build-scalable-scraping-auto): For developers building MCP servers. Grounded in verified open-source tools.
+- [AI-Powered Etsy Listing Automation Playbook: From Scraping to Sales](https://ptrk-en.gumroad.com/l/arena-ai-powered-etsy-listing-automation-playbook-from): For Etsy sellers using AI for listings. Grounded in verified open-source tools.
+- [The No-Code Automation Pro’s Guide to Open-Source Scraping & Automation Tools](https://ptrk-en.gumroad.com/l/arena-the-no-code-automation-pro-s-guide-to-open-sourc): For no-code automation users (Zapier/n8n refugees). Grounded in verified open-source tools.
+- [Local LLM Agent Stack: A Postmortem of Real Tools for Real Workflows](https://ptrk-en.gumroad.com/l/arena-local-llm-agent-stack-a-postmortem-of-real-tools): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [AI Automation Playbook: Build Scalable Scraping + LLM Agents Without Breaking th](https://ptrk-en.gumroad.com/l/arena-ai-automation-playbook-build-scalable-scraping-l): For indie SaaS founders automating with AI. Grounded in verified open-source tools.
+- [Local LLM API Cookbook: Build Scraping Agents That Work Offline](https://ptrk-en.gumroad.com/l/arena-local-llm-api-cookbook-build-scraping-agents-tha): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [The No-Code Automation Survivor’s Guide to Open Source Tools](https://autoincomesys.com/products/arena-the-no-code-automation-survivor-s-guide-to-open-): For no-code automation users (Zapier/n8n refugees). Grounded in verified open-source tools.
+- [Local LLM Agent Automation Playbook: From Scraping to MCP Integration](https://autoincomesys.com/products/arena-local-llm-agent-automation-playbook-from-scrapin): For people running local LLMs (Ollama/MLX/llama.cpp). Grounded in verified open-source tools.
+- [AI Job Application Speedrun: Automate Your Resume, Scrape Jobs, and Win Intervie](https://autoincomesys.com/products/arena-ai-job-application-speedrun-automate-your-resume): For job seekers using AI for applications. Grounded in verified open-source tools.
+
+## Reference data
+- [Commercial-Safety Index](https://autoincomesys.com/tools/commercial-safety-index): which local-first AI tools are safe to use commercially — license and commercial-use verdicts with methodology; machine-readable twin at https://autoincomesys.com/tools/commercial-safety-index/index.json
 
 ## Latest articles
 - [Agent Loop Prompts Setup That Actually Works](https://autoincomesys.com/articles/agent-loop-prompts-setup-that-actually-works)
 - [Agentic Commerce: A Practical 2026 Guide](https://autoincomesys.com/articles/agentic-commerce-a-practical-2026-guide)
 - [Agentic Commerce Benchmarks & Numbers](https://autoincomesys.com/articles/agentic-commerce-benchmarks-numbers)
+- [Agentic Commerce for Local-First Teams](https://autoincomesys.com/articles/agentic-commerce-for-local-first-teams)
+- [Ai Agents Buying Products Setup That Actually Works](https://autoincomesys.com/articles/ai-agents-buying-products-setup-that-actually-works)
 - [AI Automation Workflows: A Practical 2026 Guide](https://autoincomesys.com/articles/ai-automation-workflows-a-practical-2026-guide)
 - [AI Automation Workflows: A Practical Dev Guide](https://autoincomesys.com/articles/ai-automation-workflows-a-practical-dev-guide)
+- [AI Automation Workflows: Benchmarks & Numbers](https://autoincomesys.com/articles/ai-automation-workflows-benchmarks-numbers)
 - [Ai Automation Workflows Step-by-Step](https://autoincomesys.com/articles/ai-automation-workflows-step-by-step)
+- [AI For Beginners: A Practical Dev Guide](https://autoincomesys.com/articles/ai-for-beginners-a-practical-dev-guide)
 - [AI For Beginners vs the Alternatives](https://autoincomesys.com/articles/ai-for-beginners-vs-the-alternatives)
 - [AI For Non Technical: A Practical 2026 Guide](https://autoincomesys.com/articles/ai-for-non-technical-a-practical-2026-guide)
+- [AI For Non Technical Benchmarks & Numbers](https://autoincomesys.com/articles/ai-for-non-technical-benchmarks-numbers)
 - [AI For Non Technical: Common Pitfalls](https://autoincomesys.com/articles/ai-for-non-technical-common-pitfalls)
 - [Ai Passive Income Step-by-Step](https://autoincomesys.com/articles/ai-passive-income-step-by-step)
+- [AI Passive Income vs the Alternatives](https://autoincomesys.com/articles/ai-passive-income-vs-the-alternatives)
 - [AI Productivity Guide: Common Pitfalls](https://autoincomesys.com/articles/ai-productivity-guide-common-pitfalls)
+- [AI Productivity Guide Step-by-Step](https://autoincomesys.com/articles/ai-productivity-guide-step-by-step)
 - [Ai Prompt Library: A Minimal Working Example](https://autoincomesys.com/articles/ai-prompt-library-a-minimal-working-example)
 - [Ai Prompt Library: A Practical 2026 Guide](https://autoincomesys.com/articles/ai-prompt-library-a-practical-2026-guide)
+- [AI Prompt Library for Local-First Teams](https://autoincomesys.com/articles/ai-prompt-library-for-local-first-teams)
 - [Ai Prompts For Realtors Setup That Actually Works](https://autoincomesys.com/articles/ai-prompts-for-realtors-setup-that-actually-works)
 - [AI Prompts For Realtors vs the Alternatives](https://autoincomesys.com/articles/ai-prompts-for-realtors-vs-the-alternatives)
 - [Ai Shopping Agents Common Pitfalls](https://autoincomesys.com/articles/ai-shopping-agents-common-pitfalls)
+- [AI Shopping Agents vs the Paid Alternatives](https://autoincomesys.com/articles/ai-shopping-agents-vs-the-paid-alternatives)
+- [AI Skills For Professionals: Common Pitfalls](https://autoincomesys.com/articles/ai-skills-for-professionals-common-pitfalls)
 - [AI Skills For Professionals Setup That Actually Works](https://autoincomesys.com/articles/ai-skills-for-professionals-setup-that-actually-works)
+- [Ai Tools Stack Is It Worth It (Honest Take)](https://autoincomesys.com/articles/ai-tools-stack-is-it-worth-it-honest-take)
 - [AI Workflow Pack Benchmarks & Numbers](https://autoincomesys.com/articles/ai-workflow-pack-benchmarks-numbers)
 - [AI Workflow Pack in 2026](https://autoincomesys.com/articles/ai-workflow-pack-in-2026)
-- [Apple Silicon LLM Server for Local-First Teams](https://autoincomesys.com/articles/apple-silicon-llm-server-for-local-first-teams)
-- [Apple Silicon Llm Server Step By Step](https://autoincomesys.com/articles/apple-silicon-llm-server-step-by-step)
-- [Autonomous Commerce 2026: A Practical Dev Guide](https://autoincomesys.com/articles/autonomous-commerce-2026-a-practical-dev-guide)
-- [AWS S3 Local Development: A Minimal Working Example](https://autoincomesys.com/articles/aws-s3-local-development-a-minimal-working-example)
-- [AWS S3 Local Development - A Practical Dev Guide](https://autoincomesys.com/articles/aws-s3-local-development-a-practical-dev-guide)
-- [AWS S3 Local Development CI/CD Setup That Actually Works](https://autoincomesys.com/articles/aws-s3-local-development-ci-cd-setup-that-actually-works)
-- [AWS S3 Local Development Step-by-Step](https://autoincomesys.com/articles/aws-s3-local-development-step-by-step)
-- [AWS Sandbox Local: A Practical Dev Guide](https://autoincomesys.com/articles/aws-sandbox-local-a-practical-dev-guide)
-- [AWS Sandbox Local Benchmarks & Numbers](https://autoincomesys.com/articles/aws-sandbox-local-benchmarks-numbers)
-- [AWS Sandbox Local vs the Alternatives](https://autoincomesys.com/articles/aws-sandbox-local-vs-the-alternatives)
-- [Best AI Tools 2026: A Practical 2026 Guide](https://autoincomesys.com/articles/best-ai-tools-2026-a-practical-2026-guide)

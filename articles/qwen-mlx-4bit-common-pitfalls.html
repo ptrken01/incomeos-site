@@ -1,13 +1,16 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>Qwen Mlx 4Bit Common Pitfalls | Local-First AI Dev Notes</title>
-<meta name="description" content="When deploying Qwen models using MLX on Apple Silicon, the promise of fast, private local inference is compelling — but only if you avoid some subtle gotch">
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15    When deploying Qwen models using MLX on Apple Silicon, the promise of fast">
 <meta property="og:title" content="Qwen Mlx 4Bit Common Pitfalls">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://autoincomesys.com/articles/qwen-mlx-4bit-common-pitfalls">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qwen Mlx 4Bit Common Pitfalls", "description": "When deploying Qwen models using MLX on Apple Silicon, the promise of fast, private local inference is compelling — but only if you avoid some subtle gotchas that silently break your workflow. The MLX Deploy Playbook aims to fix these silent failures and get you running faster with a build-once ap", "url": "https://autoincomesys.com/articles/qwen-mlx-4bit-common-pitfalls", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/qwen-mlx-4bit-common-pitfalls"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qwen Mlx 4Bit Common Pitfalls", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15    When deploying Qwen models using MLX on Apple Silicon, the promise of fast, private local inference is compelling — but only if you avoid some subtle gotchas that silently break your workflow. The MLX Deploy Playbook a", "url": "https://autoincomesys.com/articles/qwen-mlx-4bit-common-pitfalls", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/qwen-mlx-4bit-common-pitfalls"}}</script>
 </head><body>
 <header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
 <main><article><h1>Qwen Mlx 4Bit Common Pitfalls</h1><h2>Qwen Mlx 4Bit Common Pitfalls</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
 <p>When deploying Qwen models using MLX on Apple Silicon, the promise of fast, private local inference is compelling — but only if you avoid some subtle gotchas that silently break your workflow. The MLX Deploy Playbook aims to fix these silent failures and get you running faster with a build-once approach.</p>
 <p>Here are the most common pitfalls when using Qwen 4-bit models on MLX and how to sidestep them:</p>
 <p>---</p>

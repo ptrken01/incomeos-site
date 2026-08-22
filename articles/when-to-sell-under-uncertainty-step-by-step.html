@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>When To Sell Under Uncertainty Step-by-Step | Local-First AI Dev Notes</title>
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When you're managing assets, investments, or even product launches under un">
+<meta property="og:title" content="When To Sell Under Uncertainty Step-by-Step">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/when-to-sell-under-uncertainty-step-by-step">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "When To Sell Under Uncertainty Step-by-Step", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When you're managing assets, investments, or even product launches under uncertainty, deciding *when* to sell is often more important than *what* to sell. Optimal stopping theory provides a framework for making such dec", "url": "https://autoincomesys.com/articles/when-to-sell-under-uncertainty-step-by-step", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/when-to-sell-under-uncertainty-step-by-step"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>When To Sell Under Uncertainty Step-by-Step</h1><h2>When To Sell Under Uncertainty Step-by-Step</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
+<p>When you're managing assets, investments, or even product launches under uncertainty, deciding *when* to sell is often more important than *what* to sell. Optimal stopping theory provides a framework for making such decisions mathematically.</p>
+<p>Consider an agent who observes a sequence of values (e.g., stock prices, bids, or performance metrics) and must decide when to stop observing and sell. The classic example is the "secretary problem" or "37% rule," but in practice, agents often face more complex scenarios with varying reward structures.</p>
+<p>Let’s walk through a practical implementation of an optimal stopping agent that can be reused across domains.</p>
+<h3>Step-by-Step Implementation</h3>
+<p>We’ll build a simple decision agent that evaluates observed values and decides when to sell based on a threshold. This approach is suitable for cases where you observe values over time and want to maximize expected returns without knowing future values.</p>
+<h4>Step 1: Setup and Observations</h4>
+<p>```python</p>
+<p>import numpy as np</p>
+<p>def optimal_stopping_agent(observations, threshold_type='percentile'):</p>
+<p>    """</p>
+<p>    Decide when to sell based on observed values.</p>
+<p>    Args:</p>
+<p>        observations (list): Sequence of observed values.</p>
+<p>        threshold_type (str): 'percentile' or 'mean'.</p>
+<p>    Returns:</p>
+<p>        int: Index where agent decides to stop and sell.</p>
+<p>    """</p>
+<p>    n = len(observations)</p>
+<p>    if n == 0:</p>
+<p>        return -1</p>
+<p>    # Calculate threshold based on type</p>
+<p>    if threshold_type == 'percentile':</p>
+<p>        threshold = np.percentile(observations, 75)  # 75th percentile</p>
+<p>    elif threshold_type == 'mean':</p>
+<p>        threshold = np.mean(observations)</p>
+<p>    else:</p>
+<p>        raise ValueError("threshold_type must be 'percentile' or 'mean'")</p>
+<p>    # Find first value that exceeds threshold</p>
+<p>    for i, val in enumerate(observations):</p>
+<p>        if val &gt;= threshold:</p>
+<p>            return i</p>
+<p>    return n - 1  # Default to last observation</p>
+<h2>Example usage:</h2>
+<p>obs = [100, 120, 90, 150, 130, 180, 160]</p>
+<p>decision_point = optimal_stopping_agent(obs)</p>
+<p>print(f"Decision point: {decision_point}, Value: {obs[decision_point]}")</p>
+<p>```</p>
+<h4>Step 2: Evaluate and Refine</h4>
+<p>This simple rule works well in many cases. However, for more sophisticated scenarios (e.g., when you're dealing with noisy data or want to incorporate risk), consider extending the agent:</p>
+<ul>
+<li>Use dynamic thresholds based on volatility.</li>
+<li>Add a time penalty if you must act quickly.</li>
+<li>Incorporate expected value calculations instead of just thresholds.</li>
+</ul>
+<p>Example with adaptive threshold:</p>
+<p>```python</p>
+<p>def adaptive_stopping_agent(observations, window=3):</p>
+<p>    """</p>
+<p>    Uses rolling average to adjust stopping condition.</p>
+<p>    """</p>
+<p>    n = len(observations)</p>
+<p>    if n &lt; window:</p>
+<p>        return -1</p>
+<p>    for i in range(window, n):</p>
+<p>        avg = np.mean(observations[i-window:i])</p>
+<p>        if observations[i] &gt; avg:</p>
+<p>            return i</p>
+<p>    return n - 1</p>
+<p>```</p>
+<p>This approach is especially useful when you're observing a series of prices or values that may fluctuate, but you want to act before the trend reverses.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How does this apply to investment decisions?</strong></p>
+<p>A: In investments, you observe market prices over time and must decide when to sell for maximum return. This agent helps by identifying when a value exceeds historical trends or thresholds, reducing emotional decision-making.</p>
+<p><strong>Q: What if I don’t know the future values?</strong></p>
+<p>A: The agent makes decisions based on current observations and patterns. It assumes that past behavior may indicate future potential. For high uncertainty, combine with risk-adjusted thresholds.</p>
+<p><strong>Q: Can this be extended for multiple assets or sequential decisions?</strong></p>
+<p>A: Yes. You can modify the agent to track multiple sequences or apply it iteratively across assets. The core logic remains the same — decide when to stop observing and commit.</p>
+<h3>Get it</h3>
+<p>Want a build-once, private workflow for optimal stopping decisions? Try our <a href="https://ptrk-en.gumroad.com/l/math-optimal-stopping?offer_code=Launch40">Optimal-Stopping Decisions Playbook</a>. It includes reusable decision rules, examples across domains, and integration-ready code for agents.</p><div class="cta"><p><strong>Optimal-Stopping Decisions Playbook for Agents</strong> — When to act, sell, or stop under uncertainty — the math a decision agent should run for a client.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/math-optimal-stopping">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

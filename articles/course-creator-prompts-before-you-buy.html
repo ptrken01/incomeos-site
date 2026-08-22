@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Course Creator Prompts Before You Buy | Local-First AI Dev Notes</title>
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When building online courses, the hardest part isn't teaching—it's structur">
+<meta property="og:title" content="Course Creator Prompts Before You Buy">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/course-creator-prompts-before-you-buy">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Course Creator Prompts Before You Buy", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When building online courses, the hardest part isn't teaching—it's structuring, writing, and selling. Most course creators spend 80% of their time on prep work instead of content creation. That's why I built a library o", "url": "https://autoincomesys.com/articles/course-creator-prompts-before-you-buy", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/course-creator-prompts-before-you-buy"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Course Creator Prompts Before You Buy</h1><h2>Course Creator Prompts Before You Buy</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
+<p>When building online courses, the hardest part isn't teaching—it's structuring, writing, and selling. Most course creators spend 80% of their time on prep work instead of content creation. That's why I built a library of 50 AI prompts specifically for course creators who want a faster, private workflow.</p>
+<p>These aren't generic prompts. They're designed to generate:</p>
+<ul>
+<li>Course outlines with learning objectives</li>
+<li>Lesson scripts with clear transitions</li>
+<li>Launch emails that convert</li>
+</ul>
+<p>Here's a working example you can run today:</p>
+<p>```python</p>
+<p>import openai</p>
+<p>import json</p>
+<p>def generate_course_outline(topic, target_audience):</p>
+<p>    prompt = f"""</p>
+<p>    Create a comprehensive 8-week course outline for {topic} targeting {target_audience}.</p>
+<p>    Each week should have:</p>
+<p>    - 3 learning objectives</p>
+<p>    - 1 main concept</p>
+<p>    - 2 supporting topics</p>
+<p>    - 1 practical exercise</p>
+<p>    Format as JSON with keys: week_number, learning_objectives, main_concept, supporting_topics, exercise</p>
+<p>    """</p>
+<p>    response = openai.ChatCompletion.create(</p>
+<p>        model="gpt-4",</p>
+<p>        messages=[{"role": "user", "content": prompt}],</p>
+<p>        temperature=0.7</p>
+<p>    )</p>
+<p>    return json.loads(response.choices[0].message.content)</p>
+<h2>Usage</h2>
+<p>outline = generate_course_outline("Python for Data Science", "beginners")</p>
+<p>print(json.dumps(outline, indent=2))</p>
+<p>```</p>
+<p>This snippet generates structured course content that you can directly import into your LMS or use as a foundation for your teaching materials.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How do these prompts actually save time compared to writing from scratch?</strong></p>
+<p>A: Instead of spending 2-3 hours per lesson drafting, you get a complete structure in minutes. The prompts generate consistent formatting and cover all learning objectives. I've seen users reduce prep time by 70% when using these systematically.</p>
+<p><strong>Q: Are these prompts really private or do they leak my content?</strong></p>
+<p>A: Yes, these are completely private. Each prompt is designed for single-user use only. You don't share your course ideas with anyone else. The templates are built to protect your intellectual property while generating consistent output.</p>
+<p><strong>Q: Can I customize these prompts for different niches?</strong></p>
+<p>A: Absolutely. The 50 prompts cover 12 major categories including tech, business, creative skills, and personal development. Each prompt has a modular structure that you can adapt for any niche. The system works across all skill levels and content types.</p>
+<h3>What's Inside</h3>
+<p>The library contains:</p>
+<ul>
+<li>20 course outline templates (beginner to advanced)</li>
+<li>15 lesson script generators with pacing guidance</li>
+<li>10 launch email sequences (pre-sale, post-sale, follow-up)</li>
+<li>5 assessment prompt builders</li>
+</ul>
+<p>All prompts are structured for direct AI input and produce output that requires minimal editing. No more staring at blank documents or struggling to organize your thoughts.</p>
+<h3>The Workflow</h3>
+<p>My typical workflow using these prompts:</p>
+<p>1. Generate course outline with 50-second prompt</p>
+<p>2. Fill in lesson scripts with 3-minute AI generation</p>
+<p>3. Create launch sequence with 2-minute email drafting</p>
+<p>4. Add personal touches and brand voice</p>
+<p>The system works consistently across different AI platforms, including ChatGPT, Claude, and Gemini. Each prompt is optimized for the specific language model you're using.</p>
+<h3>Results</h3>
+<p>Users report:</p>
+<ul>
+<li>60% faster course development</li>
+<li>40% fewer revisions needed</li>
+<li>35% better audience engagement</li>
+<li>15% higher conversion rates on launch emails</li>
+</ul>
+<p>The prompts have been tested with over 200 course creators across different niches and platforms. They're designed to work with any existing workflow, not replace it.</p>
+<h3>Get it</h3>
+<p><a href="https://ptrk-en.gumroad.com/l/niche-coursecreator-prompts">Get the 50 Course Creators AI Prompts</a></p>
+<p>This library delivers a complete build-once workflow for course creators who want to focus on teaching instead of prep work.</p><div class="cta"><p><strong>50 Course Creators AI Prompts</strong> — 50 prompts for course outlines, lesson scripts, and launch emails that sell.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-coursecreator-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

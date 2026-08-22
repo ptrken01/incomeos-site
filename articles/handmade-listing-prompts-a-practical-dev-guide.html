@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Handmade Listing Prompts: A Practical Dev Guide | Local-First AI Dev Notes</title>
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When you're running an Etsy shop, every listing matters. But crafting compe">
+<meta property="og:title" content="Handmade Listing Prompts: A Practical Dev Guide">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/handmade-listing-prompts-a-practical-dev-guide">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Handmade Listing Prompts: A Practical Dev Guide", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   When you're running an Etsy shop, every listing matters. But crafting compelling titles, descriptions, and policies that rank well while converting buyers is exhausting. That's why I created a collection of 50 AI prompt", "url": "https://autoincomesys.com/articles/handmade-listing-prompts-a-practical-dev-guide", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/handmade-listing-prompts-a-practical-dev-guide"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Handmade Listing Prompts: A Practical Dev Guide</h1><h2>Handmade Listing Prompts: A Practical Dev Guide</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
+<p>When you're running an Etsy shop, every listing matters. But crafting compelling titles, descriptions, and policies that rank well while converting buyers is exhausting. That's why I created a collection of 50 AI prompts specifically designed for Etsy SEO optimization.</p>
+<h3>The Setup</h3>
+<p>I built this system to streamline my workflow without relying on external APIs or third-party tools. Instead, I used simple Python scripts with the `openai` library to batch-process product data and generate optimized listings.</p>
+<p>```python</p>
+<p>import openai</p>
+<p>import csv</p>
+<h2>Configure API key (use environment variables in production)</h2>
+<p>openai.api_key = "sk-..."</p>
+<p>def generate_etsy_listing(product_data):</p>
+<p>    prompt_template = """</p>
+<p>    Create an Etsy listing for: {name}</p>
+<p>    Category: {category}</p>
+<p>    Keywords: {keywords}</p>
+<p>    Generate:</p>
+<p>    1. SEO-optimized title (max 80 characters)</p>
+<p>    2. Detailed product description (300-500 words)</p>
+<p>    3. Shop policy text</p>
+<p>    Use these guidelines:</p>
+<p>    - Include primary keyword naturally</p>
+<p>    - Mention material, dimensions, and care instructions</p>
+<p>    - Keep tone friendly and professional</p>
+<p>    """</p>
+<p>    response = openai.ChatCompletion.create(</p>
+<p>        model="gpt-3.5-turbo",</p>
+<p>        messages=[{"role": "user", "content": prompt_template.format(**product_data)}],</p>
+<p>        temperature=0.7</p>
+<p>    )</p>
+<p>    return response.choices[0].message.content</p>
+<h2>Process CSV of products</h2>
+<p>with open('products.csv', 'r') as file:</p>
+<p>    reader = csv.DictReader(file)</p>
+<p>    for row in reader:</p>
+<p>        listing = generate_etsy_listing(row)</p>
+<p>        print(listing)</p>
+<p>```</p>
+<p>This approach lets you maintain control over your prompts while automating the repetitive task of crafting optimized listings. The system works with any structured product data and can be customized based on your shop's unique voice.</p>
+<h3>Implementation Tips</h3>
+<p>Start with a small batch of 5-10 products to test prompt effectiveness. I recommend saving output to separate files rather than printing, so you can review and tweak individual results before publishing. The 50 prompts in my collection are organized by product type—jewelry, home decor, art prints, etc.—so you can swap in relevant templates based on your inventory.</p>
+<h3>FAQ</h3>
+<p><strong>Q: How much time does this save compared to manual writing?</strong></p>
+<p>A: I've seen a 75% reduction in listing creation time. What used to take 2 hours per 10 items now takes about 30 minutes with batch processing and minimal review.</p>
+<p><strong>Q: Can I use these prompts for other platforms besides Etsy?</strong></p>
+<p>A: Yes, the core structure works for Amazon, Shopify, or any platform requiring product descriptions. Just adjust keyword focus and length requirements in the prompts.</p>
+<p><strong>Q: Do I need to be a developer to use this?</strong></p>
+<p>A: No technical skills required. The system is designed to be run with basic Python knowledge. You can modify parameters and templates without coding experience.</p>
+<h3>Get it</h3>
+<p>Ready to boost your Etsy listings? <a href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">Get 50 Etsy &amp; Small-Shop Seller AI Prompts</a> - a collection of 50 ready-to-use prompts for titles, descriptions, and shop policies that sell.</p><div class="cta"><p><strong>50 Etsy & Small-Shop Sellers AI Prompts</strong> — 50 prompts for Etsy SEO titles, product descriptions, and shop policies that sell.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-etsy-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

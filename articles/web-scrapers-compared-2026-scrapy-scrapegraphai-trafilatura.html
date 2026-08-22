@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Web Scrapers Compared: Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, 2026) | Local-First AI Dev Notes</title>
+<meta name="description" content="If you need to pull structured data off the web in 2026, three open-source scrapers come up constantly: **Scrapy**, **ScrapeGraphAI**, and **trafilatura**.">
+<meta property="og:title" content="Web Scrapers Compared: Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, 2026)">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/web-scrapers-compared-2026-scrapy-scrapegraphai-trafilatura">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Web Scrapers Compared: Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, 2026)", "description": "If you need to pull structured data off the web in 2026, three open-source scrapers come up constantly: **Scrapy**, **ScrapeGraphAI**, and **trafilatura**. They are not competitors so much as different tools for different jobs. Here is the honest breakdown — and the local-first setup that actually", "url": "https://autoincomesys.com/articles/web-scrapers-compared-2026-scrapy-scrapegraphai-trafilatura", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/web-scrapers-compared-2026-scrapy-scrapegraphai-trafilatura"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Web Scrapers Compared: Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, 2026)</h1><h2>Web Scrapers Compared: Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, 2026)</h2>
+<p>If you need to pull structured data off the web in 2026, three open-source scrapers come up constantly: <strong>Scrapy</strong>, <strong>ScrapeGraphAI</strong>, and <strong>trafilatura</strong>. They are not competitors so much as different tools for different jobs. Here is the honest breakdown — and the local-first setup that actually works.</p>
+<p>For the full comparison with a runnable smoke test and license detail, see <a href="https://ptrk-en.gumroad.com/l/web-scrapers-compared?offer_code=LAUNCH40">Web Scrapers Compared on Gumroad</a>.</p>
+<h3>What each one is for</h3>
+<ul>
+<li><strong><a href="https://github.com/scrapy/scrapy">Scrapy</a></strong> — a full crawling *framework*. Use it when you need to follow links, paginate, and orchestrate requests across an entire site. Overkill for one page; ideal for a crawl job.</li>
+<li><strong><a href="https://github.com/ScrapeGraphAI/Scrapegraph-ai">ScrapeGraphAI</a></strong> — an LLM-driven "graph" of scraping steps. Use it when the page structure shifts and you'd rather prompt than maintain XPath. Costs tokens per run.</li>
+<li><strong><a href="https://github.com/adbar/trafilatura">trafilatura</a></strong> — a *readability* library: given a page, it extracts the main text and metadata. Use it when you already have the HTML and just want clean article content.</li>
+</ul>
+<h3>The decision rule</h3>
+<p>| You need… | Use |</p>
+<p>|-----------|-----|</p>
+<p>| Crawl an entire site, follow links | <strong>Scrapy</strong> |</p>
+<p>| Extract main text from a known URL | <strong>trafilatura</strong> |</p>
+<p>| Structure shifts; you'd rather prompt than write XPath | <strong>ScrapeGraphAI</strong> |</p>
+<h3>License honesty (the part people skip)</h3>
+<ul>
+<li>Scrapy: BSD-3 — commercial use fine.</li>
+<li>trafilatura: GPL-3 — fine to use, but watch redistribution terms if you ship it.</li>
+<li>ScrapeGraphAI: MIT for the library, but it calls external LLM APIs — your token spend, your ToS.</li>
+</ul>
+<h3>A local-first smoke test</h3>
+<p>```bash</p>
+<h2>clean text from a URL, no browser, no cloud</h2>
+<p>pip install trafilatura</p>
+<p>python -c "import trafilatura; print(trafilatura.extract(trafilatura.fetch_url('https://example.com')))"</p>
+<p>```</p>
+<p>If you want the complete write-up — when each tool wins, a side-by-side smoke test you can run, and the license traps that bite in production — grab <a href="https://ptrk-en.gumroad.com/l/web-scrapers-compared?offer_code=LAUNCH40">Web Scrapers Compared</a>.</p><div class="cta"><p><strong>Web Scrapers Compared — Scrapy vs ScrapeGraphAI vs trafilatura (Local-First, Free)</strong> — Which free, local-first scraper to use for which job — with license honesty and a real smoke test.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/web-scrapers-compared">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

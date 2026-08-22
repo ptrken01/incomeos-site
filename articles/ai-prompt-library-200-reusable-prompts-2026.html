@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>200 Copy-Paste Prompts: The Library Structure That Makes Them Reusable | Local-First AI Dev Notes</title>
+<meta name="description" content="A folder of 200 prompt `.txt` files is useless the day you need one. The value of a prompt library is retrieval and reuse, not volume. Here is the structur">
+<meta property="og:title" content="200 Copy-Paste Prompts: The Library Structure That Makes Them Reusable">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/ai-prompt-library-200-reusable-prompts-2026">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "200 Copy-Paste Prompts: The Library Structure That Makes Them Reusable", "description": "A folder of 200 prompt `.txt` files is useless the day you need one. The value of a prompt library is retrieval and reuse, not volume. Here is the structure that makes a prompt library actually pay off — and the 200 prompts built on it.  For the full library, see [The AI Prompt Library on Gumroad](", "url": "https://autoincomesys.com/articles/ai-prompt-library-200-reusable-prompts-2026", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/ai-prompt-library-200-reusable-prompts-2026"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>200 Copy-Paste Prompts: The Library Structure That Makes Them Reusable</h1><h2>200 Copy-Paste Prompts: The Library Structure That Makes Them Reusable</h2>
+<p>A folder of 200 prompt `.txt` files is useless the day you need one. The value of a prompt library is retrieval and reuse, not volume. Here is the structure that makes a prompt library actually pay off — and the 200 prompts built on it.</p>
+<p>For the full library, see <a href="https://ptrk-en.gumroad.com/l/ai-prompt-library">The AI Prompt Library on Gumroad</a>.</p>
+<h3>Structure before scale</h3>
+<ul>
+<li><strong>Tag by job, not by tool.</strong> `sales/objection-reply`, `ops/incident-summary`, `writing/rewrite-tight`. You search by intent.</li>
+<li><strong>One variable slot per prompt.</strong> Mark the input with `{{INPUT}}` so the same prompt serves every case.</li>
+<li><strong>Keep a one-line "use when" above each.</strong> The header is what you scan at 9am.</li>
+</ul>
+<h3>A reusable pattern</h3>
+<p>```</p>
+<h2>use when: drafting a cold reply to a pricing objection</h2>
+<p>Role: senior AE.</p>
+<p>Input: {{INPUT}}</p>
+<p>Output: 3 short replies, plain language, no jargon, one question each.</p>
+<p>```</p>
+<p>When every prompt follows that shape, you can wire them into agents and scripts instead of pasting by hand.</p>
+<h3>Make them machine-readable</h3>
+<p>Following the structure in <a href="https://github.com/anthropics/prompt-eng-interactive">Anthropic's prompt-engineering guide</a> — separate system, context, and task — means the same prompt works in a notebook, an agent loop, or a cron job. Version them in git so a prompt that regresses is one `git revert` away.</p>
+<h3>From library to pipeline</h3>
+<p>Once prompts are tagged and slotted, a tiny dispatcher can pick the right one by the `use when` line and feed it `{{INPUT}}`. That is the difference between a prompt collection and a working system.</p>
+<p>Get <a href="https://ptrk-en.gumroad.com/l/ai-prompt-library">The AI Prompt Library</a> for 200 ready, tagged, `{{INPUT}}`-slotted prompts.</p>
+<h3>Test before you trust</h3>
+<p>Before a prompt enters the library, run it on three real inputs. If the output shape breaks on any of them, fix the prompt, not the input. A library is only as good as its worst-tested member, so the bar is "passes on real cases," not "looks right."</p><div class="cta"><p><strong>The AI Prompt Library: 200 Copy-Paste Prompts for Business</strong> — 200 production prompts across marketing, ops, and writing - paste and get results.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/ai-prompt-library">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

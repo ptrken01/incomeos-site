@@ -1,13 +1,16 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>Self-Host LLM Guide: A Minimal Working Example | Local-First AI Dev Notes</title>
-<meta name="description" content="Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guide shows how to get a minimal, working local LLM se">
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15    Deploying your own LLM server can be surprisingly straightforward when you">
 <meta property="og:title" content="Self-Host LLM Guide: A Minimal Working Example">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://autoincomesys.com/articles/self-host-llm-guide-a-minimal-working-example">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Self-Host LLM Guide: A Minimal Working Example", "description": "Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guide shows how to get a minimal, working local LLM server in underutes using the Local-LLM Builder Bundle.  ## Setup Overview  We'll deploy an LLM server on a local machine using MLX and the promp", "url": "https://autoincomesys.com/articles/self-host-llm-guide-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/self-host-llm-guide-a-minimal-working-example"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Self-Host LLM Guide: A Minimal Working Example", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15    Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guide shows how to get a minimal, working local LLM server in underutes using the Local-LLM Builder Bundle.  ## Setup", "url": "https://autoincomesys.com/articles/self-host-llm-guide-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/self-host-llm-guide-a-minimal-working-example"}}</script>
 </head><body>
 <header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
 <main><article><h1>Self-Host LLM Guide: A Minimal Working Example</h1><h2>Self-Host LLM Guide: A Minimal Working Example</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
 <p>Deploying your own LLM server can be surprisingly straightforward when you use the right tools. This guide shows how to get a minimal, working local LLM server in underutes using the Local-LLM Builder Bundle.</p>
 <h3>Setup Overview</h3>
 <p>We'll deploy an LLM server on a local machine using MLX and the prompt pack from the bundle. The setup requires:</p>
@@ -66,7 +69,7 @@
 <p><strong>Q: What hardware do I need to run this locally?</strong></p>
 <p>A: An Apple Silicon Mac (M1/M2/M3) works best due to MLX optimizations. Linux systems with CUDA are also viable, though performance varies. The minimum recommended RAM is</p>
 <p><strong>Q: How does the prompt pack improve performance?</strong></p>
-<p>A: The prompt pack contains pre-tuned templates optimized for specific tasks like code generation or summarization. These the need for manual prompt engineering and consistency. Using these templates can task-specific accuracy by compared to generic prompts.</p>
+<p>A: The prompt pack contains pre-tuned templates optimized for specific tasks like code generation or summarization. They reduce the need for manual prompt engineering and keep outputs consistent. Task-matched templates tend to produce better results than generic prompts.</p>
 <p><strong>Q: Can I use this for production applications?</strong></p>
 <p>A: This setup is ideal for development, testing, and private use cases. For high-throughput production environments, consider scaling with Docker containers or cloud deployments. The bundle includes best practices for secure deployment that can be extended for production.</p>
 <h3>Get it</h3>

@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Self-Hosted Automation Compared: n8n vs Automatisch (Why n8n Costs You, Automatisch Doesn't) | Local-First AI Dev Notes</title>
+<meta name="description" content="Two open-source workflow automators dominate the self-hosted conversation: **n8n** and **Automatisch**. They look similar in a screenshot, but their licens">
+<meta property="og:title" content="Self-Hosted Automation Compared: n8n vs Automatisch (Why n8n Costs You, Automatisch Doesn't)">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/self-hosted-automation-compared-n8n-vs-automatisch-2026">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Self-Hosted Automation Compared: n8n vs Automatisch (Why n8n Costs You, Automatisch Doesn't)", "description": "Two open-source workflow automators dominate the self-hosted conversation: **n8n** and **Automatisch**. They look similar in a screenshot, but their licenses change what \"free\" actually means for a business — and that difference is the whole reason to pick one over the other. Here is the honest com", "url": "https://autoincomesys.com/articles/self-hosted-automation-compared-n8n-vs-automatisch-2026", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/self-hosted-automation-compared-n8n-vs-automatisch-2026"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Self-Hosted Automation Compared: n8n vs Automatisch (Why n8n Costs You, Automatisch Doesn't)</h1><h2>Self-Hosted Automation Compared: n8n vs Automatisch (Why n8n Costs You, Automatisch Doesn't)</h2>
+<p>Two open-source workflow automators dominate the self-hosted conversation: <strong>n8n</strong> and <strong>Automatisch</strong>. They look similar in a screenshot, but their licenses change what "free" actually means for a business — and that difference is the whole reason to pick one over the other. Here is the honest comparison and a working local deploy.</p>
+<p>For the full breakdown with a runnable, hardened docker-compose, see <a href="https://ptrk-en.gumroad.com/l/self-hosted-automation-compared?offer_code=LAUNCH40">Self-Hosted Automation Compared on Gumroad</a>.</p>
+<h3>The license trap (read this first)</h3>
+<ul>
+<li><strong><a href="https://github.com/n8n-io/n8n">n8n</a></strong> is published under a *fair-code* license, not a standard open-source one. The license forbids using n8n to build a product that competes with n8n, and — more practically — the free self-hosted tier is constrained for <strong>commercial</strong> use. Teams hit paid-plan walls (SSO, advanced roles, some scaling features) faster than the marketing suggests.</li>
+<li><strong><a href="https://github.com/automatisch/automatisch">Automatisch</a></strong> is <strong>MIT</strong>. Self-host it freely, including for commercial use, with no seat-based ceiling and no "enterprise" gate in front of core features.</li>
+</ul>
+<p>If you are automating your own business, both technically work. If you are a solo founder or a small team watching burn, the license is the entire story.</p>
+<h3>Capability comparison</h3>
+<p>| Area | n8n | Automatisch |</p>
+<p>|------|-----|-------------|</p>
+<p>| License | Fair-code (commercial limits) | MIT (free commercial) |</p>
+<p>| Built-in integrations | Very large marketplace | Growing, community-driven |</p>
+<p>| Trigger model | Webhook, cron, app events | Webhook, cron, app events |</p>
+<p>| Self-host difficulty | Moderate (queues, DB) | Light (single compose) |</p>
+<p>| Per-seat cost | Yes, on paid tiers | No |</p>
+<p>| Best for | Teams wanting max integrations | Solos/small teams avoiding lock-in |</p>
+<h3>When to pick which</h3>
+<p>| You need… | Pick |</p>
+<p>|-----------|------|</p>
+<p>| MIT, truly free commercial self-host | <strong>Automatisch</strong> |</p>
+<p>| Largest built-in integration marketplace | <strong>n8n</strong> (watch the license) |</p>
+<p>| Avoid per-seat surprises as you grow | <strong>Automatisch</strong> |</p>
+<h3>A working Automatisch deploy (local-first)</h3>
+<p>```bash</p>
+<h2>minimal compose — runs free, MIT, on your own box</h2>
+<p>docker compose up -d   # from the Automatisch repo's docker-compose.yml</p>
+<p>```</p>
+<p>That gives you a private automation server with no per-seat cost and no phone call to sales.</p>
+<p>For the complete comparison — a node-by-node capability table, the exact license clauses that bite in production, and a hardened `docker-compose.yml` you can ship today — get <a href="https://ptrk-en.gumroad.com/l/self-hosted-automation-compared?offer_code=LAUNCH40">Self-Hosted Automation Compared</a>.</p><div class="cta"><p><strong>Self-Hosted Automation Compared — Automatisch vs n8n (Why n8n Costs You, Automatisch Doesn't)</strong> — The n8n fair-code license trap, and how to deploy Automatisch free with a working docker-compose.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/self-hosted-automation-compared">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

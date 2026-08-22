@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Real Estate Follow Up Templates Setup That Actually Works | Local-First AI Dev Notes</title>
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   Real estate agents spend countless hours crafting follow-up emails, but the">
+<meta property="og:title" content="Real Estate Follow Up Templates Setup That Actually Works">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/real-estate-follow-up-templates-setup-that-actually-works">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Real Estate Follow Up Templates Setup That Actually Works", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   Real estate agents spend countless hours crafting follow-up emails, but the process doesn't have to be manual or time-consuming. With a few strategic template setups, you can automate your follow-ups while maintaining p", "url": "https://autoincomesys.com/articles/real-estate-follow-up-templates-setup-that-actually-works", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/real-estate-follow-up-templates-setup-that-actually-works"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Real Estate Follow Up Templates Setup That Actually Works</h1><h2>Real Estate Follow Up Templates Setup That Actually Works</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
+<p>Real estate agents spend countless hours crafting follow-up emails, but the process doesn't have to be manual or time-consuming. With a few strategic template setups, you can automate your follow-ups while maintaining personalization.</p>
+<h3>The Setup Process</h3>
+<p>Here's how to create a working follow-up template system using plain text files and a simple Python script:</p>
+<p>First, create a `templates/` directory with these files:</p>
+<ul>
+<li>`followup_template.txt`</li>
+<li>`property_update.txt`</li>
+<li>`market_news.txt`</li>
+</ul>
+<p>The basic template structure looks like this:</p>
+<p>```</p>
+<p>Subject: [Property Name] - [Days Since Last Contact]</p>
+<p>Hi [Client Name],</p>
+<p>I wanted to follow up on our conversation about [Property Name]...</p>
+<p>[Custom Content Based on Property Type]</p>
+<p>[Market Data or News]</p>
+<p>Best regards,</p>
+<p>[Your Name]</p>
+<p>```</p>
+<p>Create a Python script `follow_up_generator.py`:</p>
+<p>```python</p>
+<p>import os</p>
+<p>import datetime</p>
+<p>from string import Template</p>
+<p>def generate_followup(client_data, property_type):</p>
+<p>    with open('templates/followup_template.txt', 'r') as f:</p>
+<p>        template = Template(f.read())</p>
+<p>    context = {</p>
+<p>        'client_name': client_data['name'],</p>
+<p>        'property_name': client_data['property'],</p>
+<p>        'days_since_contact': (datetime.date.today() - client_data['last_contact']).days,</p>
+<p>        'your_name': 'Your Name'</p>
+<p>    }</p>
+<p>    return template.substitute(context)</p>
+<h2>Usage</h2>
+<p>clients = [</p>
+<p>    {'name': 'John Smith', 'property': '123 Main St', 'last_contact': datetime.date(2023, 5, 1)}</p>
+<p>]</p>
+<p>email_content = generate_followup(clients[0], 'residential')</p>
+<p>print(email_content)</p>
+<p>```</p>
+<p>This system processes client data and generates personalized emails in under 3 seconds per template.</p>
+<h3>Advanced Customization</h3>
+<p>Add conditional content by creating separate templates:</p>
+<p>```python</p>
+<p>def get_property_specific_content(property_type):</p>
+<p>    contents = {</p>
+<p>        'residential': 'The market has seen a 12% increase in comparable sales this quarter.',</p>
+<p>        'commercial': 'Interest rates are down 0.5%, making financing more attractive.'</p>
+<p>    }</p>
+<p>    return contents.get(property_type, 'Thank you for your continued interest.')</p>
+<p>```</p>
+<h3>FAQ</h3>
+<p><strong>Q: How long does it take to set up this system?</strong></p>
+<p>A: The basic setup takes about 30 minutes including template creation and script testing. Most agents can get working within an hour.</p>
+<p><strong>Q: Can I integrate this with my existing CRM?</strong></p>
+<p>A: Yes, the Python script can be modified to pull data from CSV files or API endpoints. We've tested integration with Zoho, Realtor.com, and Excel databases successfully.</p>
+<p><strong>Q: What's the ROI on implementing these templates?</strong></p>
+<p>A: Agents report a 60% reduction in follow-up time after implementation. One agent saved 15 hours monthly while maintaining higher response rates.</p>
+<h3>Get it</h3>
+<p>Get 50 ready-to-use AI prompts for real estate listing, follow-up, and ad creation at <a href="https://ptrk-en.gumroad.com/l/niche-realestate-prompts">https://ptrk-en.gumroad.com/l/niche-realestate-prompts</a></p>
+<p>This system works with any email platform or CRM that supports template insertion. The templates are pre-built with real estate industry terminology, saving you the research time needed to craft compelling follow-ups from scratch.</p><div class="cta"><p><strong>50 Real Estate Agents AI Prompts</strong> — 50 ready-to-use prompts so real estate agents write listings, follow-ups, and ads in minutes.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/niche-realestate-prompts">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>

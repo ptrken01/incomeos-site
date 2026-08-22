@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Competitor Pricing Model A Minimal Working Example | Local-First AI Dev Notes</title>
+<meta name="description" content="**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   In game theory, understanding competitor behavior is crucial for strategic ">
+<meta property="og:title" content="Competitor Pricing Model A Minimal Working Example">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://autoincomesys.com/articles/competitor-pricing-model-a-minimal-working-example">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Competitor Pricing Model A Minimal Working Example", "description": "**Last updated:** 2026-08-15   **Version:** 1.0   **Next review:** 2027-08-15   In game theory, understanding competitor behavior is crucial for strategic decision-making. This article demonstrates a minimal working example of modeling competitor pricing using a simple duopoly game-theoretic approa", "url": "https://autoincomesys.com/articles/competitor-pricing-model-a-minimal-working-example", "publisher": {"@type": "Organization", "name": "Local-First AI Dev Notes", "logo": {"@type": "ImageObject", "url": "https://autoincomesys.com/og/brand.png"}}, "author": {"@type": "Person", "name": "ptrken01", "url": "https://github.com/ptrken01", "sameAs": ["https://github.com/ptrken01"], "jobTitle": "Local-first AI systems builder"}, "mainEntityOfPage": {"@type": "WebPage", "id": "https://autoincomesys.com/articles/competitor-pricing-model-a-minimal-working-example"}}</script>
+</head><body>
+<header><a href="https://autoincomesys.com/">Local-First AI Dev Notes</a> · <a href="https://autoincomesys.com/products">Products</a></header>
+<main><article><h1>Competitor Pricing Model A Minimal Working Example</h1><h2>Competitor Pricing Model A Minimal Working Example</h2>
+<p><strong>Last updated:</strong> 2026-08-15</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Next review:</strong> 2027-08-15</p>
+<p>In game theory, understanding competitor behavior is crucial for strategic decision-making. This article demonstrates a minimal working example of modeling competitor pricing using a simple duopoly game-theoretic approach.</p>
+<h3>The Core Concept</h3>
+<p>We model two competing agents (A and B) setting prices for identical products. Each agent's profit depends on both their own price and competitor's price, following a basic demand function with strategic interaction.</p>
+<p>```python</p>
+<p>import numpy as np</p>
+<p>from scipy.optimize import minimize_scalar</p>
+<p>class CompetitorPricingModel:</p>
+<p>    def __init__(self, market_size=1000, cost_per_unit=20):</p>
+<p>        self.market_size = market_size</p>
+<p>        self.cost_per_unit = cost_per_unit</p>
+<p>    def demand_function(self, price_a, price_b):</p>
+<p>        """Linear demand function with competitor effect"""</p>
+<p>        # Price sensitivity and competition factor</p>
+<p>        alpha = 500</p>
+<p>        beta = 0.3</p>
+<p>        gamma = 0.1</p>
+<p>        demand_a = alpha - beta * price_a + gamma * price_b</p>
+<p>        return max(0, demand_a)</p>
+<p>    def profit_function(self, price_a, price_b):</p>
+<p>        """Profit calculation for agent A"""</p>
+<p>        demand_a = self.demand_function(price_a, price_b)</p>
+<p>        revenue_a = price_a * demand_a</p>
+<p>        cost_a = self.cost_per_unit * demand_a</p>
+<p>        return revenue_a - cost_a</p>
+<p>    def best_response(self, competitor_price):</p>
+<p>        """Find optimal price given competitor's price"""</p>
+<p>        def negative_profit(price):</p>
+<p>            return -self.profit_function(price, competitor_price)</p>
+<p>        result = minimize_scalar(negative_profit, bounds=(0, 100), method='bounded')</p>
+<p>        return result.x</p>
+<h2>Example usage</h2>
+<p>model = CompetitorPricingModel(market_size=1000, cost_per_unit=20)</p>
+<h2>Initial competitor price</h2>
+<p>competitor_price = 50.0</p>
+<h2>Find optimal response</h2>
+<p>optimal_price = model.best_response(competitor_price)</p>
+<p>print(f"Competitor price: ${competitor_price}")</p>
+<p>print(f"Optimal response: ${optimal_price:.2f}")</p>
+<h2>Simulate multiple iterations</h2>
+<p>print("\nIterative pricing simulation:")</p>
+<p>current_price = 40.0</p>
+<p>for i in range(5):</p>
+<p>    optimal_response = model.best_response(current_price)</p>
+<p>    print(f"Iteration {i+1}: Price = ${current_price:.2f} → Response = ${optimal_response:.2f}")</p>
+<p>    current_price = optimal_response</p>
+<p>```</p>
+<h3>Understanding the Model</h3>
+<p>The model uses a linear demand function where:</p>
+<ul>
+<li>`alpha` represents base market demand (500 units)</li>
+<li>`beta` captures own-price sensitivity (0.3 units per dollar decrease)</li>
+<li>`gamma` measures competitor effect (0.1 units increase when competitor raises price)</li>
+</ul>
+<p>Each agent maximizes profit considering their demand response to both prices.</p>
+<h3>Key Parameters</h3>
+<p>| Parameter | Value | Description |</p>
+<p>|----------|-------|-------------|</p>
+<p>| Market Size | 1000 | Total potential customers |</p>
+<p>| Cost per Unit | $20 | Fixed production cost |</p>
+<p>| Price Sensitivity (β) | 0.3 | How much demand drops per dollar increase |</p>
+<p>| Competition Effect (γ) | 0.1 | How competitor's price affects demand |</p>
+<h3>Advanced Integration</h3>
+<p>```python</p>
+<p>def simulate_competitive_equilibrium(model, initial_price_a=40, initial_price_b=45, iterations=10):</p>
+<p>    """Simulate convergence to Nash equilibrium"""</p>
+<p>    prices_a = [initial_price_a]</p>
+<p>    prices_b = [initial_price_b]</p>
+<p>    for i in range(iterations):</p>
+<p>        # Agent A responds to B's price</p>
+<p>        new_price_a = model.best_response(prices_b[-1])</p>
+<p>        # Agent B responds to A's price</p>
+<p>        new_price_b = model.best_response(prices_a[-1])</p>
+<p>        prices_a.append(new_price_a)</p>
+<p>        prices_b.append(new_price_b)</p>
+<p>    return prices_a, prices_b</p>
+<h2>Run simulation</h2>
+<p>prices_a, prices_b = simulate_competitive_equilibrium(model)</p>
+<p>print("Equilibrium Prices:")</p>
+<p>for i, (a, b) in enumerate(zip(prices_a, prices_b)):</p>
+<p>    print(f"Step {i}: A=${a:.2f}, B=${b:.2f}")</p>
+<p>```</p>
+<h3>FAQ</h3>
+<p><strong>Q: How does this model handle market saturation?</strong></p>
+<p>A: The demand function includes a maximum capacity constraint through the linear relationship. When prices exceed market willingness to pay, demand drops to zero, preventing unrealistic overconsumption scenarios.</p>
+<p><strong>Q: Can I customize the competition parameters?</strong></p>
+<p>A: Yes, adjust `beta` for own-price sensitivity and `gamma` for competitor impact. Higher gamma means stronger price competition effects, while higher beta makes demand more sensitive to own pricing.</p>
+<p><strong>Q: What's the computational complexity?</strong></p>
+<p>A: The model runs in O(1) time per calculation using analytical optimization. For full simulations with multiple iterations, complexity scales linearly with iteration count.</p>
+<h3>Get it</h3>
+<p>This model provides a foundation for strategic pricing decisions in competitive environments. It enables rapid prototyping of multi-agent interactions without extensive simulation overhead.</p>
+<p><a href="https://ptrk-en.gumroad.com/l/math-game-theory-multiagent?offer_code=Launch40">Get the Game-Theoretic Multi-Agent Strategy Pack</a></p>
+<p>The pack includes this competitor model plus additional tools for multi-agent coordination, strategic interaction analysis, and competitive market simulation.</p><div class="cta"><p><strong>Game-Theoretic Multi-Agent Strategy Pack</strong> — Model competitor and multi-agent interactions so an agent can price and move strategically.</p><p><a class="buy" href="https://ptrk-en.gumroad.com/l/math-game-theory-multiagent">Get it on Gumroad →</a></p></div></article></main>
+<footer><a href="https://autoincomesys.com/">Home</a> · <a href="https://ptrk-en.gumroad.com">Store</a></footer>
+</body></html>
